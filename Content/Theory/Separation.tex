@@ -1,0 +1,21 @@
+\subsection{Separation}
+Wahl eines geeigneten Koordinatensystems ist wichtig.
+
+\textbf{Beispiels-PDGL: }$\frac1x\partFrac{u}{x}+\frac1y\partFrac{u}{y}=\frac{1}{y^2}$
+\begin{enumerate}
+\item \textbf{Ansatz: }
+	\begin{itemize}
+		\item PDGL 1.Ordnung: $U(x,y)=X(x) + Y(y)$
+		\item PDGL 2.Ordnung: $U(x,y)=X(x) \cdot Y(y)$ 
+	\end{itemize}
+	Beispiel: PDGL 1.Ordnung: $U(x,y)=X(x) + Y(y)$ 
+\item \textbf{Einsetzen: } Ansatz in PDGL einsetzen.\\[0.4cm]
+	Beispiel: $\partFrac{u}{x}=X'(x)$\qquad $\partFrac{u}{y}=Y'(y)$ \quad $\Rightarrow$ \quad $\frac{X'(x)}{x}+\frac{Y'(y)}{y}=\frac{1}{y^2}$
+\item \textbf{Separation: } Auf jeder Seite der PDGL darf nur noch eine Variable vorkommen. Die beiden jetzt gewöhnlichen DGL sind über eine Konstante gekoppelt (fixieren der Variable). Wahl der Konstante: Wenn Schwingung erwartet wird: $-k^2$, sonst $k$, ausser man weiss es besser ;-).\\[0.4cm]
+	Beispiel: $\frac{X'(x)}{x}=k=\frac{1}{y^2}-\frac{Y'(y)}{y}$
+\item \textbf{Lösen der DGL's: } Man erhält eine Familie von Lösungen\\
+	Beispiell:	 
+		$X'(x)=k\cdot x \quad\Rightarrow\quad X(x)=\frac12 kX^2+C_x$ \qquad\qquad $Y'(y)=\frac1y-ky \quad\Rightarrow\quad Y(y)=\ln(y)-\frac{ky^2}{2}+C_y$\\
+\item \textbf{Gesamtlösung zusammenbasteln (Linearkombination der Lösungsfamilie), damit Randbedingungen stimmen: }
+	Beispiel: $U(x,y)=\frac12 kx^2\frac12 ky^2+ln(y)+C$
+\end{enumerate}

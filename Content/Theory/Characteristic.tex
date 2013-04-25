@@ -1,0 +1,35 @@
+\subsection{Charakteristiken}
+\textbf{Wichtig:} Als Anfangsbedingungen dürfen \textbf{keine} Charakteristiken verwendet werden, sonst ist die Charakteristik die Lösung (anstatt Fläche ergibt sich eine Kurve).\\
+\textbf{Wichtig:} Die Charakteristik darf den Rand nur einmal durchlaufen.\\
+Nützlich für Qasilineare PDGL 1.Ordnung.\todo{Noch mehr?}\\
+$$a(x,y,u)\cdot\partFrac{u}{x}+b(x,y,u)\cdot\partFrac{u}{y}=c(x,y,u) \qquad\Rightarrow\qquad a(x,y,u)\cdot\partFrac{u}{x}+b(x,y,u)\cdot\partFrac{u}{y}-c(x,y,u)=0$$\\
+
+
+\begin{tabular}{ll}
+Gebiet:& $\Omega{\ldots|x>0,alle y}$\qquad Randbedingung: $u(0,y_0)=g(y_0)$\\
+Vektorielle schreibweise:& $\begin{bmatrix}
+	a(x,y,u)\\ b(x,y,u)\\ c(x,y,u)
+\end{bmatrix}\cdot 
+\underset{\overrightarrow{n}~:~Normale ~auf~ Flaeche}{\underbrace{\begin{bmatrix}
+\partFrac{u}{x} & \partFrac{u}{y} & -1
+\end{bmatrix}}}=0$\\[1cm]
+Tangenten:& $\overrightarrow{t}_x=\begin{bmatrix}1\\0\\ \partFrac{u}{x}\end{bmatrix}\qquad 
+			\overrightarrow{t}_y=\begin{bmatrix}0\\1\\ \partFrac{u}{y}\end{bmatrix}$\\[1cm]
+Lösungsweg& Für jeden Anfangspunkt $\begin{bmatrix} 0\\y_0\\g(y_0)\end{bmatrix}$ finde eine Charakteristik, diese nach $x$, $y$ auflösen.
+\end{tabular}
+
+Beispiel:\\
+\begin{enumerate}
+	\item PDGL mit Randbedingungen und Definitionsbereich: $\partFrac ux+2\partFrac uy=3$, \qquad $u(0,y_0)=g(y_0)=\sin(y_0)$\\
+	Therme in Matrixschreibweise: $\begin{bmatrix}a\\b\\c\end{bmatrix}=\begin{bmatrix}1\\2\\3\end{bmatrix}$
+	\item Charakteristiken ausrechnen PDGL $\rightarrow$ DGL: 	$\frac {d}{dt}\begin{bmatrix}x(t)\\y(t)\\u(t)\end{bmatrix}=\begin{bmatrix}1\\2\\3\end{bmatrix}$
+	\item DGL's lösen: 
+	$\begin{bmatrix}x\\y\\u\end{bmatrix}=\begin{bmatrix}t+x_0\\t+y_0\\t+u_0\end{bmatrix}$
+	\item Anfangsbedingungen einsetzen: $\begin{bmatrix}x\\y\\u\end{bmatrix}=\begin{bmatrix}t+x_0\\t+y_0\\t+u_0\end{bmatrix}\Bigg|_{t=0}=
+	\begin{bmatrix}x_0\\y_0\\u_0\end{bmatrix}=\begin{bmatrix}0\\y_0\\\sin(y_0)\end{bmatrix}$\\
+	Lösung der DGL ist: $\begin{bmatrix}x\\y\\u\end{bmatrix}=\begin{bmatrix}1\\2\\3\end{bmatrix}\cdot t+ \begin{bmatrix}0\\y_0\\\sin(y_0)\end{bmatrix}$\\
+	
+	\item Eliminieren aller Variablen ausser $u,x,y$: $u=3x+sin(y-2x)$
+\end{enumerate}
+
+
