@@ -1,7 +1,7 @@
 \section{Numerik}
 \subsection{1.Ableitung}
 
-$$g'\approx \frac{g(x+\Delta x)-g(x)}{\Delta x}$$
+$$g'\approx \frac{g(x+\Delta x)-g(x)}{\Delta x} \qquad\qquad \text{oder} \qquad\qquad g'\approx \frac{g(x+\Delta x)-g(x-\Delta x)}{2\Delta x}\qquad \text{(Bessere Qualität)}$$
 \subsection{2.Ableitung}
 
 $g''\approx \frac{g(x+\Delta x)-2 g(x) + g(x- \Delta x)}{\Delta x^2}$
@@ -84,9 +84,12 @@ Dirichletsche Randbedingung ($u(x,y)= f(x,y) \forall (x,y)\epsilon \delta G)$\\
 Gleichung:    $-\Delta u(x,y)= f(x,y) $
 $\frac{g(x+\Delta x,y ) -2 g(x,y)+ g(x-\Delta x,y)}{2\Delta x} +
 \frac{g(x,y+\Delta y) -2 g(x,y)+ g(x,y-\Delta y)}{2\Delta y}$\\
-$h=\Delta x = \Delta y \Rightarrow \frac 1 {h^2} (\tilde{u}_{j,k+1} +
+
+$h=\Delta x = \Delta y \Rightarrow \boxed{\frac 1 {h^2} (\tilde{u}_{j,k+1} +
 \tilde{u}_{j+1,k} + \tilde{u}_{j,k-1} + \tilde{u}_{j-1,k} - 4 \tilde{u}_{j,k})
-= f_{j, k}$\\
+= f_{j, k}}$\\[0.4cm]
+
+
 $B \tilde{u} = f \Rightarrow B= \begin{bmatrix}
              T& D & 0 & \ldots \\
              D& T & D & \ldots \\
