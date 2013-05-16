@@ -147,26 +147,36 @@ $$\frac{u(x,t+\Delta t) - u(x,t)}{\Delta t} =
 \frac{u(x+\Delta x, t)-2u(x,y) + u( x - \Delta x, t )} {\Delta x^2} $$ 
 $$\delta_t
 u(x,t)=\delta_{xx}(x,t)$$ 
-$ u{j,k+1} = r \tilde{u}{j-1,k} + (1-2r)\tilde{u}{j,k} + r \tilde{u}{j+1,k}
+$ u_{j,k+1} = r \tilde{u}_{j-1,k} + (1-2r)\tilde{u}_{j,k} + r \tilde{u}_{j+1,k}
 \Longrightarrow$ aus den Positionen k wird k+1 berechtet $r=\frac{\Delta
 t}{\Delta x^2}$
+
+\subsubsubsection{LinAlg-Ansatz}: 
+Für Dimensionen: $n = \lceil\frac{x_{max} - x_{min}}{\Delta x}\rceil$. 
+Initialwerte: $\underline{\tilde{u}}^{(0)} = f(x,0)$ mit $x \in \{\Delta x, \dots, (n-1) \Delta x\}$ ($n-1 \times 1$ Vektor). 
+$C = \operatorname{tridiag}_{n-1}(r, 1-2r, r)$ ($n-1 \times n-1$ Matrix). Iterative Berechnung: $\underline{\tilde{u}}^{(k+1)} = C \underline{\tilde{u}}^{(k)}$
+Absolute Berechnung: $\underline{\tilde{u}}^{(k)} = C^k \underline{\tilde{u}}^{(0)}$
+
 Nachteil:\\
-$$||A^{-1} < 1 \Longrightarrow \text{um stabiles Verfahren muss} r <
+$$||A^{-1}|| < 1 \Longrightarrow \text{um stabiles Verfahren muss} r <
 \frac{1}{2}$$
+
 \subsubsection{Implizites Verfahren}
+Im Unterschied zum expliziten Verfahren, das Werte vom vorherigen Zeitpunkt nutzt, wird hier das ein Gleichungssystem global gelöst.
 $$\frac{u(x,t) - u(x,t -\Delta t)}{\Delta t} = 
 \frac{u(x+\Delta x, t)-2u(x,y) + u( x - \Delta x, t )} {\Delta x^2} $$ 
-$ u{j,k} = r \tilde{u}{j-1,k+1} + (1+2r)\tilde{u}{j,k+1} + r \tilde{u}{j+1,k+1}
+$ u_{j,k} = r \tilde{u}_{j-1,k+1} + (1+2r)\tilde{u}_{j,k+1} + r \tilde{u}_{j+1,k+1}
 \Longrightarrow
 u^{(k)} = E^{(n)} u^{(k+1)}$ Da $||(E^{(n)})^{-1}|| $ immer $< 1$ konvergiert
 das implizite Verfahren immer.
 
+\todo{Das wichtigste steht nicht: $E^(n)$!!}
 
-\subsubsection{Crank Nicolson -Verfahren (expizite + implezite Verfahren)}
+\subsubsection{Crank Nicolson -Verfahren (explizite + implizite Verfahren)}
 
 
-$$ r \tilde{u}{j-1,k+1} + (2+2r)\tilde{u}{j,k+1} + r \tilde{u}{j+1,k+1} = r
-\tilde{u}{j-1,k+1} + (2-2r)\tilde{u}{j,k+1} + r \tilde{u}{j+1,k+1} $$
+$$ r \tilde{u}_{j-1,k+1} + (2+2r)\tilde{u}_{j,k+1} + r \tilde{u}_{j+1,k+1} = r
+\tilde{u}_{j-1,k+1} + (2-2r)\tilde{u}_{j,k+1} + r \tilde{u}_{j+1,k+1} $$
 
 $$
   \begin{bmatrix}
@@ -217,7 +227,7 @@ $$
  
 \subsection{FDM für Hyperbolische PDGL}
 
-$$u_{tt}=u{xx} = homogen$$
+$$u_{tt}=u_{xx} = homogen$$
 $$u_{tt} -u_{xx}= v(x,t) = inhomogen$$
 
 $$\Longrightarrow u_{j,k+1}=r^2 u_{j-1,k} 2(1-r^2)u_{j,k}+ r^2
