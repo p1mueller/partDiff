@@ -178,90 +178,117 @@ Wenn $u_x(x,y) = 0$, dann spricht man auch von der Spiegelmethode. Die Punkte $P
 
 
 \subsection{FDM für parabolische PDGL}
+	Wärmeleitungsgleichung: $\boxed{u_t(x,t)=u_{xx}(x,t)}$\qquad $f(0)=f(1)=0$ \qquad$ \overset{\_}{\Omega}=[0,1]\times [0,\infty]$\\
+	
+	Randbedingungen: $u(x,0)=f(x) \qquad u(0,t)=u(1,t)=0\qquad x\in(0,1) \qquad t\in[0,\infty)$
 \subsubsection{Explizites Verfahren (Richardson-Verfahren)}
-$$\frac{u(x,t+\Delta t) - u(x,t)}{\Delta t} = 
-\frac{u(x+\Delta x, t)-2u(x,y) + u( x - \Delta x, t )} {\Delta x^2} $$ 
-$$\delta_t
-u(x,t)=\delta_{xx}(x,t)$$ 
-$ u_{j,k+1} = r \tilde{u}_{j-1,k} + (1-2r)\tilde{u}_{j,k} + r \tilde{u}_{j+1,k}
-\Longrightarrow$ aus den Positionen k wird k+1 berechtet $r=\frac{\Delta
-t}{\Delta x^2}$
+$\boxed{\frac{\tilde{u}(x,t+\Delta t) - \tilde{u}(x,t)}{\Delta t} = 
+\frac{\tilde{u}(x+\Delta x, t)-2\tilde{u}(x,y) + \tilde{u}( x - \Delta x, t )} {\Delta x^2}} \qquad \Delta x=\frac 1n\qquad \Delta t=\frac r{n^2} \qquad \boxed{r=\frac{\Delta
+t}{\Delta x^2}}$\\
 
-\subsubsubsection{LinAlg-Ansatz}: 
-Für Dimensionen: $n = \lceil\frac{x_{max} - x_{min}}{\Delta x}\rceil$. 
-Initialwerte: $\underline{\tilde{u}}^{(0)} = f(x,0)$ mit $x \in \{\Delta x, \dots, (n-1) \Delta x\}$ ($n-1 \times 1$ Vektor). 
-$C = \operatorname{tridiag}_{n-1}(r, 1-2r, r)$ ($n-1 \times n-1$ Matrix). Iterative Berechnung: $\underline{\tilde{u}}^{(k+1)} = C \underline{\tilde{u}}^{(k)}$
-Absolute Berechnung: $\underline{\tilde{u}}^{(k)} = C^k \underline{\tilde{u}}^{(0)}$
+\textbf{Idee:} Aus den Positionen k wird k+1 berechnet: $\tilde{u}_{j,k+1} = r \tilde{u}_{j-1,k} + (1-2r)\tilde{u}_{j,k} + r \tilde{u}_{j+1,k}$\\
 
-Nachteil:\\
-$$||A^{-1}|| < 1 \Longrightarrow \text{um stabiles Verfahren muss} r <
-\frac{1}{2}$$
+
+\begin{itemize}
+\item Initialisierung, Randbedingung: $\tilde{u}_{j,0}=f(j/n)$ \qquad $\tilde{u}_{0,k}=\tilde{u}_{n,k}=0$
+\item Approximationsmatrize: $C^{(n)}=tridiag_{n-1}(r,1-2r,r)=\begin{bmatrix}
+1-2r& r		& 0		& 0 	&\cdots\\
+r	& 1-2r  & r		& 0		&\cdots\\
+0	& r		& 1-2r 	& r 	&\cdots\\
+0	& 0		& r		& 1-2r 	&\cdots\\
+\vdots&	\vdots&\vdots&\vdots&\ddots	
+\end{bmatrix}$ 
+\item Einen Schritt berechnen: $\tilde{u}^{(k+1)}=C^{(n)} \tilde{u}^{(k)}$
+\item k-Schritte berechnen: $\tilde{u}^{(k)}=\big\{C^{(n)}\big\}^k \tilde{u}^{(0)}$
+\end{itemize}
+
+\textbf{Konvergenzverhalten:} \\
+
+\begin{minipage}{6cm}
+\includegraphics[width=6cm]{Content/Numerik/KonvExplizit.png}
+\end{minipage}
+\hfill
+\begin{minipage}{12cm}
+Verfahren ist stabil wenn: $||A^{-1}|| < 1 \qquad \Rightarrow\qquad r < \frac{1}{2}$\\
+
+Dies macht es Nötig die Zeitschritte extrem klein zu wählen, darum ist das Verfahren auch nicht wirklich praxistauglich, weil sehr hohe Rechenkapazität nötig sind.\\
+
+Der Grund für das schlechte Konvergenzverhalten kann geometrisch visualisiert werden. In die Berechnung des Wertes im Knoten $P$, werden die Werte aller schwarz eingefärbter Knoten eingehen. Von den Randwerten wird nur die 0-te Stufe berücksichtigt.
+\end{minipage}
+
+
+
+
+
 
 \subsubsection{Implizites Verfahren}
-Im Unterschied zum expliziten Verfahren, das Werte vom vorherigen Zeitpunkt nutzt, wird hier das ein Gleichungssystem global gelöst.
-$$\frac{u(x,t) - u(x,t -\Delta t)}{\Delta t} = 
-\frac{u(x+\Delta x, t)-2u(x,y) + u( x - \Delta x, t )} {\Delta x^2} $$ 
-$ u_{j,k} = r \tilde{u}_{j-1,k+1} + (1+2r)\tilde{u}_{j,k+1} + r \tilde{u}_{j+1,k+1}
-\Longrightarrow
-u^{(k)} = E^{(n)} u^{(k+1)}$ Da $||(E^{(n)})^{-1}|| $ immer $< 1$ konvergiert
-das implizite Verfahren immer.
+Im Unterschied zum expliziten Verfahren, das Werte vom vorherigen Zeitpunkt nutzt, wird hier das ein Gleichungssystem global gelöst.\\
 
-\todo{Das wichtigste steht nicht: $E^(n)$!!}
+$\boxed{\frac{\tilde{u}(x,t) - \tilde{u}(x,t -\Delta t)}{\Delta t} = 
+\frac{\tilde{u}(x+\Delta x, t)-2\tilde{u}(x,y) + \tilde{u}( x - \Delta x, t )} {\Delta x^2}}$\\
 
-\subsubsection{Crank Nicolson -Verfahren (explizite + implizite Verfahren)}
+$ \tilde{u}_{j,k} = r \tilde{u}_{j-1,k+1} + (1+2r)\tilde{u}_{j,k+1} + r \tilde{u}_{j+1,k+1}$
+
+\textbf{Idee:} Die Ableitungen werden mittels Rückwärtsdifferenz berechnet\\
 
 
-$$ r \tilde{u}_{j-1,k+1} + (2+2r)\tilde{u}_{j,k+1} + r \tilde{u}_{j+1,k+1} = r
-\tilde{u}_{j-1,k+1} + (2-2r)\tilde{u}_{j,k+1} + r \tilde{u}_{j+1,k+1} $$
+\begin{itemize}
+\item Initialisierung, Randbedingung: $\tilde{u}_{j,0}=f(j/n)$ \qquad $\tilde{u}_{0,k}=\tilde{u}_{n,k}=0$
+\item Approximationsmatrize: $E^{(n)}=tridiag_{n-1}(-r,1+2r,-r)=\begin{bmatrix}
+1+2r& r		& 0		& 0 	&\cdots\\
+r	& 1+2r  & r		& 0		&\cdots\\
+0	& r		& 1+2r 	& r 	&\cdots\\
+0	& 0		& r		& 1+2r 	&\cdots\\
+\vdots&	\vdots&\vdots&\vdots&\ddots	
+\end{bmatrix}$ 
+\item Einen Schritt berechnen: $\tilde{u}^{(k+1)}=\left\{E^{(n)}\right\}^{-1} \tilde{u}^{(k)}$
+\item k-Schritte berechnen: $\tilde{u}^{(k)}=\left(\left\{E^{(n)}\right\}^{-1}\right)^k \tilde{u}^{(0)}$
+\end{itemize}
 
-$$
-  \begin{bmatrix}
-             2-2r& r & 0 & 0\\
-             r & 2-2r & r & 0  \\
-              0& r &2-2r& r  \\
-              0& 0 & r &2-2r \\
-             \ldots 
-           \end{bmatrix} 
-  \begin{bmatrix}
-  	T_{1,0}\\
-  	T_{2,0}\\
-  	T_{3,0}\\
-  	T_{4,0}\\
-  \end{bmatrix} +
-  \begin{bmatrix}
-  	T_{0} r\\
-  	0\\
-  	0\\
-  	T_{L} r\\
-  \end{bmatrix} = 
-  \begin{bmatrix}
-             2+2r& -r & 0 & 0\\
-             -r & 2+2r & -r & 0  \\
-              0& -r &2+2r& -r  \\
-              0& 0 & -r &2+2r \\
-             \ldots 
-           \end{bmatrix} 
-  \begin{bmatrix}
-  	T_{1,1}\\
-  	T_{2,1}\\
-  	T_{3,1}\\
-  	T_{4,1}\\
-  \end{bmatrix} -
-  \begin{bmatrix}
-  	T_{0} r\\
-  	0\\
-  	0\\
-  	T_{L} r\\
-  \end{bmatrix}
-  $$
-  $\Longrightarrow G^{(n)} u^{(k)} = F^{(n)} u^{(k+1)} \Longrightarrow
-  u^{(k+1)}= (F^{(n)})^{-1} G^{(n)} u^{(k)}$
+\textbf{Vorteil:} Das implizite Verfahren ist immer stabil, unabhängig von der Zeitauflösung $\Delta t$\todo{Wirklich immer???}.\\
+\textbf{Nachteil:} Aufwendige Matrixinversion nötig.
 
-  
-  
-  
- 
-\subsection{FDM für Hyperbolische PDGL}
+\subsubsection{Crank Nicolson -Verfahren (gemischtes Verfahren)}
+
+Die Idee des Verfahrens von Crank-Nicolson ist es die Approximationen\\
+
+$\boxed{\frac{\tilde{u}(x,t+\Delta t) - \tilde{u}(x,t)}{\Delta t} = 
+\frac{\tilde{u}(x+\Delta x, t)-2\tilde{u}(x,y) + \tilde{u}( x - \Delta x, t )} {\Delta x^2}}$\\
+
+und\\
+
+$\boxed{\frac{\tilde{u}(x,t) - \tilde{u}(x,t -\Delta t)}{\Delta t} = 
+\frac{\tilde{u}(x+\Delta x, t)-2\tilde{u}(x,y) + \tilde{u}( x - \Delta x, t )} {\Delta x^2}}$\\
+
+zu mitteln. Mit dieser Idee geht das stetige Problem in folgendes diskretes Problem über:
+
+$-r \tilde{u}_{j-1,k+1} + (2+2r)\tilde{u}_{j,k+1} - r \tilde{u}_{j+1,k+1} = r
+\tilde{u}_{j-1,k+1} + (2-2r)\tilde{u}_{j,k+1} + r \tilde{u}_{j+1,k+1} $
+
+
+
+\begin{itemize}
+\item Initialisierung, Randbedingung: $\tilde{u}_{j,0}=f(j/n)$ \qquad $\tilde{u}_{0,k}=\tilde{u}_{n,k}=0$
+\item Approximationsmatrizen:\\
+$F^{(n)}=E^{(n)}+I=tridiag_{n-1}(-r,2+2r,-r)=\begin{bmatrix}
+2+2r& -r	& 0		& 0 	&\cdots\\
+-r	& 2+2r  & -r	& 0		&\cdots\\
+0	& -r	& 2+2r 	& -r 	&\cdots\\
+0	& 0		& -r	& 2+2r 	&\cdots\\
+\vdots&	\vdots&\vdots&\vdots&\ddots	
+\end{bmatrix}$\\
+$G^{(n)}=C^{(n)}+I=tridiag_{n-1}(~r,~2-2r,~r~)=\begin{bmatrix}
+2-2r& r		& 0		& 0 	&\cdots\\
+r	& 2-2r  & r		& 0		&\cdots\\
+0	& r		& 2-2r 	& r 	&\cdots\\
+0	& 0		& r		& 2-2r 	&\cdots\\
+\vdots&	\vdots&\vdots&\vdots&\ddots	
+\end{bmatrix}$ 
+\item Einen Schritt berechnen: $\tilde{u}^{(k+1)}=\left\{F^{(n)}\right\}^{-1} \cdot G^{(n)}\cdot \tilde{u}^{(k)}$
+\item k-Schritte berechnen: $\tilde{u}^{(k)}=\left(\left\{F^{(n)}\right\}^{-1} \cdot G^{(n)}\right)^{k}\cdot \tilde{u}^{(0)}$
+\end{itemize}
+
+\subsection{(FDM für Hyperbolische PDGL)}
 
 $$u_{tt}=u_{xx} = homogen$$
 $$u_{tt} -u_{xx}= v(x,t) = inhomogen$$
