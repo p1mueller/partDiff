@@ -1,12 +1,14 @@
 \section{Numerik}
-\subsection{1.Ableitung}
+\subsection{Diskretisierung}
+\subsubsection{1.Ableitung}
 
 $$g'\approx \frac{g(x+\Delta x)-g(x)}{\Delta x} \qquad\qquad \text{oder} \qquad\qquad g'\approx \frac{g(x+\Delta x)-g(x-\Delta x)}{2\Delta x}\qquad \text{(Bessere Qualität)}$$
-\subsection{2.Ableitung}
+\subsubsection{2.Ableitung}
 
 $g''\approx \frac{g(x+\Delta x)-2 g(x) + g(x- \Delta x)}{\Delta x^2}$
 
 \subsection{FDM}
+\textbf{TIPP:} Bei Anfangsbedingungen ungleich Null das Gleichungssystem selber von Hand herleiten, reduziert die Chance auf Fehler.
 \subsubsection{Grundgleichung: $-u''(x)=f(x)$}
 $ A^{(n)} \tilde{u}^{(n)} =f^{(n)}   $\\
 $A^{(n)}= \frac{1}{\Delta x^2} tridiag {n-1} (-1,2,-1) = \frac{1}{\Delta x^2}
@@ -21,7 +23,7 @@ Randwert: $\tilde{u}(0)= a; \tilde{u}(n)=b $
 $A^{(n)}=\tilde{u}^{(n)} =\begin{bmatrix}
              f(0) + \tilde{u}(0) \\
              f(1) \\
-             .  \\
+             \vdots  \\
              f(n) + \tilde{u}(n)
            \end{bmatrix} $\\
 \subsubsection{Grundgleichung: $T''(x) + h (T_A -T(x)) = 0)$}
@@ -39,22 +41,34 @@ $A^{(n)}= \frac{1}{\Delta x^2} tridiag {n-1}
            
            
 \subsection{Konvergenz}
-$||v||_{\Delta x}=\sqrt{\Delta x (v_1^2+v_2^2 + \ldots v_{n-1}^2)}= \sqrt{\Delta
-x}||v||$\\
+Ein Modell ist konvergent wenn bei $n\leftarrow\infty$ die Schätzung $\tilde{u}$ und $u$ übereinstimmt.\\
+
+$\boxed{||v||_{\Delta x}=\sqrt{\Delta x (v_1^2+v_2^2 + \ldots v_{n-1}^2)}= \sqrt{\Delta
+x}||v||}$\\
 Es konvertiert wenn: $\lim\limits_{n\to \infty
 }||\tilde{u}^{(n)}-u^{(n)}||=0=\sqrt{\frac{1}{n}}||\tilde{u}^{(n)}-u^{(n)}=\sqrt{\frac{1}{n}}\sqrt{(\tilde{u}_1)-u_1)^2
 + \ldots + \tilde{u}_{n-1}-u_{n-1}}$\\
 
 \subsection{Konsistenz}
-$A^{(n)}\tilde{u}^{(n)} -f^{(n)} =0 $; exakt: $A^{(n)} u^{(n)} -f^{(n)} =
-r^{(n)}=Residuenvektor$  $r^{(n)}=A^{(n)}(\tilde{u}^{(n)} - u^{(n)})$\\
-Konsistent wenn $\lim\limits_{n\to \infty} ||r^{(n)}||_{\frac{1}{n}}=0$\\
+Ein Modell ist nicht konsistent wenn das Modell durch Vereinfachung nicht mehr mit der Realität übereinstimmt.
 
+Globaler Konsistenzfehler: $\boxed{||r^{(n)}||_{1/n}\leq \frac 1{12}\max\limits_{\xi\in[0,1]}|f''(\xi)|\cdot \Delta x^2}$
 
-Taylor: $g(x)= \sum\limits_{k=0}^n\frac{1}{k!} g^{(n)}(x_0)(x-x_0)^k +
+\subsubsection{Residuum}
+Exakt: $A^{(n)}\cdot \tilde{u}^{(n)}-f^{(n)}=0$\\
+Residuum: $A^{(n)}\cdot (u^{(n)}-\tilde{u}^{(n)})=r^{(n)}$
+
+Eine Approximationsverfahren ist Konsistent, wenn $\boxed{\lim\limits_{n\rightarrow \infty}||r^{(n)}||_{1/n}=0}$ gilt.\\
+
+Konsistenz ist eine notwendige, aber nicht hinreichende Bedingung für die Konvergenz eines Verfahrens.
+
+\subsubsection{Taylor}
+$g(x)= \sum\limits_{k=0}^n\frac{1}{k!} g^{(n)}(x_0)(x-x_0)^k +
 \frac{1}{(n+1)!}g^{(n+1)}(\xi)(x-x_0)^{n+1}$ = Taylor
 Approximationspolynom  + Lagronesche Restglied ($\xi$ ist unabhängig von $x,
-x_0$)\\
+x_0$)
+
+
 
 \subsubsection{Vorwärt/Rückwärtsdifferenz}
 $g'(x) - \frac{g(x+\Delta x) + g(x)}{\Delta x}= O(\Delta x) = 
@@ -72,15 +86,30 @@ $g''(x) - \frac{g(x+\Delta x) -2 g(x)+ g(x-\Delta x)}{2\Delta x}= O(\Delta x^2)
 = \frac{g''(\xi_1)}{2}\Delta x^2 \Rightarrow 1.Ordnung$
 
 \subsection{Stabilität}
-Determinante: $|A|$ = Flächenfaktor: Wie viel mal grösser wird die Fläche\\
-Norm: $||A||$ = wie stark wird der Einheitskreis verzehrt. $||A||=
-\max\limits_k |\lambda_k|$\\
-Verfahren ist stabil wenn $||(A^{(n)})^{-1}|| \leq C =$ irgend eine von n
-unabhängige Konstante
+Die Stabilität einer Matrize kann über deren Norm $||A||_*$ bestimmt werden.\\
 
+Es gilt: $||A||_*=\max\limits_{||X||_*=1}||A\cdot x||_*$\qquad$||A\cdot x||_*\leq||A||~||x||_*$\\
+
+Ein Approximationsverfahren ist stabil wenn, wenn unabhängig von der konstante $C$ gilt:
+$\boxed{||{A^{(n)}}^{-1}||\leq C}$\\
+
+
+
+Die Bestimmung von $||A||$ ist im Allgemeinen nicht einfach, darum wird $||A||$ oft über den Umweg der Diagonalisierung von A bestimmt.
+
+$y=A\cdot x\qquad\Rightarrow\qquad\tilde{y}=D\cdot\tilde{x}$\qquad mit\qquad $D=\begin{bmatrix}\lambda_1&&\\&\ddots&\\&&\lambda_n\end{bmatrix}$\\
+
+Es gilt $TAT^T=D$, wobei T die Transformationsmatrix vom $x$-Koordinatensystem zum $\tilde{x}$-Koordinatensystem darstellt. $T$ ist orthogonal.
+Die Diagonalelemente $\lambda_1,\ldots,\lambda_n$ werden auch Eigenwerte genannt.\\
+
+Eine Approximationsformel ist stabil wenn: $\boxed{||A||=\max\limits_{k}|y_k|\leq C}$\\
+
+Eigenwerte bestimmen: $\boxed{\det(A-\lambda I)=0}\qquad \Rightarrow \qquad \lambda_1,\ldots,\lambda_n$\\
+Eigenvektoren bestimmen (für jedes $\lambda_i$): $A-\lambda_i I=0\qquad \Rightarrow \qquad v_1,\ldots,v_n$\\
 
 \subsection{FDM für elliptisch PDGL (Poisson: $\Delta u = f$)}
-Dirichletsche Randbedingung ($u(x,y)= f(x,y) \forall (x,y)\epsilon \delta G)$\\
+%Dirichletsche Randbedingung ($u(x,y)= f(x,y) \forall (x,y)\epsilon \delta G)$\\
+
 Gleichung:    $-\Delta u(x,y)= f(x,y) $
 $\frac{g(x+\Delta x,y ) -2 g(x,y)+ g(x-\Delta x,y)}{2\Delta x} +
 \frac{g(x,y+\Delta y) -2 g(x,y)+ g(x,y-\Delta y)}{2\Delta y}$\\
@@ -113,31 +142,38 @@ und $D=\begin{bmatrix}
 
            
 \subsubsection{Irreguläre Gitter (für den Rand)}
-\begin{minipage}{8cm}
-	\includegraphics[width=8cm]{Content/Numerik/irregulaereGitter.png}
+\begin{minipage}{5cm}
+	\includegraphics[width=5cm]{Content/Numerik/irregulaereGitter.png}
 
 \end{minipage}
-\begin{minipage}{10cm}
+\begin{minipage}{14cm}
 
-$\left(\frac{u(x+eh,y)-u(x,y)}{e(e+w)} +\frac{u(x+wh,y)-u(x,y)}{w(e+w)}
-+ \frac{u(x+nh,y)-u(x,y)}{n(n+s)} + \frac{u(x+sh,y)-u(x,y)}{n(n+s)}\right) $\\$\frac{2}{h^2}= f(x,y)$
-\\
+$\left(\frac{u(x+eh,y)-u(x,y)}{e(e+w)} +\frac{u(x+wh,y)-u(x,y)}{w(e+w)}+\frac{u(x+nh,y)-u(x,y)}{n(n+s)} + \frac{u(x+sh,y)-u(x,y)}{n(n+s)}\right)\frac{2}{h^2}=f(x,y)$\\
+
 oder
 \\
+
 $\frac{u(P_E) - u(P)}{e(e+w)} + \frac{u(P_W) - u(P)}{w(e+w)} + \frac{u(P_N) - u(P)}{n(n+s)} + \frac{u(P_S) - u(P)}{s(n+s)} = \frac{h^2}{2} f(x,y)$
 \end{minipage}
-\subsubsection{Neumann Rand $\delta_n u(x,y) \forall (x,y) \epsilon \delta G$}
+\subsubsection{Neumann Rand 
+%$\partial_n u(x,y) \forall (x,y) \epsilon \partial_n G$
+}
 \begin{minipage}{8cm}
 	\includegraphics[width=8cm]{Content/Numerik/NeumannRand.png}
 
 
 \end{minipage}
 \begin{minipage}{10cm}
-$u(P_W)= u(P_E) - 2 h \delta_x u(P) \Rightarrow $\\
-$\frac{2u(P_E) + u(P_N) +
-u(P_S)- 4 u(P) - 2h \delta_x u(P)}{h^2}$
+In einem Randpunkt P liegen wie in der Abbildung ersichtlich, $P_N$ und $P_S$ auf dem Rand von Omega, $P_W$ liegt ausserhalb von Omega.\\
+In P sei die Neumannsche Randbedingung: $\boxed{\partFrac{u}{n}(P)=g(P)}$\\
+$u_x(P)=\frac{u(P_E)-u(P_W)}{2h}\quad\Rightarrow\quad u(P_W)=u(P_E)-2h\cdot u_x(P)$\\
 
-Wenn $\delta_n u(x,y) = 0$, dann spricht man auch von der Spiegelmethode.
+$\boxed{\frac{2u(P_E) + u(P_N) +
+u(P_S)- 4 u(P) - 2h\cdot u_x(P)}{h^2}}$\\
+
+
+\textbf{Spiegelmethode}:\\
+Wenn $u_x(x,y) = 0$, dann spricht man auch von der Spiegelmethode. Die Punkte $P_W$ und $P_E$ weisen dann die gleiche Wertigkeit auf ($P_W=P_E$).
 \end{minipage}
 
 
