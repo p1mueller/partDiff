@@ -1,0 +1,91 @@
+\section{FEM}
+
+Der Vektorraum $\mathbb{V}$ hat undendlich viele Dimensionen. Falls wir n unabhängige Funktionen $v_1,\ldots,v_n$ wählen, dann spannen die Funktionen $a_1\cdot v_1(x)+\ldots+a_n\cdot v_n(x)$ einen n dimensionalen Teilraum $\mathbb{V}^{(n)}$  von $\mathbb{V}$ auf. Dabei gilt:\\
+
+$\boxed{\tilde{u}^{(n)}=a_1\cdot v_1(x)+\ldots+a_n\cdot v_n(x)}$
+\subsection{Das Verfahren von Ritz}
+\textbf{Ritzsche Matrize: }
+$R^{(n)}=\begin{bmatrix}
+	R_{1,1}& R_{1,2}&\cdots\\
+	R_{2,1}& R_{2,2}&\cdots\\
+	\vdots & \vdots &\ddots\\
+\end{bmatrix}$ \qquad mit \qquad $R_{j,k}^{(n)}=\int\limits_{0}^{1}{v_j'(x)\cdot v_k'(x) dx}$\\
+\textbf{Ritzscher Vektor: } 
+$r^{(n)}=\begin{bmatrix}
+	r_1\\
+	r_2\\
+	\vdots\\
+\end{bmatrix}$ \qquad mit \qquad $r_{k}^{(n)}=\int\limits_{0}^{1}{f(x)\cdot v_k(x) dx}$\\
+
+\textbf{Lösung nach Ritz:} $R^{(n)}\cdot a=r^{(n)}\qquad \Rightarrow \qquad a=\left\{R^{(n)}\right\}^{-1}\cdot r^{(n)}$
+\subsection{Das Verfahren von Galerkin}
+\textbf{Galerksche Matrize: }
+$G^{(n)}=\begin{bmatrix}
+	G_{1,1}& G_{1,2}&\cdots\\
+	G_{2,1}& G_{2,2}&\cdots\\
+	\vdots & \vdots &\ddots\\
+\end{bmatrix}$ \qquad mit \qquad $G_{j,k}^{(n)}=\int\limits_{0}^{1}{v_j''(x)\cdot v_k(x) dx}$\\
+\textbf{Galerkscher Vektor: } 
+$g^{(n)}=\begin{bmatrix}
+	g_1\\
+	g_2\\
+	\vdots\\
+\end{bmatrix}$ \qquad mit \qquad $g_{k}^{(n)}=\int\limits_{0}^{1}{f(x)\cdot v_k(x) dx}$\\
+
+\textbf{Lösung nach Galerkin:} $G^{(n)}\cdot a+g^{(n)}=0\qquad \Rightarrow \qquad a=\textcolor{red}{\mathbf{-}}\left\{G^{(n)}\right\}^{-1}\cdot g^{(n)}$
+
+
+\subsection{Gewichtete Residuen (Bereichskollokation)}
+
+Gewichtungsfunktionen: $\{w_1(x),\ldots,w_n(x)\}$
+
+\textbf{Matrize (gewichtete Residuen): }
+$M^{(n)}=\begin{bmatrix}
+	M_{1,1}& M_{1,2}&\cdots\\
+	M_{2,1}& M_{2,2}&\cdots\\
+	\vdots & \vdots &\ddots\\
+\end{bmatrix}$ \qquad mit \qquad $M_{j,k}^{(n)}=\int\limits_{0}^{1}{v_j''(x)\cdot w_k(x) dx}$\\
+\textbf{Vektor (gewichtete Residuen): } 
+$m^{(n)}=\begin{bmatrix}
+	m_1\\
+	m_2\\
+	\vdots\\
+\end{bmatrix}$ \qquad mit \qquad $m_{k}^{(n)}=\int\limits_{0}^{1}{f(x)\cdot w_k(x) dx}$\\
+
+\textbf{Lösung der gewichteten Residuen:} $M^{(n)}\cdot a+m^{(n)}=0\qquad \Rightarrow \qquad a=\textcolor{red}{\mathbf{-}}\left\{M^{(n)}\right\}^{-1}\cdot m^{(n)}$
+
+\subsection{Punktkollokation}
+Im Sinne einer Punktkollokation werden n Stützstellen im Intervall von [0,1] gewählt.\\
+
+$\begin{bmatrix}
+	v_1''(x_1)& v_2''(x_1)&\cdots\\
+	v_1''(x_2)& v_2''(x_2)&\cdots\\
+	\vdots& \vdots&\ddots
+\end{bmatrix}\cdot
+\begin{bmatrix}
+a_1\\
+a_2\\
+\vdots
+\end{bmatrix}
+=\begin{bmatrix}
+-f(x_1)\\
+-f(x_2)\\
+\vdots
+\end{bmatrix}$\qquad Das Gleichungssystem nach a auflösen
+
+\subsection{Das Verfahren von Gauss (MSE)}
+
+\textbf{Gausscher Matrize: }
+$Q^{(n)}=\begin{bmatrix}
+	Q_{1,1}& Q_{1,2}&\cdots\\
+	Q_{2,1}& Q_{2,2}&\cdots\\
+	\vdots & \vdots &\ddots\\
+\end{bmatrix}$ \qquad mit \qquad $Q_{j,k}^{(n)}=\int\limits_{0}^{1}{v_j''(x)\cdot v_k''(x) dx}$\\
+\textbf{Gausscher Vektor: } 
+$q^{(n)}=\begin{bmatrix}
+	q_1\\
+	q_2\\
+	\vdots\\
+\end{bmatrix}$ \qquad mit \qquad $q_{k}^{(n)}=\int\limits_{0}^{1}{f(x)\cdot v_k''(x) dx}$\\
+
+\textbf{Lösung nach Gauss:} $Q^{(n)}\cdot a+q^{(n)}=0\qquad \Rightarrow \qquad a=\textcolor{red}{\mathbf{-}}\left\{Q^{(n)}\right\}^{-1}\cdot q^{(n)}$
