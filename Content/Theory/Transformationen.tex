@@ -60,6 +60,26 @@ $\partial_t^2u-\partial_x^2u=f \qquad \Rightarrow \qquad f(t,x)=\frac{a_0^f(t)}{
 
 
 
+\subsubsection{Laplace-Transformation}
+
+$\boxed{F(t)=\int\limits_{0}^{\infty}{f(t)\e^{-st}} dt}$ \qquad Siehe auch weiter hinten in der Zusammenfassung!\\
+
+\textbf{Lösung einer ODGL:}\\
+
+$\dot{x}(t)+p x(t)=f(t) \qquad f(t)=q$\\
+$\dot{x}(t)+p x(t)=f(t)\FT s X(s)-x(0)+pX(s)=F(s) \qquad f(t)\FT F(s)=\frac{q}{s}$\\
+
+$\Rightarrow X(s)=\frac{F(s)+x(0)}{s+p}=\frac{q+x(0)}{s(s+p)}\Big|_{x(0)=0}\IFT x(t)=\frac{q}{p}(1-\e^{-pt})$\\
+
+\textbf{Lösung einer PDGL:}\\
+
+$\partFrac{u}{t}+x\partFrac{u}{x}=x\qquad t\geq 0,\quad x\geq 0\qquad u(x,0)=0,\quad u(0,t)=0\qquad x,t>0$\\
+
+Transformation: $\partFrac{u}{t}+x\partFrac{u}{x}=x\FT sU(s,x)-u(x,0)+x\partFrac{U(s,x)}{x}=\frac{x}{s}\qquad \Rightarrow \qquad U(s,x)=\frac{x}{s(s+1)}$\\
+$U(s,x)\IFT x(1-\e^{-t})$
+
+
+
 
 
 
