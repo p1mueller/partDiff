@@ -146,6 +146,7 @@ und $D=\begin{bmatrix}
 	\includegraphics[width=5cm]{Content/Numerik/irregulaereGitter.png}
 
 \end{minipage}
+\hfill
 \begin{minipage}{14cm}
 
 $\left(\frac{u(x+eh,y)-u(x,y)}{e(e+w)} +\frac{u(x+wh,y)-u(x,y)}{w(e+w)}+\frac{u(x+nh,y)-u(x,y)}{n(n+s)} + \frac{u(x+sh,y)-u(x,y)}{n(n+s)}\right)\frac{2}{h^2}=f(x,y)$\\
@@ -158,12 +159,13 @@ $\frac{u(P_E) - u(P)}{e(e+w)} + \frac{u(P_W) - u(P)}{w(e+w)} + \frac{u(P_N) - u(
 \subsubsection{Neumann Rand 
 %$\partial_n u(x,y) \forall (x,y) \epsilon \partial_n G$
 }
-\begin{minipage}{8cm}
-	\includegraphics[width=8cm]{Content/Numerik/NeumannRand.png}
+\begin{minipage}{6cm}
+	\includegraphics[width=6cm]{Content/Numerik/NeumannRand.png}
 
 
 \end{minipage}
-\begin{minipage}{10cm}
+\hfill
+\begin{minipage}{13cm}
 In einem Randpunkt P liegen wie in der Abbildung ersichtlich, $P_N$ und $P_S$ auf dem Rand von Omega, $P_W$ liegt ausserhalb von Omega.\\
 In P sei die Neumannsche Randbedingung: $\boxed{\partFrac{u}{n}(P)=g(P)}$\\
 $u_x(P)=\frac{u(P_E)-u(P_W)}{2h}\quad\Rightarrow\quad u(P_W)=u(P_E)-2h\cdot u_x(P)$\\
@@ -329,19 +331,6 @@ $\Rightarrow$ $\oint\limits_{\Gamma}{\Delta u(x,y) dx dy}=\oint\limits_{\partial
 \item Man kann mit Flussgrössen un Bilanzen rechnen, dadurch kann der Laplace-Operator $(\Delta)$ verzichtet werden und somit die aufwendige Mathematik umgangen werden.
 \item Es kann mit komplizierten Geometrien gerechnet werden.  
 \end{itemize}
-
-\begin{minipage}{4cm}
-	\includegraphics[width=4cm]{Content/Numerik/FVMPrinzip.png}
-\end{minipage}
-\hfill
-\begin{minipage}{14cm}
-	$\frac{u(P_E)-u(P_P)}{h}\cdot h+\frac{u(P_N)-u(P_P)}{h}\cdot h+\frac{u(P_W)-u(P_P)}{h}\cdot h+\frac{u(P_S)-u(P_P)}{h}\cdot h\approx 0$\\
-	
-	$\Rightarrow\tilde{u}(P_E)+\tilde{u}(P_N)+\tilde{u}(P_W)+\tilde{u}(P_S)+4\cdot\tilde{u}(P_P)=0$
-\end{minipage}
-
-
-
 
 \begin{minipage}{6cm}
 	\includegraphics[width=6cm]{Content/Numerik/FVM1.png}

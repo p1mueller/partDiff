@@ -11,6 +11,7 @@
 \usepackage{fancybox}
 \usepackage{graphicx}
 \usepackage{color}
+\usepackage{xcolor}
 \usepackage{lastpage}
 \usepackage{wrapfig}
 \usepackage{fancyhdr}
@@ -95,8 +96,16 @@
 
 \newcommand{\todo}[1]{\colorbox{red}{\textbf{#1}}}
 \newcommand{\e}{\mathrm{e}}
+\newcommand{\grad}[1]{\underset{#1}{\mathrm{grad~}}}
 \DeclareMathOperator{\Real}{Re}
 \DeclareMathOperator{\Imag}{Im}
+
+\newcommand{\cfbox}[2]{%
+    \colorlet{currentcolor}{.}%
+    {\color{#1}%
+    \fbox{\color{currentcolor}#2}}%
+}
+
 
 \newcommand{\partFrac}[2]{\frac{\partial #1}{\partial #2}}
 
