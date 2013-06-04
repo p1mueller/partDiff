@@ -1,9 +1,47 @@
-\section{Rechenregeln}
-	\subsection{Integralrechnung}
-		\todo{Ergänzen}
-	\subsection{Differentialrechnung}
-		\todo{Ergänzen}
-	\subsection{Differentialgleichungen}
-		\todo{Ergänzen}
+\section{Mathe Grundlagen}	
+
+	\subsection{Partialbruchzerlegung}
+		\input{Content/Rechenregeln/PBZ}
+			
 	\subsection{Trigonometrie}
-		\todo{Ergänzen}
+		\input{Content/Rechenregeln/Trigo}	
+
+	\subsection{Differentialrechnung}
+		$f'(x_0)=\lim\limits_{\Delta x\rightarrow 0} \frac{f(x_0+\Delta) x-f(x_0)}{\Delta x}$	
+			
+	\subsection{Taylor Polynom}
+		$f(x_0+h)=f(x_0) + f'(x_0)h + \frac{f''(x_0)}{2}h^2 + \frac{f'''(x_0)}{3!}h^3 + \ldots + \frac{f^{(n)}(x_0)}{n!}h^n + R_n(x_0, h)$
+
+	\subsection{Integralrechnung}	
+	\begin{tabbing}
+	     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \= xxx \= xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\kill  
+	     Integration\>\>$A=\int\limits_{a}^{b}{f(t)dt}=\left[F(t)\right]_a^b=F(b)-F(a)$\\[0.2cm]
+	     Linearität\>		  
+	   $\qquad\int{f(\alpha x+\beta )dx=\frac{1}{\alpha}\cdot F(\alpha x+
+				\beta)+C}$\\[0.2cm]
+		   Partielle Integration\>
+	   $\qquad\int\limits_a^b{\underset{\Uparrow}{u}'(x)\cdot \underset{\Downarrow}{v}(x)dx}=\biggl[ u(x)\cdot v(x) \biggr]_a^b
+	   -\int\limits_a^b{u(x)\cdot v'(x)dx}$\\[0.2cm]
+	   Substitution (Rationalisierung)\>
+	   $\qquad t=\tan\frac{x}{2}, \qquad dx=\frac{2dt}{1+t^2} \qquad 
+	   \sin  x=\frac{2t}{1+t^2} \qquad \cos x=\frac{1-t^2}{1+t^2}
+				\quad\int{R(\sin(x)\cos(x))dx}$\\ 
+	   Allgemeine Substitution \> \>
+				$\int\limits_{a}^{b}{f(x)dx}=\int\limits_{g^{-1}(a)}^{g^{-1}(b)}{f(g(t))\cdot
+				g'(t)dt}\qquad t=g^{-1}(x)\qquad  \fbox{x=g(t)}\qquad dx=g'(t)\cdot dt$\\
+	   Logarithmische Integration \>\>
+	    $ \int{\frac{f'(x)}{f(x)}dx}=\ln|f(x)|+C	\qquad{(f(x)\neq 1)}$\\[0.2cm]
+	  Spezielle Form des Integranden \>\>
+		 		$\int{f'(x)\cdot (f(x))^{\alpha} dx}= f(x)^{\alpha +1}\cdot
+		 		\frac{1}{\alpha+1}+C \qquad{(\alpha \neq -1)}$\\ 
+	   Differentiation\>\>
+		 		$\int \limits ^{b} _{a} {f'(t)dt}=f(b)-f(a)$\qquad
+				$\frac{d}{dx} \int \limits ^{x} _{1} {f(t)dt}=f(x)$
+	\end{tabbing}
+	%\subsubsection{Einige unbestimmte Integrale}
+	\includegraphics[width=19cm]{Content/Rechenregeln/integrale.png} 
+	
+	
+			
+	\subsection{Differentialgleichungen}
+		\input{Content/Rechenregeln/DGL}
