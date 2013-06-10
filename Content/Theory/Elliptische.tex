@@ -1,13 +1,13 @@
 \subsection{Elliptische PDGL}
 $\Delta u=f\qquad \omega=\{(x,y)|y\geq 0\},\quad u(x,y)=ay$
 
-\textbf{Satz:} Wenn $\Omega$ beschränkt und zusammenhängend, dann ist die Lösung u immer eindeutig.\\
+\textbf{Satz:} Wenn $\Omega$ beschrÃ¤nkt und zusammenhÃ¤ngend, dann ist die LÃ¶sung u immer eindeutig.\\
 
 \textbf{Beweis:} Annahme: $u=u_1-u_2$\\
 Einsetzen: $\Delta u_1 - \Delta u_2=f-f=0$\\
 $\left.(u_1-u_2)\right|_{\partial \omega}=g-g=0$\\
 $\Delta u=0 \qquad \left.u\right|_{\partial\Omega}=0$\\
-Falls $u=0$ eine Lösung, dann gibt es nur eine Lösung.
+Falls $u=0$ eine LÃ¶sung, dann gibt es nur eine LÃ¶sung.
 
 \subsubsection{Maximumprinzip} 
 
@@ -15,7 +15,7 @@ Wenn gilt $\Delta u=0$, dann befinden sich die Extrema (Maxima und Minima der Fu
 
 \subsubsection{Greensche Funktion} 
 
-Eine elliptische PDGL wird mittels Inversion von $\Delta$ gelöst. Dieser Umkehr geschieht mittels Greenscher Funktion, welche die Umkehrfunktion $\Delta$ ist\qquad $\Delta$: Laplace-Operator.
+Eine elliptische PDGL wird mittels Inversion von $\Delta$ gelÃ¶st. Dieser Umkehr geschieht mittels Greenscher Funktion, welche die Umkehrfunktion $\Delta$ ist\qquad $\Delta$: Laplace-Operator.
 
 $u(x)=\int\limits_\Omega{\sigma(x,\xi)f(\xi)d\xi}+\int\limits_\Omega{h(x,\xi)f(\xi)d\xi}\qquad \sigma(x,\xi)=
 \begin{cases}
@@ -28,12 +28,12 @@ $u(x)=\int\limits_\Omega{\sigma(x,\xi)f(\xi)d\xi}+\int\limits_\Omega{h(x,\xi)f(\
 
 Greensche Funktion: $G(x,\xi)=\sigma(x,\xi)+h(x,\xi)$
 
-Satz: Ist $\Omega$ ein Gebiet, auf dem das Dirichlet Problem eindeutig lösbar ist, dann gibt es eine Funktion $G(x,\xi)$, welche als Funktion von x die Gleichung
+Satz: Ist $\Omega$ ein Gebiet, auf dem das Dirichlet Problem eindeutig lÃ¶sbar ist, dann gibt es eine Funktion $G(x,\xi)$, welche als Funktion von x die Gleichung
 
 $\Delta G(x,\xi)=\delta(x-\xi)$
 
-löst mit homogenen Randbedingungen.
-Lösung: $u(x)=\int\limits_{\Omega}^{}{G(x,\xi)f(\xi)d\xi}+\int\limits_{\partial\Omega}g(\xi)\cdot\grad{\xi}G(x,\xi)d\eta\qquad \eta:\text{ Normale von }\partial G$
+lÃ¶st mit homogenen Randbedingungen.
+LÃ¶sung: $u(x)=\int\limits_{\Omega}^{}{G(x,\xi)f(\xi)d\xi}+\int\limits_{\partial\Omega}g(\xi)\cdot\grad{\xi}G(x,\xi)d\eta\qquad \eta:\text{ Normale von }\partial G$
 
 \subsubsection{Mittelwerteigenschaft harmonischer Funktionen}
 

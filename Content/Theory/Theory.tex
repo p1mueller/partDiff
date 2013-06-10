@@ -4,14 +4,14 @@
 
 \subsubsection{Ordnung}
 
-Wie bei gewöhnlichen Differentialgleichungen ist die Ordnung
-die höchste Ableitung der unbekannten Funktion, die in der
+Wie bei gewÃ¶hnlichen Differentialgleichungen ist die Ordnung
+die hÃ¶chste Ableitung der unbekannten Funktion, die in der
 Differentialgleichung vorkommt.\\
 
 \textbf{PDGL 1.Ordnung: } \qquad$F\biggl(x_1,\dots,x_n, u, \frac{\partial u}{\partial x_1},\dots,\frac{\partial u}{\partial x_n}\biggr)$
 
 Sie kann durch Substitution $\frac{\partial u}{\partial x_i}\to p_i$ durch  $F(x_1,\dots,x_n,u,p_1,\dots,p_n),$
-ausgedrückt werden.\\
+ausgedrÃ¼ckt werden.\\
 
 \textbf{PDGL 2.Ordnung: } \qquad $F\biggl(x_1,\dots,x_n,u,
 \frac{\partial u}{\partial x_1},\dots,\frac{\partial u}{\partial x_n},
@@ -19,7 +19,7 @@ ausgedrückt werden.\\
 
 Sie kann durch Substitution $\frac{\partial u}{\partial x_i}\to p_i,~\frac{\partial^2 u}{\partial x_i\partial x_j}\to t_{ij}$ durch
 $F(x_1,\dots,x_n,u,p_1,\dots,p_n,t_{11},t_{12},\dots,t_{n,n-1},t_{nn})$
-ausgedrückt werden.
+ausgedrÃ¼ckt werden.
 
 \subsubsection{Laplace-Operator}
 $u(x,y,z)\quad\Rightarrow\quad \Delta u=\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}+\frac{\partial^2u}{\partial z^2}$
@@ -31,7 +31,7 @@ Gegeben:& $F\biggl(x,y,u,\frac{\partial u}{\partial x},\frac{\partial u}{\partia
 \frac{\partial^2 u}{\partial x^2},\frac{\partial^2 u}{\partial x\partial y},
 \frac{\partial^2u}{\partial y^2}\biggr)=0.$\\[0.2cm]
 Substitution: & $p=\frac{\partial u}{\partial x},\qquad q=\frac{\partial u}{\partial y}$\\[0.2cm]
-Für zweite Ableitungen: & $\frac{\partial^2 u}{\partial x^2}=\frac{\partial p}{\partial x},\quad \frac{\partial^2 u}{\partial x\partial y}=\frac{\partial p}{\partial y}=\frac{\partial q}{\partial x},\quad\frac{\partial^2 u}{\partial y^2}=\frac{\partial q}{\partial y}$\\[0.2cm]
+FÃ¼r zweite Ableitungen: & $\frac{\partial^2 u}{\partial x^2}=\frac{\partial p}{\partial x},\quad \frac{\partial^2 u}{\partial x\partial y}=\frac{\partial p}{\partial y}=\frac{\partial q}{\partial x},\quad\frac{\partial^2 u}{\partial y^2}=\frac{\partial q}{\partial y}$\\[0.2cm]
 Gleichungssystem 1.Ordnung& $p=\frac{\partial u}{\partial x},\quad q=\frac{\partial u}{\partial y},\quad\frac{\partial p}{\partial y}=\frac{\partial q}{\partial x}$
 \end{tabular}
 
@@ -49,19 +49,19 @@ Gleichungssystem 1.Ordnung& $p=\frac{\partial u}{\partial x},\quad q=\frac{\part
 	\end{tabular}
 \end{minipage}
 
-Das Gebiet einer PDGL \textbf{muss} offen sein, nur dann ist die partielle Ableitung überall definiert. Das Gebiet ist offen, wenn um jeden Punkt in Gebiet $\Omega$ ein kleiner Ball gezeichnet werden kann, welcher auch in Gebiet $\Omega$ ist.
+Das Gebiet einer PDGL \textbf{muss} offen sein, nur dann ist die partielle Ableitung Ã¼berall definiert. Das Gebiet ist offen, wenn um jeden Punkt in Gebiet $\Omega$ ein kleiner Ball gezeichnet werden kann, welcher auch in Gebiet $\Omega$ ist.
 
-\textbf{Lösung einer PDGL:}\\
+\textbf{LÃ¶sung einer PDGL:}\\
 \begin{tabular}{ll}
-Gegeben:& Gebiet $\Omega$,PDGL,Randwerte $\partial\Omega$\\
-Lösung:& Funktion $u$: $\overset{\_}{\Omega}\rightarrow \mathbb{R}$, PDGL in $\Omega$ und Randwerte auf $\partial\Omega$\\
+Gegeben:& Gebiet $\Omega$, PDGL,Randwerte $\partial\Omega$\\
+LÃ¶sung:& Funktion $u$: $\overset{\_}{\Omega}\rightarrow \mathbb{R}$, PDGL in $\Omega$ und Randwerte auf $\partial\Omega$\\
 \end{tabular}
 
 \subsubsection{Klassifikation einer PRGL}
 
 
 \begin{tabular}{ll}
-Ordnung:& Höchste vorkommende partielle Ableitung\\
+Ordnung:& HÃ¶chste vorkommende partielle Ableitung\\
 Type:& Linear:\qquad $F(\ldots)$ lineare Funktion von $u,\frac{\partial u}{\partial x_1},\frac{\partial u}{\partial x_2},\ldots,\frac{\partial u}{\partial x_n}$\\
 & Quasilinear: \qquad  $F(\ldots)$ lineare Funktion von $u,\frac{\partial u}{\partial x_1},\frac{\partial u}{\partial x_2},u\frac{\partial u}{\partial x_k},\ldots,\frac{\partial u}{\partial x_n}$, wobei Produkte von \\
 

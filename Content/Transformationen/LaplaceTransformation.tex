@@ -1,11 +1,11 @@
 \section{Laplace Transformation}
 	$$\boxed{F(s)=\int\limits_0^\infty f(t)e^{-st}dt} \qquad s=\sigma +j\omega$$\\
-	- Definitionsbereich nur f"ur \textbf{kausale} Systeme $\boxed{t\geq 0}$\\
-	- Integrierbar "uber das Intervall $(0,\infty)$\\
+	- Definitionsbereich nur für \textbf{kausale} Systeme $\boxed{t\geq 0}$\\
+	- Integrierbar über das Intervall $(0,\infty)$\\
 	- Wachstum kleiner als der von eienr Exponentialfunktion $\boxed{\sigma > 0}$\\
-	- $\sigma$ ist der D"ampfungsfaktor: $e^{-s}=e^{-\sigma} \cdot e^{-j\omega}$ \\
+	- $\sigma$ ist der Dämpfungsfaktor: $e^{-s}=e^{-\sigma} \cdot e^{-j\omega}$ \\
 	- Fourier-Transformierte $F(\omega)$ kann durch die
-	Laplace-Transformation $F(s)$ ausgedr"uckt werden.  \\
+	Laplace-Transformation $F(s)$ ausgedrückt werden.  \\
 	- Fourier $\longleftrightarrow$ Laplace Umwandlungen nur wenn Polstelle
 	($\sigma > 0$) dh. links von $j\omega$ Achse und kausal!
   
@@ -13,14 +13,14 @@
   		\renewcommand{\arraystretch}{2}
 		\begin{tabular}{|l|l c p{5.5cm}|}
         	\hline
-        	Linearit"at & 
+        	Linearität & 
  			$\alpha\cdot f(t) + \beta\cdot g(t)$ & $\FT$ & $\alpha\cdot F(s) +
  			\beta\cdot G(s)$ \\
  			\hline
  			Verschiebung im Zeitbereich &
  			$f(t\pm t_0) $ & $\FT$ & $ F(s)e^{\pm t_0 s}$ \\
  			\hline
- 			D"ampfung (Verschiebung im Frequenzbereich) &
+ 			Dämpfung (Verschiebung im Frequenzbereich) &
  			$f(t)e^{\mp\alpha t}$ & $\FT$ & $F(s\pm\alpha)$ \\
  			\hline
  			"Ahnlichkeit&
@@ -64,19 +64,19 @@
 			Dies kann nur gemacht werden wenn Polstelle ($\sigma > 0$) links von
 			$j\omega$-Achse ist und das System kausal ist.
 			
-		\subsection{R"uktransformation (Komplexe Integration)}
+		\subsection{Rüktransformation (Komplexe Integration)}
 			$$f(t)=\int\limits_{x-j\infty}^{x+j\infty}F(s) \cdot e^{st} \cdot ds$$
 			
-		\subsection{Vorgehen R�cktransformation}
+		\subsection{Vorgehen Rücktransformation}
 		\begin{tabular}{ll}
-  			1. Ansatz & Versuchen Z�hler Gleichnamig mit Nenner machen un danach
-  			k�rzen (Korrekturen!) \\
+  			1. Ansatz & Versuchen Zähler Gleichnamig mit Nenner machen un danach
+  			kürzen (Korrekturen!) \\
   			2. Ansatz & Partitialbruchzerlegung
 		\end{tabular}
 			
 		\newpage
 		
-		\subsection{R"ucktransformation "uber Tabelle}
+		\subsection{Rücktransformation über Tabelle}
 			\begin{center}
 				\input{Content/Transformationen/laplaceTabelle}
 			\end{center}

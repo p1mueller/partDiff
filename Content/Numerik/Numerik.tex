@@ -2,7 +2,7 @@
 \subsection{Diskretisierung}
 \subsubsection{1.Ableitung}
 
-$$g'\approx \frac{g(x+\Delta x)-g(x)}{\Delta x} \qquad\qquad \text{oder} \qquad\qquad g'\approx \frac{g(x+\Delta x)-g(x-\Delta x)}{2\Delta x}\qquad \text{(Bessere Qualität)}$$
+$$g'\approx \frac{g(x+\Delta x)-g(x)}{\Delta x} \qquad\qquad \text{oder} \qquad\qquad g'\approx \frac{g(x+\Delta x)-g(x-\Delta x)}{2\Delta x}\qquad \text{(Bessere QualitÃ¤t)}$$
 \subsubsection{2.Ableitung}
 
 $g''\approx \frac{g(x+\Delta x)-2 g(x) + g(x- \Delta x)}{\Delta x^2}$
@@ -41,7 +41,7 @@ $A^{(n)}= \frac{1}{\Delta x^2} tridiag {n-1}
            
            
 \subsection{Konvergenz}
-Ein Modell ist konvergent wenn bei $n\leftarrow\infty$ die Schätzung $\tilde{u}$ und $u$ übereinstimmt.\\
+Ein Modell ist konvergent wenn bei $n\leftarrow\infty$ die SchÃ¤tzung $\tilde{u}$ und $u$ Ã¼bereinstimmt.\\
 
 $\boxed{||v||_{\Delta x}=\sqrt{\Delta x (v_1^2+v_2^2 + \ldots v_{n-1}^2)}= \sqrt{\Delta
 x}||v||}$\\
@@ -50,7 +50,7 @@ Es konvertiert wenn: $\lim\limits_{n\to \infty
 + \ldots + \tilde{u}_{n-1}-u_{n-1}}$\\
 
 \subsection{Konsistenz}
-Ein Modell ist nicht konsistent wenn das Modell durch Vereinfachung nicht mehr mit der Realität übereinstimmt.
+Ein Modell ist nicht konsistent wenn das Modell durch Vereinfachung nicht mehr mit der RealitÃ¤t Ã¼bereinstimmt.
 
 Globaler Konsistenzfehler: $\boxed{||r^{(n)}||_{1/n}\leq \frac 1{12}\max\limits_{\xi\in[0,1]}|f''(\xi)|\cdot \Delta x^2}$
 
@@ -60,17 +60,17 @@ Residuum: $A^{(n)}\cdot (u^{(n)}-\tilde{u}^{(n)})=r^{(n)}$
 
 Eine Approximationsverfahren ist Konsistent, wenn $\boxed{\lim\limits_{n\rightarrow \infty}||r^{(n)}||_{1/n}=0}$ gilt.\\
 
-Konsistenz ist eine notwendige, aber nicht hinreichende Bedingung für die Konvergenz eines Verfahrens.
+Konsistenz ist eine notwendige, aber nicht hinreichende Bedingung fÃ¼r die Konvergenz eines Verfahrens.
 
 \subsubsection{Taylor}
 $g(x)= \sum\limits_{k=0}^n\frac{1}{k!} g^{(n)}(x_0)(x-x_0)^k +
 \frac{1}{(n+1)!}g^{(n+1)}(\xi)(x-x_0)^{n+1}$ = Taylor
-Approximationspolynom  + Lagronesche Restglied ($\xi$ ist unabhängig von $x,
+Approximationspolynom  + Lagronesche Restglied ($\xi$ ist unabhÃ¤ngig von $x,
 x_0$)
 
 
 
-\subsubsection{Vorwärt/Rückwärtsdifferenz}
+\subsubsection{VorwÃ¤rt/RÃ¼ckwÃ¤rtsdifferenz}
 $g'(x) - \frac{g(x+\Delta x) + g(x)}{\Delta x}= O(\Delta x) = 
 \frac{g''(\xi_1)}{2}\Delta x^2 \Rightarrow 1.Ordnung$
 
@@ -85,17 +85,17 @@ $g'(x) - \frac{g(x+\Delta x) + g(x-\Delta x)}{2\Delta x}= O(\Delta x^2) =
 $g''(x) - \frac{g(x+\Delta x) -2 g(x)+ g(x-\Delta x)}{2\Delta x}= O(\Delta x^2)
 = \frac{g''(\xi_1)}{2}\Delta x^2 \Rightarrow 1.Ordnung$
 
-\subsection{Stabilität}
-Die Stabilität einer Matrize kann über deren Norm $||A||_*$ bestimmt werden.\\
+\subsection{StabilitÃ¤t}
+Die StabilitÃ¤t einer Matrize kann Ã¼ber deren Norm $||A||_*$ bestimmt werden.\\
 
 Es gilt: $||A||_*=\max\limits_{||X||_*=1}||A\cdot x||_*$\qquad$||A\cdot x||_*\leq||A||~||x||_*$\\
 
-Ein Approximationsverfahren ist stabil wenn, wenn unabhängig von der konstante $C$ gilt:
+Ein Approximationsverfahren ist stabil wenn, wenn unabhÃ¤ngig von der konstante $C$ gilt:
 $\boxed{||{A^{(n)}}^{-1}||\leq C}$\\
 
 
 
-Die Bestimmung von $||A||$ ist im Allgemeinen nicht einfach, darum wird $||A||$ oft über den Umweg der Diagonalisierung von A bestimmt.
+Die Bestimmung von $||A||$ ist im Allgemeinen nicht einfach, darum wird $||A||$ oft Ã¼ber den Umweg der Diagonalisierung von A bestimmt.
 
 $y=A\cdot x\qquad\Rightarrow\qquad\tilde{y}=D\cdot\tilde{x}$\qquad mit\qquad $D=\begin{bmatrix}\lambda_1&&\\&\ddots&\\&&\lambda_n\end{bmatrix}$\\
 
@@ -105,9 +105,9 @@ Die Diagonalelemente $\lambda_1,\ldots,\lambda_n$ werden auch Eigenwerte genannt
 Eine Approximationsformel ist stabil wenn: $\boxed{||A||=\max\limits_{k}|y_k|\leq C}$\\
 
 Eigenwerte bestimmen: $\boxed{\det(A-\lambda I)=0}\qquad \Rightarrow \qquad \lambda_1,\ldots,\lambda_n$\\
-Eigenvektoren bestimmen (für jedes $\lambda_i$): $A-\lambda_i I=0\qquad \Rightarrow \qquad v_1,\ldots,v_n$\\
+Eigenvektoren bestimmen (fÃ¼r jedes $\lambda_i$): $A-\lambda_i I=0\qquad \Rightarrow \qquad v_1,\ldots,v_n$\\
 
-\subsection{FDM für elliptisch PDGL (Poisson: $\Delta u = f$)}
+\subsection{FDM fÃ¼r elliptisch PDGL (Poisson: $\Delta u = f$)}
 %Dirichletsche Randbedingung ($u(x,y)= f(x,y) \forall (x,y)\epsilon \delta G)$\\
 
 Gleichung:    $-\Delta u(x,y)= f(x,y) $
@@ -141,7 +141,7 @@ und $D=\begin{bmatrix}
            \end{bmatrix}$
 
            
-\subsubsection{Irreguläre Gitter (für den Rand)}
+\subsubsection{IrregulÃ¤re Gitter (fÃ¼r den Rand)}
 \begin{minipage}{5cm}
 	\includegraphics[width=5cm]{Content/Numerik/irregulaereGitter.png}
 
@@ -179,8 +179,8 @@ Wenn $u_x(x,y) = 0$, dann spricht man auch von der Spiegelmethode. Die Punkte $P
 \end{minipage}
 
 
-\subsection{FDM für parabolische PDGL}
-	Wärmeleitungsgleichung: $\boxed{u_t(x,t)=u_{xx}(x,t)}$\qquad $f(0)=f(1)=0$ \qquad$ \overset{\_}{\Omega}=[0,1]\times [0,\infty]$\\
+\subsection{FDM fÃ¼r parabolische PDGL}
+	WÃ¤rmeleitungsgleichung: $\boxed{u_t(x,t)=u_{xx}(x,t)}$\qquad $f(0)=f(1)=0$ \qquad$ \overset{\_}{\Omega}=[0,1]\times [0,\infty]$\\
 	
 	Randbedingungen: $u(x,0)=f(x) \qquad u(0,t)=u(1,t)=0\qquad x\in(0,1) \qquad t\in[0,\infty)$
 \subsubsection{Explizites Verfahren (Richardson-Verfahren)}
@@ -213,9 +213,9 @@ r	& 1-2r  & r		& 0		&\cdots\\
 \begin{minipage}{12cm}
 Verfahren ist stabil wenn: $||A^{-1}|| < 1 \qquad \Rightarrow\qquad r < \frac{1}{2}$\\
 
-Dies macht es Nötig die Zeitschritte extrem klein zu wählen, darum ist das Verfahren auch nicht wirklich praxistauglich, weil sehr hohe Rechenkapazität nötig sind.\\
+Dies macht es NÃ¶tig die Zeitschritte extrem klein zu wÃ¤hlen, darum ist das Verfahren auch nicht wirklich praxistauglich, weil sehr hohe RechenkapazitÃ¤t nÃ¶tig sind.\\
 
-Der Grund für das schlechte Konvergenzverhalten kann geometrisch visualisiert werden. In die Berechnung des Wertes im Knoten $P$, werden die Werte aller schwarz eingefärbter Knoten eingehen. Von den Randwerten wird nur die 0-te Stufe berücksichtigt.
+Der Grund fÃ¼r das schlechte Konvergenzverhalten kann geometrisch visualisiert werden. In die Berechnung des Wertes im Knoten $P$, werden die Werte aller schwarz eingefÃ¤rbter Knoten eingehen. Von den Randwerten wird nur die 0-te Stufe berÃ¼cksichtigt.
 \end{minipage}
 
 
@@ -224,14 +224,14 @@ Der Grund für das schlechte Konvergenzverhalten kann geometrisch visualisiert we
 
 
 \subsubsection{Implizites Verfahren}
-Im Unterschied zum expliziten Verfahren, das Werte vom vorherigen Zeitpunkt nutzt, wird hier das ein Gleichungssystem global gelöst.\\
+Im Unterschied zum expliziten Verfahren, das Werte vom vorherigen Zeitpunkt nutzt, wird hier das ein Gleichungssystem global gelÃ¶st.\\
 
 $\boxed{\frac{\tilde{u}(x,t) - \tilde{u}(x,t -\Delta t)}{\Delta t} = 
 \frac{\tilde{u}(x+\Delta x, t)-2\tilde{u}(x,y) + \tilde{u}( x - \Delta x, t )} {\Delta x^2}}$\\
 
 $ \tilde{u}_{j,k} = r \tilde{u}_{j-1,k+1} + (1+2r)\tilde{u}_{j,k+1} + r \tilde{u}_{j+1,k+1}$
 
-\textbf{Idee:} Die Ableitungen werden mittels Rückwärtsdifferenz berechnet\\
+\textbf{Idee:} Die Ableitungen werden mittels RÃ¼ckwÃ¤rtsdifferenz berechnet\\
 
 
 \begin{itemize}
@@ -247,8 +247,8 @@ r	& 1+2r  & r		& 0		&\cdots\\
 \item k-Schritte berechnen: $\tilde{u}^{(k)}=\left(\left\{E^{(n)}\right\}^{-1}\right)^k \tilde{u}^{(0)}$
 \end{itemize}
 
-\textbf{Vorteil:} Das implizite Verfahren ist immer stabil, unabhängig von der Zeitauflösung $\Delta t$\\
-\textbf{Nachteil:} Aufwendige Matrixinversion nötig.
+\textbf{Vorteil:} Das implizite Verfahren ist immer stabil, unabhÃ¤ngig von der ZeitauflÃ¶sung $\Delta t$\\
+\textbf{Nachteil:} Aufwendige Matrixinversion nÃ¶tig.
 
 \subsubsection{Crank Nicolson -Verfahren (gemischtes Verfahren)}
 
@@ -262,7 +262,7 @@ und\\
 $\boxed{\frac{\tilde{u}(x,t) - \tilde{u}(x,t -\Delta t)}{\Delta t} = 
 \frac{\tilde{u}(x+\Delta x, t)-2\tilde{u}(x,y) + \tilde{u}( x - \Delta x, t )} {\Delta x^2}}$\\
 
-zu mitteln. Mit dieser Idee geht das stetige Problem in folgendes diskretes Problem über:
+zu mitteln. Mit dieser Idee geht das stetige Problem in folgendes diskretes Problem Ã¼ber:
 
 $-r \tilde{u}_{j-1,k+1} + (2+2r)\tilde{u}_{j,k+1} - r \tilde{u}_{j+1,k+1} = r
 \tilde{u}_{j-1,k+1} + (2-2r)\tilde{u}_{j,k+1} + r \tilde{u}_{j+1,k+1} $
@@ -290,7 +290,7 @@ r	& 2-2r  & r		& 0		&\cdots\\
 \item k-Schritte berechnen: $\tilde{u}^{(k)}=\left(\left\{F^{(n)}\right\}^{-1} \cdot G^{(n)}\right)^{k}\cdot \tilde{u}^{(0)}$
 \end{itemize}
 
-\subsection{(FDM für Hyperbolische PDGL)}
+\subsection{(FDM fÃ¼r Hyperbolische PDGL)}
 
 $$u_{tt}=u_{xx} = homogen$$
 $$u_{tt} -u_{xx}= v(x,t) = inhomogen$$
@@ -328,7 +328,7 @@ $\Rightarrow$ $\oint\limits_{\Gamma}{\Delta u(x,y) dx dy}=\oint\limits_{\partial
 
 \textbf{Vorteile:}\\
 \begin{itemize}
-\item Man kann mit Flussgrössen un Bilanzen rechnen, dadurch kann der Laplace-Operator $(\Delta)$ verzichtet werden und somit die aufwendige Mathematik umgangen werden.
+\item Man kann mit FlussgrÃ¶ssen un Bilanzen rechnen, dadurch kann der Laplace-Operator $(\Delta)$ verzichtet werden und somit die aufwendige Mathematik umgangen werden.
 \item Es kann mit komplizierten Geometrien gerechnet werden.  
 \end{itemize}
 
@@ -339,16 +339,16 @@ $\Rightarrow$ $\oint\limits_{\Gamma}{\Delta u(x,y) dx dy}=\oint\limits_{\partial
 \begin{minipage}{12cm}
 \textbf{Vorgehen bei der Berechnung:}\\
 \begin{enumerate}
-\item Punkte $P_1,\ldots,P_n$ wählen.
+\item Punkte $P_1,\ldots,P_n$ wÃ¤hlen.
 \item Aufteilen des Bereichs in kleine Teilbereiche, z.B. durch Mittelsenkrechte
 \item Rand diskretisieren.\\
 \end{enumerate}
 
-Für P1-Zelle:\quad $\frac{\tilde{u}(P_2)-\tilde{u}(P_1)}{\delta_{1,2}}\cdot\lambda_{1,2}+\frac{\tilde{u}(P_3)-\tilde{u}(P_1)}{\delta_{1,3}}\cdot\lambda_{1,3}+\frac{\tilde{u}(R_1)-\tilde{u}(P_1)}{\delta_1}\cdot\lambda_1$\\
+FÃ¼r P1-Zelle:\quad $\frac{\tilde{u}(P_2)-\tilde{u}(P_1)}{\delta_{1,2}}\cdot\lambda_{1,2}+\frac{\tilde{u}(P_3)-\tilde{u}(P_1)}{\delta_{1,3}}\cdot\lambda_{1,3}+\frac{\tilde{u}(R_1)-\tilde{u}(P_1)}{\delta_1}\cdot\lambda_1$\\
 
-Für P2-Zelle:\quad $\frac{\tilde{u}(P_1)-\tilde{u}(P_2)}{\delta_{1,2}}\cdot\lambda_{1,2}+\frac{\tilde{u}(P_3)-\tilde{u}(P_2)}{\delta_{2,3}}\cdot\lambda_{2,3}+\frac{\tilde{u}(R_2)-\tilde{u}(P_2)}{\delta_2}\cdot\lambda_2$\\
+FÃ¼r P2-Zelle:\quad $\frac{\tilde{u}(P_1)-\tilde{u}(P_2)}{\delta_{1,2}}\cdot\lambda_{1,2}+\frac{\tilde{u}(P_3)-\tilde{u}(P_2)}{\delta_{2,3}}\cdot\lambda_{2,3}+\frac{\tilde{u}(R_2)-\tilde{u}(P_2)}{\delta_2}\cdot\lambda_2$\\
 
-Für P3-Zelle:\quad $\frac{\tilde{u}(P_2)-\tilde{u}(P_3)}{\delta_{2,3}}\cdot\lambda_{2,3}+\frac{\tilde{u}(P_1)-\tilde{u}(P_3)}{\delta_{1,3}}\cdot\lambda_{1,3}+\frac{\tilde{u}(R_3)-\tilde{u}(P_3)}{\delta_3}\cdot\lambda_3$\\
+FÃ¼r P3-Zelle:\quad $\frac{\tilde{u}(P_2)-\tilde{u}(P_3)}{\delta_{2,3}}\cdot\lambda_{2,3}+\frac{\tilde{u}(P_1)-\tilde{u}(P_3)}{\delta_{1,3}}\cdot\lambda_{1,3}+\frac{\tilde{u}(R_3)-\tilde{u}(P_3)}{\delta_3}\cdot\lambda_3$\\
 \end{minipage}
 
 \begin{minipage}{6cm}

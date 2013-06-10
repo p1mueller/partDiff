@@ -1,6 +1,6 @@
 \section{FEM}
 
-Der Vektorraum $\mathbb{V}$ hat undendlich viele Dimensionen. Falls wir n unabhängige Funktionen $v_1,\ldots,v_n$ wählen, dann spannen die Funktionen $a_1\cdot v_1(x)+\ldots+a_n\cdot v_n(x)$ einen n dimensionalen Teilraum $\mathbb{V}^{(n)}$  von $\mathbb{V}$ auf. Dabei gilt:\\
+Der Vektorraum $\mathbb{V}$ hat undendlich viele Dimensionen. Falls wir n unabhÃ¤ngige Funktionen $v_1,\ldots,v_n$ wÃ¤hlen, dann spannen die Funktionen $a_1\cdot v_1(x)+\ldots+a_n\cdot v_n(x)$ einen n dimensionalen Teilraum $\mathbb{V}^{(n)}$  von $\mathbb{V}$ auf. Dabei gilt:\\
 
 $\boxed{\tilde{u}^{(n)}=a_1\cdot v_1(x)+\ldots+a_n\cdot v_n(x)}$
 \subsection{Das Verfahren von Ritz}
@@ -18,7 +18,7 @@ $r^{(n)}=\begin{bmatrix}
 	\vdots\\
 \end{bmatrix}$ \qquad mit \qquad $r_{k}^{(n)}=\int\limits_{0}^{1}{f(x)\cdot v_k(x) dx}$\\
 
-\textbf{Lösung nach Ritz:} $R^{(n)}\cdot a=r^{(n)}\qquad \Rightarrow \qquad a=\left\{R^{(n)}\right\}^{-1}\cdot r^{(n)}$
+\textbf{LÃ¶sung nach Ritz:} $R^{(n)}\cdot a=r^{(n)}\qquad \Rightarrow \qquad a=\left\{R^{(n)}\right\}^{-1}\cdot r^{(n)}$
 \subsection{Das Verfahren von Galerkin}
 \textbf{Galerksche Matrize: }
 $G^{(n)}=\begin{bmatrix}
@@ -33,7 +33,7 @@ $g^{(n)}=\begin{bmatrix}
 	\vdots\\
 \end{bmatrix}$ \qquad mit \qquad $g_{k}^{(n)}=\int\limits_{0}^{1}{f(x)\cdot v_k(x) dx}$\\
 
-\textbf{Lösung nach Galerkin:} $G^{(n)}\cdot a+g^{(n)}=0\qquad \Rightarrow \qquad a=\textcolor{red}{\mathbf{-}}\left\{G^{(n)}\right\}^{-1}\cdot g^{(n)}$
+\textbf{LÃ¶sung nach Galerkin:} $G^{(n)}\cdot a+g^{(n)}=0\qquad \Rightarrow \qquad a=\textcolor{red}{\mathbf{-}}\left\{G^{(n)}\right\}^{-1}\cdot g^{(n)}$
 
 
 \subsection{Gewichtete Residuen (Bereichskollokation)}
@@ -53,10 +53,10 @@ $m^{(n)}=\begin{bmatrix}
 	\vdots\\
 \end{bmatrix}$ \qquad mit \qquad $m_{k}^{(n)}=\int\limits_{0}^{1}{f(x)\cdot w_k(x) dx}$\\
 
-\textbf{Lösung der gewichteten Residuen:} $M^{(n)}\cdot a+m^{(n)}=0\qquad \Rightarrow \qquad a=\textcolor{red}{\mathbf{-}}\left\{M^{(n)}\right\}^{-1}\cdot m^{(n)}$
+\textbf{LÃ¶sung der gewichteten Residuen:} $M^{(n)}\cdot a+m^{(n)}=0\qquad \Rightarrow \qquad a=\textcolor{red}{\mathbf{-}}\left\{M^{(n)}\right\}^{-1}\cdot m^{(n)}$
 
 \subsection{Punktkollokation}
-Im Sinne einer Punktkollokation werden n Stützstellen im Intervall von [0,1] gewählt.\\
+Im Sinne einer Punktkollokation werden n StÃ¼tzstellen im Intervall von [0,1] gewÃ¤hlt.\\
 
 $\begin{bmatrix}
 	v_1''(x_1)& v_2''(x_1)&\cdots\\
@@ -72,7 +72,7 @@ a_2\\
 -f(x_1)\\
 -f(x_2)\\
 \vdots
-\end{bmatrix}$\qquad Das Gleichungssystem nach a auflösen
+\end{bmatrix}$\qquad Das Gleichungssystem nach a auflÃ¶sen
 
 \subsection{Das Verfahren von Gauss (MSE)}
 
@@ -89,23 +89,23 @@ $q^{(n)}=\begin{bmatrix}
 	\vdots\\
 \end{bmatrix}$ \qquad mit \qquad $q_{k}^{(n)}=\int\limits_{0}^{1}{f(x)\cdot v_k''(x) dx}$\\
 
-\textbf{Lösung nach Gauss:} $Q^{(n)}\cdot a+q^{(n)}=0\qquad \Rightarrow \qquad a=\textcolor{red}{\mathbf{-}}\left\{Q^{(n)}\right\}^{-1}\cdot q^{(n)}$
+\textbf{LÃ¶sung nach Gauss:} $Q^{(n)}\cdot a+q^{(n)}=0\qquad \Rightarrow \qquad a=\textcolor{red}{\mathbf{-}}\left\{Q^{(n)}\right\}^{-1}\cdot q^{(n)}$
 
 \subsection{Finite Elemente}
 
-Die besprochenen Verfahren setzen die Wahl eines Satzes $v_1(x),\ldots,v_n(x)$ von Grundfunktionen voraus. Bei FEM wird mit lokalen Trägern (Grundfunktionen) gearbeitet, diese sind nur auf einem kleinen intervall ungleich Null. Der Vorteil dieses Vorgehens liegt darin, dass in einem Bereich nur einen Träger die Approximationsfunktion beeinflusst. Der Nachteil liegt in der Anzahl der so benötigten Träger, welche sehr hoch ist.\\
+Die besprochenen Verfahren setzen die Wahl eines Satzes $v_1(x),\ldots,v_n(x)$ von Grundfunktionen voraus. Bei FEM wird mit lokalen TrÃ¤gern (Grundfunktionen) gearbeitet, diese sind nur auf einem kleinen intervall ungleich Null. Der Vorteil dieses Vorgehens liegt darin, dass in einem Bereich nur einen TrÃ¤ger die Approximationsfunktion beeinflusst. Der Nachteil liegt in der Anzahl der so benÃ¶tigten TrÃ¤ger, welche sehr hoch ist.\\
 
 \textbf{WICHTIG:} Alle Verfahren werden mit einer Disrketisierung von $h=1/3$ vorgestellt.
 
 \subsubsection{Knotenvariablen}
-Als erstes werden auf dem Intervall $[0,1]$ $n$, normalerweise gleich verteilte,   Knotenstellen eingeführt.
+Als erstes werden auf dem Intervall $[0,1]$ $n$, normalerweise gleich verteilte,   Knotenstellen eingefÃ¼hrt.
 
 \begin{minipage}{11cm}
 Dadurch wird das Intervall $[0,1]$ in Teilintervalle (Maschen) zerlegt.\\
  
-Für $n=3$:\quad $I_1=[0,1/3]$\quad $I_1=[1/3,2/3]$\quad $I_1=[2/3,1]$\\
+FÃ¼r $n=3$:\quad $I_1=[0,1/3]$\quad $I_1=[1/3,2/3]$\quad $I_1=[2/3,1]$\\
 
-Als nächstes wird jeder Knotenstelle $x_k$ eine Ansatzvariable (Knotenvariable) zugeordnet.\\
+Als nÃ¤chstes wird jeder Knotenstelle $x_k$ eine Ansatzvariable (Knotenvariable) zugeordnet.\\
 
 Ansatz: \quad $\tilde{u}(0)=a_0$\quad $\tilde{u}(1/3)=a_1$\quad $\tilde{u}(2/3)=a_2$\quad $\tilde{u}(1)=a_3$\\
 
@@ -124,8 +124,8 @@ $v_3(0)=0$&$v_3(1/3)=0$&$v_3(2/3)=0$&$v_3(1)=1$\\
 
 
 \subsubsection{Formfunktionen}
-Die lokalen Grundfunktionen sollen aus Teilstücken einfacher Funktionen, z.B: Polynomen, die nur auf einer einzelnen Masche definiert sind zusammengesetzt werden.\\
-Zwei mögliche Formfunktionen sind Beispielsweise:\quad $l_1(x)=1-x$\quad und \quad $l_2(x)=x$\\
+Die lokalen Grundfunktionen sollen aus TeilstÃ¼cken einfacher Funktionen, z.B: Polynomen, die nur auf einer einzelnen Masche definiert sind zusammengesetzt werden.\\
+Zwei mÃ¶gliche Formfunktionen sind Beispielsweise:\quad $l_1(x)=1-x$\quad und \quad $l_2(x)=x$\\
 
 \begin{minipage}{8cm}
 	\begin{tabular}{lc|c|c}
@@ -153,14 +153,14 @@ $\Longrightarrow$
 	\end{tabular}
 \end{minipage}
 \subsubsection{Elementmatrizen}
-Grundsätzlich kann die Ansatzvariable durch jedes Verfahren bestimmt werden.
+GrundsÃ¤tzlich kann die Ansatzvariable durch jedes Verfahren bestimmt werden.
 Weil bei einer linearen Ansatzfunktion die zweite Ableitung trivial $(=0)$ ist die Wahl des Ritzschen Verfahren erzwungen.
 
 Die Integrale werden maschenweise ausgewertet:\\
 
  $\int\limits_{0}^{1}{}=\int\limits_{0}^{1/3}{}+\int\limits_{1/3}^{2/3}{}+\int\limits_{2/3}^{1}{}$\\
  
-Durch diesen Ansatz wird die Ritzsche Matrize über jede Masche einzeln berechnet und danach zur globalen Ritzschen Matrize aufsummier:\\
+Durch diesen Ansatz wird die Ritzsche Matrize Ã¼ber jede Masche einzeln berechnet und danach zur globalen Ritzschen Matrize aufsummier:\\
 
 \qquad $R^{(4)}=R^{(4,1)}+R^{(4,2)}+R^{(4,3)}=
 \begin{bmatrix}
@@ -198,7 +198,7 @@ $M^{(4,1)}=M^{(4,2)}=M^{(4,3)}=
 	1 & -1\\
 \end{bmatrix}}}=\frac 1h\cdot \mathbf{E}}$\\
 
-Die Elementmatrize wird nun in die entsprechende Ritzsche Matrize eingesetzt und überlagert. Für die Quantisierung von $h=1/3$ ergibt sich:\\
+Die Elementmatrize wird nun in die entsprechende Ritzsche Matrize eingesetzt und Ã¼berlagert. FÃ¼r die Quantisierung von $h=1/3$ ergibt sich:\\
 
 $R^{4}=
 \begin{bmatrix}
@@ -226,7 +226,7 @@ $r^4=
 
 Das Rizsche Gleichungsystem dazu ist: $\boxed{R^4\cdot a+r^4=0} \qquad\Rightarrow\qquad a=-\left\{R^4\right\}^{-1}\cdot r^4$\\
 
-\textbf{Anfangsbedingungen:} Die Anfangsbedingungen $a_0$ und $a_n$ können direkt eingesetzt werden.\\
+\textbf{Anfangsbedingungen:} Die Anfangsbedingungen $a_0$ und $a_n$ kÃ¶nnen direkt eingesetzt werden.\\
 
 $a_0=10$\qquad$a_3=20$\\
 
@@ -429,10 +429,10 @@ $
 
 \subsubsection{h-Strategie}
 
-Die Grundidee der h-Strategie ist die Verfeinerung der Auflösung. Mit anderen Worten die Maschenbreite $h$ wird verkleinert. Um den ganzen Bereich dennoch abdecken zu können sind mehr Maschen notwendig.
+Die Grundidee der h-Strategie ist die Verfeinerung der AuflÃ¶sung. Mit anderen Worten die Maschenbreite $h$ wird verkleinert. Um den ganzen Bereich dennoch abdecken zu kÃ¶nnen sind mehr Maschen notwendig.
 
 \subsubsection{p-Strategie}
-Bei der p-Strategie bleibt das Netz bestehen. Die Ansatzfunktionen sollen nun durch Polynome höherer Ordnung zusammengesetzt werden, dazu werden neue Knoten und Knotenvariablen eingeführt werden.\\
+Bei der p-Strategie bleibt das Netz bestehen. Die Ansatzfunktionen sollen nun durch Polynome hÃ¶herer Ordnung zusammengesetzt werden, dazu werden neue Knoten und Knotenvariablen eingefÃ¼hrt werden.\\
 
 \textbf{Problemstellung:} $u''(x)+f(x)=0\qquad u(0)=a_0\qquad u(1)=a_6$\\
 
@@ -471,7 +471,7 @@ Die Approximation soll auf dem gleichverteilten Intervallen gelten: $[0,1/3]$,\q
 \includegraphics[width=6cm]{Content/Numerik/FEM2Ord}
 \end{minipage}\\
 
-$\underset{\text{Ritzsche Matrize $R^{(8)}$ für } h=1/3}{\underbrace{\frac{3}{30}\begin{bmatrix}
+$\underset{\text{Ritzsche Matrize $R^{(8)}$ fÃ¼r } h=1/3}{\underbrace{\frac{3}{30}\begin{bmatrix}
 	-7& 8 & -1& 0& 0& 0& 0\\
 	 8& -16& 8& 0& 0& 0& 0\\
 	-1& 8& -14& 8& -1& 0& 0\\ 
@@ -488,7 +488,7 @@ $\underset{\text{Ritzsche Matrize $R^{(8)}$ für } h=1/3}{\underbrace{\frac{3}{30
 	a_5\\
 	a_6\\
 \end{bmatrix}
-+\underset{\text{Ritzscher Vektor $r^{(8)}$ für } h=1/3}{\underbrace{\begin{bmatrix}
++\underset{\text{Ritzscher Vektor $r^{(8)}$ fÃ¼r } h=1/3}{\underbrace{\begin{bmatrix}
 	\int\limits_{0}^{1}{f(x)\cdot v_0(x)dx}\\
 	\int\limits_{0}^{1}{f(x)\cdot v_1(x)dx}\\
 	\int\limits_{0}^{1}{f(x)\cdot v_2(x)dx}\\
@@ -509,19 +509,19 @@ $\underset{\text{Ritzsche Matrize $R^{(8)}$ für } h=1/3}{\underbrace{\frac{3}{30
 \end{bmatrix}
 $\\
 
-\textbf{Vorteil der p-Strategie gegenüber der h-Strategie:} Bei beiden Strategien steigt die Dimension der Systemmatrizen an. Es besteht jedoch die berechtigte Hoffnung, dass der Zuwachs der benötigt wird, um eine vergleichbare Genauigkeit zu errreichen, bei der p-Strategie weitaus geringer ist als bei der h-Strategie. 
+\textbf{Vorteil der p-Strategie gegenÃ¼ber der h-Strategie:} Bei beiden Strategien steigt die Dimension der Systemmatrizen an. Es besteht jedoch die berechtigte Hoffnung, dass der Zuwachs der benÃ¶tigt wird, um eine vergleichbare Genauigkeit zu errreichen, bei der p-Strategie weitaus geringer ist als bei der h-Strategie. 
 
-\subsection{Konformität und Vollständigkeit}
-Muss nun die Approximationslösung zweimal ableitbar sein, so gilt der Ansatz des letzten Abschnitt nicht mehr als konform.
+\subsection{KonformitÃ¤t und VollstÃ¤ndigkeit}
+Muss nun die ApproximationslÃ¶sung zweimal ableitbar sein, so gilt der Ansatz des letzten Abschnitt nicht mehr als konform.
 
-Um die einmalige Differenzierbarkeit an den Knoten zu gewährleisten müssen neue Grundfunktionen gefunden werden.\\
+Um die einmalige Differenzierbarkeit an den Knoten zu gewÃ¤hrleisten mÃ¼ssen neue Grundfunktionen gefunden werden.\\
 
 $\tilde{u}(x)=a_0v_0(x)+a_1v_1(x)+a_2v_2(x)+a_3v_3(x)+\tilde{a}_0\tilde{v}_0(x)+\tilde{a}_1\tilde{v}_1(x)+\tilde{a}_2\tilde{v}_2(x)+\tilde{a}_3\tilde{v}_3(x)$\\
 
-Zwei Grundfunktionen stellen den richtigen Wert and den Knoten sicher. Zwei weitere Grundfunktionen werden benötigt um die erste Ableitung (Steigung) an den Übergangknoten sicherzustellen, sie sorgen für die Vollständigkeit der Grundfunktionen. (Ohne die zwei weiteren Grundfunktionen wäre an den Übergangsknoten nur eine Steigung von Null möglich.)
+Zwei Grundfunktionen stellen den richtigen Wert and den Knoten sicher. Zwei weitere Grundfunktionen werden benÃ¶tigt um die erste Ableitung (Steigung) an den Ãœbergangknoten sicherzustellen, sie sorgen fÃ¼r die VollstÃ¤ndigkeit der Grundfunktionen. (Ohne die zwei weiteren Grundfunktionen wÃ¤re an den Ãœbergangsknoten nur eine Steigung von Null mÃ¶glich.)
 
 \subsection{Hermetische Polynome dritter Ordnung}
-Übereinstimmung bis zur 1.Ableitung an den Knotenpunkten\\
+Ãœbereinstimmung bis zur 1.Ableitung an den Knotenpunkten\\
 
 \textbf{Problemstellung:} $u''(x)+f(x)=0\qquad u(0)=a_0\qquad u'(0)=\tilde{a}_0 \qquad u(1)=a_3\qquad  u'(1)=\tilde{a}_3$\\
 
@@ -570,7 +570,7 @@ $E=\frac{1}{30}
 \\
 
 
-$\underset{\text{Ritzsche Matrize $R^{(8)}$ für } h=1/3}{\underbrace{\frac{3}{30}\begin{bmatrix}
+$\underset{\text{Ritzsche Matrize $R^{(8)}$ fÃ¼r } h=1/3}{\underbrace{\frac{3}{30}\begin{bmatrix}
 	-36 & -1 & 36 & -1 & 0  & 0  & 0  & 0 \\
 	-1  & -4/9  & 1  & 1/9  & 0  & 0  & 0  & 0\\
 	36  & 1  & -72  & 0  & 36  & -1  & 0  & 0\\
@@ -589,7 +589,7 @@ $\underset{\text{Ritzsche Matrize $R^{(8)}$ für } h=1/3}{\underbrace{\frac{3}{30
 	a_3\\
 	\tilde{a}_3\\
 \end{bmatrix}
-+\underset{\text{Ritzscher Vektor $r^{(8)}$ für } h=1/3}{\underbrace{\begin{bmatrix}
++\underset{\text{Ritzscher Vektor $r^{(8)}$ fÃ¼r } h=1/3}{\underbrace{\begin{bmatrix}
 	\int\limits_{0}^{1}{f(x)\cdot v_0(x)dx}\\
 	\int\limits_{0}^{1}{f(x)\cdot \tilde{v}_0(x)dx}\\
 	\int\limits_{0}^{1}{f(x)\cdot v_1(x)dx}\\
@@ -617,4 +617,4 @@ $\\
 
 
 
-%\subsection{FEM für parabolische PDEs}
+%\subsection{FEM fÃ¼r parabolische PDEs}

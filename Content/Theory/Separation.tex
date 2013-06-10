@@ -9,9 +9,9 @@ Wahl eines geeigneten Koordinatensystems ist wichtig.
 		\item PDGL 2.Ordnung: $U(x,y)=X(x) \cdot Y(y)$ 
 	\end{itemize}
 \item \textbf{Einsetzen: } Ansatz in PDGL einsetzen.
-\item \textbf{Separation: } Auf jeder Seite der PDGL darf nur noch eine Variable vorkommen. Die beiden jetzt gewöhnlichen DGL sind über eine Konstante gekoppelt (fixieren der Variable). Wahl der Konstante: Wenn Schwingung erwartet wird: $-k^2$, sonst $k$, ausser man weiss es besser ;-).
-\item \textbf{Lösen der DGL's: } Man erhält eine Familie von Lösungen	
-\item \textbf{Gesamtlösung "'Zusammenbasteln"': } (Linearkombination der Lösungen), Randbedingungen einhalten!
+\item \textbf{Separation: } Auf jeder Seite der PDGL darf nur noch eine Variable vorkommen. Die beiden jetzt gewÃ¶hnlichen DGL sind Ã¼ber eine Konstante gekoppelt (fixieren der Variable). Wahl der Konstante: Wenn Schwingung erwartet wird: $-k^2$, sonst $k$, ausser man weiss es besser ;-).
+\item \textbf{LÃ¶sen der DGL's: } Man erhÃ¤lt eine Familie von LÃ¶sungen	
+\item \textbf{GesamtlÃ¶sung "'Zusammenbasteln"': } (Linearkombination der LÃ¶sungen), Randbedingungen einhalten!
 \end{enumerate}
 
 \begin{minipage}{0.49\textwidth}
@@ -23,7 +23,7 @@ Wahl eines geeigneten Koordinatensystems ist wichtig.
 	$\partFrac{u}{x}=X'(x)$\qquad $\partFrac{u}{y}=Y'(y)$ \quad $\Rightarrow$ \quad $\frac{X'(x)}{x}+\frac{Y'(y)}{y}=\frac{1}{y^2}$
 	\item Separation:\\[0.4cm]
 	$\frac{X'(x)}{x}=k=\frac{1}{y^2}-\frac{Y'(y)}{y}$
-	\item DGL'2 lösen:\\[0.4cm]
+	\item DGL'2 lÃ¶sen:\\[0.4cm]
 	$X'(x)=k\cdot x \quad\Rightarrow\quad X(x)=\frac12 kX^2+C_x$\\
 	$Y'(y)=\frac1y-ky \quad\Rightarrow\quad Y(y)=\ln(y)-\frac{ky^2}{2}+C_y$
 	\item Linearkombination:\\[0.4cm]
@@ -38,10 +38,10 @@ Randbedingungen: $\Omega=[1,2]\times[1,2]$ \qquad $u=0$ auf $\partial\Omega$
 	$x^2X''(x)Y(y)+xX'(x)Y(y)+y^2X(x)Y''(y)+yX(x)Y'(y)=0$
 	\item Separation: (Division durch $X(x)Y(y)$\\[0.4cm]
 	$\frac{x^2X''(x)}{X(x)}+\frac{xX'(x)}{X(x)}+\frac{y^2Y''(y)}{Y(y)}+\frac{yY'(y)}{Y(y)}=0\quad\Rightarrow\quad \frac{x^2X''(x)}{X(x)}+\frac{xX'(x)}{X(x)}=k=-\frac{y^2Y''(y)}{Y(y)}-\frac{yY'(y)}{Y(y)}$
-	\item DGL'2 lösen:\\[0.4cm]
+	\item DGL'2 lÃ¶sen:\\[0.4cm]
 	$\frac{x^2X''(x)}{X(x)}+\frac{xX'(x)}{X(x)}=k\quad\Rightarrow\quad x^2X''(x)+xX'(x)-kX(x)=0$\qquad mit $X(1)=X(2)=0$\\
 	$\frac{y^2Y''(y)}{Y(y)}-\frac{yY'(y)}{Y(y)}=-k\quad\Rightarrow\quad y^2Y''(y)+yY'(y)+kY(y)=0$\qquad mit $Y(1)=Y(2)=0$\\[0.4cm]
-	Lösung der DGL hier nicht gemacht.
+	LÃ¶sung der DGL hier nicht gemacht.
 \end{enumerate}
 \end{minipage}
 \hfill
@@ -56,15 +56,15 @@ Randbedingungen: $x=[0,\pi]$ \\
 	$X''(x)\cdot T(t)=T''(t)\cdot X(x)$
 	\item Separation:\\[0.4cm]
 	$\frac{X''(x)}{X(x)}= -\mu^2=\frac{T''(t)}{T(t)}$
-	\item DGL'2 lösen:\\[0.4cm]
+	\item DGL'2 lÃ¶sen:\\[0.4cm]
 		$X(x)=\sin(\mu x) \qquad T(t)=\sin(\mu t)$\\
 		$X(x)=\cos(\mu x) \qquad T(t)=\cos(\mu t)$
 	\item Linearkombination:\\[0.4cm]
-		Die Randbedingungen $x=0$ und $x=\pi$ können nur mit $\sin(\mu x) $ und  positivem, ganzzahligen $\mu$ erfüllt werden. $cos(nx)$-Therme fallen weg.\\[0.4cm]
+		Die Randbedingungen $x=0$ und $x=\pi$ kÃ¶nnen nur mit $\sin(\mu x) $ und  positivem, ganzzahligen $\mu$ erfÃ¼llt werden. $cos(nx)$-Therme fallen weg.\\[0.4cm]
 		$u(t,x)=\sum\limits_{n=1}^{\infty}{a_n\sin(nx)\sin(nt)} + \sum\limits_{n=1}^{\infty}{b_n\sin(nx)\cos(nt)}$\\[0.4cm]
-		Die Koeffizienten $a_n$ und $b_n$ müssen mit Hilfe der Anfangsbedingungen zur Zeit $t=0$ bestimmt werden:\\[0.4cm]
+		Die Koeffizienten $a_n$ und $b_n$ mÃ¼ssen mit Hilfe der Anfangsbedingungen zur Zeit $t=0$ bestimmt werden:\\[0.4cm]
 		$u(0,x)=\sum\limits_{n=1}^{\infty}{b_n\sin(nx)}=0 \quad\Rightarrow\quad b_n=0$\\[0.2cm]
-		$\partFrac{u}{t}(\pi,x)=\sum\limits_{n=1}^{\infty}{a_nn\sin(nx)}=\sin^3(x)=\frac34\sin(x)-\frac14\sin(3x) \quad\Rightarrow\quad a_1=\frac34 \quad a_3=-\frac{1}{12}\quad a_k=0$ für $k\neq 1,3$\\[0.4cm]
+		$\partFrac{u}{t}(\pi,x)=\sum\limits_{n=1}^{\infty}{a_nn\sin(nx)}=\sin^3(x)=\frac34\sin(x)-\frac14\sin(3x) \quad\Rightarrow\quad a_1=\frac34 \quad a_3=-\frac{1}{12}\quad a_k=0$ fÃ¼r $k\neq 1,3$\\[0.4cm]
 		$u(t,x)=\frac34\sin(x)\sin(t)-\frac1{12}\sin(3x)\sin(3t)$
 \end{enumerate}
 \end{minipage}

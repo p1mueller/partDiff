@@ -3,15 +3,15 @@
 
 
 \begin{itemize}
-\item Der Übergang von Funktionen zu Fourierreihen verwandelt eine partielle
-Differentialgleichung in eine Familie gewöhnlicher Differentialgleichungen für
+\item Der Ãœbergang von Funktionen zu Fourierreihen verwandelt eine partielle
+Differentialgleichung in eine Familie gewÃ¶hnlicher Differentialgleichungen fÃ¼r
 die einzelnen Fourier-Koeffizienten.
-\item Integraltransformationen können ein partielle Differentialgleichung in eine
+\item Integraltransformationen kÃ¶nnen ein partielle Differentialgleichung in eine
 Familie partieller Differentialgleichungen mit weniger Variablen oder sogar
-gewöhnlicher Differentialgleichungen verwandeln.
-\item Integraltransformationen und die Rücktransformationen können Formeln
-für die Lösungen gewisser partieller Differentialgleichungen liefern, und
-damit die Frage beantworten, für welche Randwertvorgaben die Gleichungen
+gewÃ¶hnlicher Differentialgleichungen verwandeln.
+\item Integraltransformationen und die RÃ¼cktransformationen kÃ¶nnen Formeln
+fÃ¼r die LÃ¶sungen gewisser partieller Differentialgleichungen liefern, und
+damit die Frage beantworten, fÃ¼r welche Randwertvorgaben die Gleichungen
 gut gestellt sind.
 \end{itemize}
 
@@ -27,34 +27,34 @@ $\partial_t^2(t,x)=\frac{a_0''(t)}{2}+\sum\limits_{k=1}^{\infty}{a_k''(t)\cos(kx
 $\partial_x^2(t,x)=-\sum\limits_{k=1}^{\infty}{a_k(t)k^2\cos(kx)+b_k(t)k^2\sin(kx)}$\\
 $\partial_t^2(t,x)=\frac{a_0''(t)}{2}+\sum\limits_{k=1}^{\infty}{a_k''(t)\cos(kx)+b_k''(t)\sin(kx)}=-\sum\limits_{k=1}^{\infty}{a_k(t)k^2\cos(kx)+b_k(t)k^2\sin(kx)}=\partial_x^2(t,x)$\\[0.2cm]
 $\boxed{\Rightarrow\quad \frac{a_0''(t)}{2}+\sum\limits_{k=1}^{\infty}{\big(a_k''(t)+a_k(t)k^2\big)\cos(kx)+\big(b_k''(t)+b_k(t)k^2\big)\sin(kx)}=0}$
-\item Diese Gleichung ist nur Lösbar wenn alle Koeffizienten verschwinden (Fourier-Theorie):\\[0.2cm]
+\item Diese Gleichung ist nur LÃ¶sbar wenn alle Koeffizienten verschwinden (Fourier-Theorie):\\[0.2cm]
 $a_0''(t)=0 \qquad a_k''(t)=-k^2a_k(t)\qquad b_k''(t)=-k^2b_k(t)$
-\item Durch die Fouriertransformation wurde die PDGL in ein DGL-System überführt, die Lösungen sind wohlbekannt:\\[0.2cm]
+\item Durch die Fouriertransformation wurde die PDGL in ein DGL-System Ã¼berfÃ¼hrt, die LÃ¶sungen sind wohlbekannt:\\[0.2cm]
 $a_0(t)=m_0(t)+c_0\qquad a_k(t)=A_k^a\cos(kt)+B_k^a\sin(kt)\qquad b_k(t)=A_k^b\cos(kt)+B_k^b\sin(kt)$
 \end{itemize}
 
 
 \subsubsection{Anfangsbedingungen}
-Die Differentialgleichungen für die Koeffizienten ak(t) und bk(t) können erst dann
-vollständig gelöst werden, wenn Anfangs oder Randbedingungen gegeben sind.\\
+Die Differentialgleichungen fÃ¼r die Koeffizienten ak(t) und bk(t) kÃ¶nnen erst dann
+vollstÃ¤ndig gelÃ¶st werden, wenn Anfangs oder Randbedingungen gegeben sind.\\
 \begin{itemize}
-\item Anfangsbedingungen für Wellengleichung:\\
+\item Anfangsbedingungen fÃ¼r Wellengleichung:\\
 \quad $u(0,x)=f(x)\qquad \partFrac{u}{t}=g(x)$
-\item Die Funktionen f und g können auch als Fourrierreihe dargestellt werden:\\
+\item Die Funktionen f und g kÃ¶nnen auch als Fourrierreihe dargestellt werden:\\
 $f(x)=\frac{a_0^f}{2}+\sum\limits_{k=1}^{\infty}{a^f_k\cos(kx)+b^f_k\sin(kx)}$\\[0.2cm]
 $g(x)=\frac{a_0^g}{2}+\sum\limits_{k=1}^{\infty}{a^g_k\cos(kx)+b^g_k\sin(kx)}$
-\item Zusammen mit dem Ansatz für $u(t,x)$ ergeben sich die Gleichungen (für $t=0$):\\
+\item Zusammen mit dem Ansatz fÃ¼r $u(t,x)$ ergeben sich die Gleichungen (fÃ¼r $t=0$):\\
 $\frac{a_0(0)}{2}+\sum\limits_{k=1}^{\infty}{a_k(0)\cos(kx)+b_k(0)\sin(kx)}=\frac{a_0^f}{2}+\sum\limits_{k=1}^{\infty}{a_k^f\cos(kx)+b^f_k\sin(kx)}$\\[0.2cm]
 $\frac{a'_0(0)}{2}+\sum\limits_{k=1}^{\infty}{a_k'(0)\cos(kx)+b_k'(0)\sin(kx)}=\frac{a_0^g}{2}+\sum\limits_{k=1}^{\infty}{a_k^g\cos(kx)+b^g_k\sin(kx)}$
 \item Koeffizientenvergleich ergibt:\\
 $a_k(0)=a_k^f\qquad a_k'(0)=a_k^g\qquad b_k(0)=b_k^f\qquad b_k'(0)=b_k^g$
-\item Die vollständige Lösung ist damit:\\
+\item Die vollstÃ¤ndige LÃ¶sung ist damit:\\
 $u(t,x)=\frac{a_0^g(t)+a_0^f}2+\sum\limits_{k=1}^{\infty}{\left(a_k^f\cos(kt)+\frac 1k a_k^2\sin(kt)\right)\cos(kx)+\left(b_k^f\cos(kt)+\frac 1k b_k^2\sin(kt)\right)}\sin(kx)$
 \end{itemize}
 
 \subsubsection{Inhomogene Wellengleichung}
 
-Das Verfahren lässt sich auch auf die inhomogene Wellengleichung verallgemeinern. Das Störglied wird dabei ebenfalls als Fourierreihe entwickelt.
+Das Verfahren lÃ¤sst sich auch auf die inhomogene Wellengleichung verallgemeinern. Das StÃ¶rglied wird dabei ebenfalls als Fourierreihe entwickelt.
 
 $\partial_t^2u-\partial_x^2u=f \qquad \Rightarrow \qquad f(t,x)=\frac{a_0^f(t)}{2}+\sum\limits_{k=1}^{\infty}{a^f_k(t)\cos(kx)+b^f_k\sin(kx)}$
 
@@ -64,14 +64,14 @@ $\partial_t^2u-\partial_x^2u=f \qquad \Rightarrow \qquad f(t,x)=\frac{a_0^f(t)}{
 
 $\boxed{F(t)=\int\limits_{0}^{\infty}{f(t)\e^{-st}} dt}$ \qquad Siehe auch weiter hinten in der Zusammenfassung!\\
 
-\textbf{Lösung einer ODGL:}\\
+\textbf{LÃ¶sung einer ODGL:}\\
 
 $\dot{x}(t)+p x(t)=f(t) \qquad f(t)=q$\\
 $\dot{x}(t)+p x(t)=f(t)\FT s X(s)-x(0)+pX(s)=F(s) \qquad f(t)\FT F(s)=\frac{q}{s}$\\
 
 $\Rightarrow X(s)=\frac{F(s)+x(0)}{s+p}=\frac{q+x(0)}{s(s+p)}\Big|_{x(0)=0}\IFT x(t)=\frac{q}{p}(1-\e^{-pt})$\\
 
-\textbf{Lösung einer PDGL:}\\
+\textbf{LÃ¶sung einer PDGL:}\\
 
 $\partFrac{u}{t}+x\partFrac{u}{x}=x\qquad t\geq 0,\quad x\geq 0\qquad u(x,0)=0,\quad u(0,t)=0\qquad x,t>0$\\
 
