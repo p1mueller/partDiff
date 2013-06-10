@@ -8,12 +8,12 @@ Wie bei gewöhnlichen Differentialgleichungen ist die Ordnung
 die höchste Ableitung der unbekannten Funktion, die in der
 Differentialgleichung vorkommt.\\
 
-\textbf{PDGL 1.Ordnung: } \qquad$F\biggl(x_1,\dots,x_n, u, \frac{\partial u}{\partial x_1},\dots,\frac{\partial u}{\partial x_n}\biggr)$
+\textbf{PDGL 1. Ordnung: } \qquad$F\biggl(x_1,\dots,x_n, u, \frac{\partial u}{\partial x_1},\dots,\frac{\partial u}{\partial x_n}\biggr)$
 
 Sie kann durch Substitution $\frac{\partial u}{\partial x_i}\to p_i$ durch  $F(x_1,\dots,x_n,u,p_1,\dots,p_n),$
 ausgedrückt werden.\\
 
-\textbf{PDGL 2.Ordnung: } \qquad $F\biggl(x_1,\dots,x_n,u,
+\textbf{PDGL 2. Ordnung: } \qquad $F\biggl(x_1,\dots,x_n,u,
 \frac{\partial u}{\partial x_1},\dots,\frac{\partial u}{\partial x_n},
 \frac{\partial^2 u}{\partial x_1^2},\dots,\frac{\partial^2 u}{\partial x_n^2}\biggr)$
 
@@ -49,7 +49,7 @@ Gleichungssystem 1.Ordnung& $p=\frac{\partial u}{\partial x},\quad q=\frac{\part
 	\end{tabular}
 \end{minipage}
 
-Das Gebiet einer PDGL \textbf{muss} offen sein, nur dann ist die partielle Ableitung überall definiert. Das Gebiet ist offen, wenn um jeden Punkt in Gebiet $\Omega$ ein kleiner Ball gezeichnet werden kann, welcher auch in Gebiet $\Omega$ ist.
+Das Gebiet einer PDGL \textbf{muss} offen sein, nur dann ist die partielle Ableitung überall definiert. Das Gebiet ist offen, wenn um jeden Punkt im Gebiet $\Omega$ ein kleiner Ball gezeichnet werden kann, welcher auch in Gebiet $\Omega$ ist.
 
 \textbf{Lösung einer PDGL:}\\
 \begin{tabular}{ll}
@@ -57,15 +57,12 @@ Gegeben:& Gebiet $\Omega$, PDGL,Randwerte $\partial\Omega$\\
 Lösung:& Funktion $u$: $\overset{\_}{\Omega}\rightarrow \mathbb{R}$, PDGL in $\Omega$ und Randwerte auf $\partial\Omega$\\
 \end{tabular}
 
-\subsubsection{Klassifikation einer PRGL}
-
-
-\begin{tabular}{ll}
+\subsubsection{Klassifikation einer PDGL}
+\begin{tabular}{lll}
 Ordnung:& Höchste vorkommende partielle Ableitung\\
-Type:& Linear:\qquad $F(\ldots)$ lineare Funktion von $u,\frac{\partial u}{\partial x_1},\frac{\partial u}{\partial x_2},\ldots,\frac{\partial u}{\partial x_n}$\\
-& Quasilinear: \qquad  $F(\ldots)$ lineare Funktion von $u,\frac{\partial u}{\partial x_1},\frac{\partial u}{\partial x_2},u\frac{\partial u}{\partial x_k},\ldots,\frac{\partial u}{\partial x_n}$, wobei Produkte von \\
-
-\todo{Anschauen}
+Typ:& Linear: & Linear bei $u, x_1,...,x_n, \frac{\partial u}{\partial x_1},\ldots,\frac{\partial u}{\partial x_n}$\\
+& Quasilinear: &  Linear bei $\frac{\partial u}{\partial x_1},\ldots,\frac{\partial u}{\partial x_n}$\\
+& Nichtlineare: & Alles andere
 \end{tabular}
 
 \input{Content/Theory/Characteristic.tex}
