@@ -23,10 +23,11 @@ $\boxed{u(t,x)=\frac{a_0(t)}{2}+\sum\limits_{k=1}^{\infty}{a_k(t)\cos(kx)+b_k(t)
 
 \begin{enumerate}
 \item Ansatz der Fourieranalyse in PDGL einsetzen:\\
-$\partial_t^2(t,x)=\frac{a_0''(t)}{2}+\sum\limits_{k=1}^{\infty}{a_k''(t)\cos(kx)+b_k''(t)\sin(kx)}$\\
-$\partial_x^2(t,x)=-\sum\limits_{k=1}^{\infty}{a_k(t)k^2\cos(kx)+b_k(t)k^2\sin(kx)}$\\
-$\partial_t^2(t,x)=\partial_x^2(t,x) 
-\quad \Leftrightarrow \quad \frac{a_0''(t)}{2}+\sum\limits_{k=1}^{\infty}{a_k''(t)\cos(kx)+b_k''(t)\sin(kx)}=-\sum\limits_{k=1}^{\infty}{a_k(t)k^2\cos(kx)+b_k(t)k^2\sin(kx)}$\\[0.2cm]
+$$\partial_t^2(t,x)=\frac{a_0''(t)}{2}+\sum\limits_{k=1}^{\infty}{a_k''(t)\cos(kx)+b_k''(t)\sin(kx)} 
+\qquad \qquad
+\partial_x^2(t,x)=-\sum\limits_{k=1}^{\infty}{a_k(t)k^2\cos(kx)+b_k(t)k^2\sin(kx)}$$
+$$\partial_t^2(t,x)=\partial_x^2(t,x) 
+\qquad \Longleftrightarrow \qquad \frac{a_0''(t)}{2}+\sum\limits_{k=1}^{\infty}{a_k''(t)\cos(kx)+b_k''(t)\sin(kx)}=-\sum\limits_{k=1}^{\infty}{a_k(t)k^2\cos(kx)+b_k(t)k^2\sin(kx)}$$
 $\boxed{\Rightarrow\quad \frac{a_0''(t)}{2}+\sum\limits_{k=1}^{\infty}{\big(a_k''(t)+a_k(t)k^2\big)\cos(kx)+\big(b_k''(t)+b_k(t)k^2\big)\sin(kx)}=0}$
 \item Diese Gleichung ist nur lösbar wenn alle Koeffizienten verschwinden (Fourier-Theorie):\\[0.2cm]
 $a_0''(t)=0 \qquad a_k''(t)=-k^2a_k(t)\qquad b_k''(t)=-k^2b_k(t)$
@@ -36,7 +37,7 @@ $a_0(t)=m_0(t)+c_0\qquad a_k(t)=A_k^a\cos(kt)+B_k^a\sin(kt)\qquad b_k(t)=A_k^b\c
 
 
 \subsubsection{Anfangsbedingungen}
-Die Differentialgleichungen für die Koeffizienten ak(t) und bk(t) können erst dann
+Die Differentialgleichungen für die Koeffizienten $ak(t)$ und $bk(t)$ können erst dann
 vollständig gelöst werden, wenn Anfangs oder Randbedingungen gegeben sind.\\
 \begin{itemize}
 \item Anfangsbedingungen für Wellengleichung:\\
