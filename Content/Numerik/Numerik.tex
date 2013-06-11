@@ -2,10 +2,10 @@
 \subsection{Diskretisierung}
 \subsubsection{1.Ableitung}
 
-$$g'\approx \frac{g(x+\Delta x)-g(x)}{\Delta x} \qquad\qquad \text{oder} \qquad\qquad g'\approx \frac{g(x+\Delta x)-g(x-\Delta x)}{2\Delta x}\qquad \text{(Bessere Qualität)}$$
+$$g'(x)\approx \frac{g(x+\Delta x)-g(x)}{\Delta x} \qquad\qquad \text{oder} \qquad\qquad \boxed{g'(x)\approx \frac{g(x+\Delta x)-g(x-\Delta x)}{2\Delta x}}\qquad \text{(Bessere Qualität)}$$
 \subsubsection{2.Ableitung}
 
-$g''\approx \frac{g(x+\Delta x)-2 g(x) + g(x- \Delta x)}{\Delta x^2}$
+$\boxed{g''(x)\approx \frac{g(x+\Delta x)-2 g(x) + g(x- \Delta x)}{\Delta x^2}}$
 
 \subsection{FDM}
 \textbf{TIPP:} Bei Anfangsbedingungen ungleich Null das Gleichungssystem selber von Hand herleiten, reduziert die Chance auf Fehler.
@@ -18,7 +18,7 @@ $A^{(n)}= \frac{1}{\Delta x^2} tridiag {n-1} (-1,2,-1) = \frac{1}{\Delta x^2}
               0& -1 & 2 & \ldots \\
               0& 0 & -1 & \ldots \\
              \ldots 
-           \end{bmatrix} (eine (n-1)x(n-1)-Matrix)$\\ 
+           \end{bmatrix}$\qquad (eine $(n-1)\times(n-1)$-Matrize)\\ 
 Randwert: $\tilde{u}(0)= a; \tilde{u}(n)=b $
 $A^{(n)}=\tilde{u}^{(n)} =\begin{bmatrix}
              f(0) + \tilde{u}(0) \\
@@ -41,7 +41,7 @@ $A^{(n)}= \frac{1}{\Delta x^2} tridiag {n-1}
            
            
 \subsection{Konvergenz}
-Ein Modell ist konvergent wenn bei $n\leftarrow\infty$ die Schätzung $\tilde{u}$ und $u$ übereinstimmt.\\
+Ein Modell ist konvergent wenn bei $n\rightarrow\infty$ die Schätzung $\tilde{u}$ und $u$ übereinstimmt.\\
 
 $\boxed{||v||_{\Delta x}=\sqrt{\Delta x (v_1^2+v_2^2 + \ldots v_{n-1}^2)}= \sqrt{\Delta
 x}||v||}$\\
@@ -52,7 +52,7 @@ Es konvertiert wenn: $\lim\limits_{n\to \infty
 \subsection{Konsistenz}
 Ein Modell ist nicht konsistent wenn das Modell durch Vereinfachung nicht mehr mit der Realität übereinstimmt.
 
-Globaler Konsistenzfehler: $\boxed{||r^{(n)}||_{1/n}\leq \frac 1{12}\max\limits_{\xi\in[0,1]}|f''(\xi)|\cdot \Delta x^2}$
+Globaler Konsistenzfehler (Residuum): $\boxed{||r^{(n)}||_{1/n}\leq \frac 1{12}\max\limits_{\xi\in[0,1]}|f''(\xi)|\cdot \Delta x^2}$
 
 \subsubsection{Residuum}
 Exakt: $A^{(n)}\cdot \tilde{u}^{(n)}-f^{(n)}=0$\\
@@ -296,7 +296,7 @@ $$\Longrightarrow u_{j,k+1}=r^2 u_{j-1,k} 2(1-r^2)u_{j,k}+ r^2
 u_{j+1,k}-u_{j,k-1}$$
 \subsubsection{Anfangsbedingungen}
 $$\tilde{u}_{j,0} = f(j\Delta x); u_{j,1}= f(j\Delta x) + g(j\Delta x)\Delta t$$
-(f(x)= Anfangsfunktion; g(x)=Ableitung; $r = \frac{\Delta t}{\Delta x}$)
+(f(x)= Anfangsfunktion; g(x)=Ableitung; $r = \frac{\Delta t}{\Delta x^2}$)
 
 \subsubsection{Transportgleichung}
 $$u_x(x,t) + u_t(x, t) = 0; u(x,0)=P(x-t)$$
@@ -341,11 +341,11 @@ $\Rightarrow$ $\oint\limits_{\Gamma}{\Delta u(x,y) dx dy}=\oint\limits_{\partial
 \item Rand diskretisieren.\\
 \end{enumerate}
 
-Für P1-Zelle:\quad $\frac{\tilde{u}(P_2)-\tilde{u}(P_1)}{\delta_{1,2}}\cdot\lambda_{1,2}+\frac{\tilde{u}(P_3)-\tilde{u}(P_1)}{\delta_{1,3}}\cdot\lambda_{1,3}+\frac{\tilde{u}(R_1)-\tilde{u}(P_1)}{\delta_1}\cdot\lambda_1$\\
+Für P1-Zelle:\quad $\frac{\tilde{u}(P_2)-\tilde{u}(P_1)}{\delta_{1,2}}\cdot\lambda_{1,2}+\frac{\tilde{u}(P_3)-\tilde{u}(P_1)}{\delta_{1,3}}\cdot\lambda_{1,3}+\frac{\tilde{u}(R_1)-\tilde{u}(P_1)}{\delta_1}\cdot\lambda_1=0$\\
 
-Für P2-Zelle:\quad $\frac{\tilde{u}(P_1)-\tilde{u}(P_2)}{\delta_{1,2}}\cdot\lambda_{1,2}+\frac{\tilde{u}(P_3)-\tilde{u}(P_2)}{\delta_{2,3}}\cdot\lambda_{2,3}+\frac{\tilde{u}(R_2)-\tilde{u}(P_2)}{\delta_2}\cdot\lambda_2$\\
+Für P2-Zelle:\quad $\frac{\tilde{u}(P_1)-\tilde{u}(P_2)}{\delta_{1,2}}\cdot\lambda_{1,2}+\frac{\tilde{u}(P_3)-\tilde{u}(P_2)}{\delta_{2,3}}\cdot\lambda_{2,3}+\frac{\tilde{u}(R_2)-\tilde{u}(P_2)}{\delta_2}\cdot\lambda_2=0$\\
 
-Für P3-Zelle:\quad $\frac{\tilde{u}(P_2)-\tilde{u}(P_3)}{\delta_{2,3}}\cdot\lambda_{2,3}+\frac{\tilde{u}(P_1)-\tilde{u}(P_3)}{\delta_{1,3}}\cdot\lambda_{1,3}+\frac{\tilde{u}(R_3)-\tilde{u}(P_3)}{\delta_3}\cdot\lambda_3$\\
+Für P3-Zelle:\quad $\frac{\tilde{u}(P_2)-\tilde{u}(P_3)}{\delta_{2,3}}\cdot\lambda_{2,3}+\frac{\tilde{u}(P_1)-\tilde{u}(P_3)}{\delta_{1,3}}\cdot\lambda_{1,3}+\frac{\tilde{u}(R_3)-\tilde{u}(P_3)}{\delta_3}\cdot\lambda_3=0$\\
 \end{minipage}
 
 \begin{minipage}{6cm}
@@ -354,7 +354,7 @@ Für P3-Zelle:\quad $\frac{\tilde{u}(P_2)-\tilde{u}(P_3)}{\delta_{2,3}}\cdot\lam
 \hfill
 \begin{minipage}{12cm}
 
- $\frac{\tilde{u}(P_E)-\tilde{u}(P_N)}{1/4\cdot\sqrt{2}}\cdot\frac{\sqrt{2}}{2}+\frac{\tilde{u}(P_W)-\tilde{u}(P_N)}{1/4\cdot\sqrt{2}}\cdot\frac{\sqrt{2}}{2}+\frac{\tilde{u}(P_N)-\tilde{u}(R_N)}{1/4}\cdot 1=0$\\
+ $\frac{\tilde{u}(P_E)-\tilde{u}(P_N)}{1/4\cdot\sqrt{2}}\cdot\frac{\sqrt{2}}{2}+\frac{\tilde{u}(P_W)-\tilde{u}(P_N)}{1/4\cdot\sqrt{2}}\cdot\frac{\sqrt{2}}{2}+\frac{\tilde{u}(R_N)-\tilde{u}(P_N)}{1/4}\cdot 1=0$\\
  
  $(\tilde{u}_E-\tilde{u}_N)\cdot 2 + (\tilde{u}_W-\tilde{u}_N)\cdot 2 + (1/2-\tilde{u}_N)\cdot 4=0$\\
  

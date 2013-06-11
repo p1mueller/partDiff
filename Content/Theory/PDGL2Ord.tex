@@ -6,11 +6,11 @@ $\boxed{\sum\limits_{i,j=1}^{n}{a_{ij}\partial_i\partial_j u}+\sum\limits_{i=1}^
 Eigenwertberechnung: 
 \begin{enumerate}
   \item Symmetrische Matrix aufstellen und $\lambda$ in der Diagonalen abziehen. Z.B.: $A = \begin{pmatrix}
-    \partial_x^2-\lambda & \partial_x \partial_y \\
-    \partial_y \partial_x  & \partial_y^2-\lambda
-  \end{pmatrix}$
+    \partial_x^2 & \partial_x \partial_y \\
+    \partial_y \partial_x  & \partial_y^2
+  \end{pmatrix}$\\
   Bei diagonalen Matrizen entsprechen die Eigenwerte den Diagonaleinträgen.
-  \item Determinante gleich 0 setzen: $\det A = (\partial_x^2 - \lambda)(\partial_y^2 - \lambda) - ( \partial_x \partial_y)^2 = 0$
+  \item Determinante gleich 0 setzen: $\det(\mathbf{A}-\lambda \mathbf{I}) = 0\quad\Rightarrow\quad \lambda_i$
   \item Gleichung lösen
 \end{enumerate}
 \begin{tabular}{|l||l|l|l|l|}
