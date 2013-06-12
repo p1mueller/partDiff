@@ -11,7 +11,7 @@ $\boxed{g''(x)\approx \frac{g(x+\Delta x)-2 g(x) + g(x- \Delta x)}{\Delta x^2}}$
 \textbf{TIPP:} Bei Anfangsbedingungen ungleich Null das Gleichungssystem selber von Hand herleiten, reduziert die Chance auf Fehler.
 \subsubsection{Grundgleichung: $-u''(x)=f(x)$}
 $ A^{(n)} \tilde{u}^{(n)} =f^{(n)}   $\\
-$A^{(n)}= \frac{1}{\Delta x^2} tridiag {n-1} (-1,2,-1) = \frac{1}{\Delta x^2}
+$A^{(n)}= \frac{1}{\Delta x^2} \tridiag_{n-1} (-1,2,-1) = \frac{1}{\Delta x^2}
   \begin{bmatrix}
              2& -1 & 0 & \ldots \\
              -1& 2 & -1 & \ldots \\
@@ -19,17 +19,17 @@ $A^{(n)}= \frac{1}{\Delta x^2} tridiag {n-1} (-1,2,-1) = \frac{1}{\Delta x^2}
               0& 0 & -1 & \ldots \\
              \ldots 
            \end{bmatrix}$\qquad (eine $(n-1)\times(n-1)$-Matrize)\\ 
-Randwert: $\tilde{u}(0)= a; \tilde{u}(n)=b $
+Randwert: $\tilde{u}(0)= a; \tilde{u}(n)=b $;
 $A^{(n)}=\tilde{u}^{(n)} =\begin{bmatrix}
              f(0) + \tilde{u}(0) \\
              f(1) \\
              \vdots  \\
              f(n) + \tilde{u}(n)
            \end{bmatrix} $\\
-\subsubsection{Grundgleichung: $T''(x) + h (T_A -T(x)) = 0)$}
+\subsubsection{Grundgleichung: $T''(x) -  h T(x) = T_A$}
 $-T'' + h T(x) = h T_A$\\
-$A^{(n)}= \frac{1}{\Delta x^2} tridiag {n-1}
-(2+h\Delta x^2 ) = \frac{1}{\Delta x^2}
+$A^{(n)}= \frac{1}{\Delta x^2} \tridiag_{n-1}
+(-1,2+h\Delta x^2,-1) = \frac{1}{\Delta x^2}
   \begin{bmatrix}
              2+h\Delta x^2& -1 & 0 & \ldots \\
              -1& 2+h\Delta x^2 & -1 & \ldots \\
