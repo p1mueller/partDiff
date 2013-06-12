@@ -22,7 +22,21 @@ $F(x_1,\dots,x_n,u,p_1,\dots,p_n,t_{11},t_{12},\dots,t_{n,n-1},t_{nn})$
 ausgedrückt werden.
 
 \subsubsection{Laplace-Operator}
-$u(x,y,z)\quad\Rightarrow\quad \Delta u=\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}+\frac{\partial^2u}{\partial z^2}$
+\begin{tabular}{ll}
+Kartesisch: $\Delta u(x,y,z)=\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}+\frac{\partial^2u}{\partial z^2}$
+& Zylinder: $\Delta f ( \rho , \phi , z ) = \frac{1}{\rho} \frac{\partial}{\partial \rho}
+\left( \rho\,\frac{\partial f}{\partial \rho} \right) +
+\frac{1}{\rho^2}\frac{\partial^2 f}{\partial \phi^2} +
+\frac{\partial^2 f}{\partial z^2}$ \\
+Polar: $\Delta f(r, \phi ) =
+\frac{\partial^2 f}{\partial r^2} +
+\frac{1}{r}\frac{\partial f}{\partial r} +
+\frac{1}{r^2}\frac{\partial^2 f}{\partial \phi^2}$
+& Kugel: $\Delta f ( r , \vartheta , \phi ) = \frac{1}{r^2} 
+\frac{\partial}{\partial r} \left( r^2  \,\frac{\partial f}{\partial r} \right) +
+\frac{1}{r^2 \sin \vartheta}  \frac{\partial}{\partial \vartheta} \left(\sin\vartheta \, \frac{\partial f}{\partial \vartheta} \right) +
+\frac{1}{r^2 \sin^2\vartheta}  \frac{\partial^2 f}{\partial \phi^2}$
+\end{tabular}
 
 \subsubsection{Umwandlung in System niedriger Ordnung}
 
