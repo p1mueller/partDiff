@@ -36,7 +36,8 @@ $g^{(n)}=\begin{bmatrix}
 \textbf{Lösung nach Galerkin:} $G^{(n)}\cdot a+g^{(n)}=0\qquad \Rightarrow \qquad a=\textcolor{red}{\mathbf{-}}\left\{G^{(n)}\right\}^{-1}\cdot g^{(n)}$
 
 
-\subsection{Gewichtete Residuen (Bereichskollokation)}
+\subsection{Gewichtete Residuen}
+\todo{Achtung: Gewichtete Residuen $\neq$ Bereichskollokation!! (Hinweis kann auch wieder gelöscht werden :) }
 
 Gewichtungsfunktionen: $\{w_1(x),\ldots,w_n(x)\}$
 
@@ -56,7 +57,7 @@ $m^{(n)}=\begin{bmatrix}
 \textbf{Lösung der gewichteten Residuen:} $M^{(n)}\cdot a+m^{(n)}=0\qquad \Rightarrow \qquad a=\textcolor{red}{\mathbf{-}}\left\{M^{(n)}\right\}^{-1}\cdot m^{(n)}$
 
 \subsection{Punktkollokation}
-Im Sinne einer Punktkollokation werden n Stützstellen im Intervall von [0,1] gewählt.\\
+Im Sinne einer Punktkollokation (einzelne Punkte müssen zwischen wahrem Resultat und Approximation übereinstimmen) werden $n$ Stützstellen im Intervall von $[0,1]$ gewählt.\\
 
 $\begin{bmatrix}
 	v_1''(x_1)& v_2''(x_1)&\cdots\\
@@ -73,6 +74,27 @@ a_2\\
 -f(x_2)\\
 \vdots
 \end{bmatrix}$\qquad Das Gleichungssystem nach a auflösen
+
+
+\subsection{Bereichskollokation}
+Im Gegensatz zur Punktkollokation müssen nicht einzelne Punkte sondern ganze Bereiche (Intervalle $I_k$) übereinstimmen. Für $-u''(x) = f(x)$ wird dieses Gleichungssystem aufgestellt.
+
+$\begin{bmatrix}
+	\int_{I_1} v_1'' & \int_{I_1} v_2''& \cdots\\
+	\int_{I_2} v_1'' & \int_{I_2} v_2''& \cdots\\
+	\vdots& \vdots&\ddots
+\end{bmatrix}\cdot
+\begin{bmatrix}
+a_1\\
+a_2\\
+\vdots
+\end{bmatrix}
+=\begin{bmatrix}
+-\int_{I_1} f(x)\\
+-\int_{I_2} f(x)\\
+\vdots
+\end{bmatrix}$\qquad Das Gleichungssystem nach a auflösen
+
 
 \subsection{Das Verfahren von Gauss (MSE)}
 
