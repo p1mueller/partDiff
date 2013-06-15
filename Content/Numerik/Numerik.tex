@@ -286,19 +286,19 @@ zu mitteln. Mit dieser Idee geht das stetige Problem in folgendes diskretes Prob
 $-r \tilde{u}_{j-1,k+1} + (2+2r)\tilde{u}_{j,k+1} - r \tilde{u}_{j+1,k+1} = r
 \tilde{u}_{j-1,k+1} + (2-2r)\tilde{u}_{j,k+1} + r \tilde{u}_{j+1,k+1} $
 
-
-
+Wie bei den anderen Verfahren gilt: $\Delta x=\frac{x_{max}-x_{min}}{n}\qquad \Delta t=\frac r{n^2} \qquad \boxed{r=\frac{\Delta
+t}{\Delta x^2}}$
 \begin{itemize}
 \item Initialisierung, Randbedingung: $\tilde{u}_{j,0}=f(j/n)$ \qquad $\tilde{u}_{0,k}=\tilde{u}_{n,k}=0$
 \item Approximationsmatrizen:\\
-$F^{(n)}=E^{(n)}+I=tridiag_{n-1}(-r,2+2r,-r)=\begin{bmatrix}
+$F^{(n)}=E^{(n)}+I=\tridiag_{n-1}(-r,2+2r,-r)=\begin{bmatrix}
 2+2r& -r	& 0		& 0 	&\cdots\\
 -r	& 2+2r  & -r	& 0		&\cdots\\
 0	& -r	& 2+2r 	& -r 	&\cdots\\
 0	& 0		& -r	& 2+2r 	&\cdots\\
 \vdots&	\vdots&\vdots&\vdots&\ddots	
 \end{bmatrix}$\\
-$G^{(n)}=C^{(n)}+I=tridiag_{n-1}(~r,~2-2r,~r~)=\begin{bmatrix}
+$G^{(n)}=C^{(n)}+I=\tridiag_{n-1}(~r,~2-2r,~r~)=\begin{bmatrix}
 2-2r& r		& 0		& 0 	&\cdots\\
 r	& 2-2r  & r		& 0		&\cdots\\
 0	& r		& 2-2r 	& r 	&\cdots\\
@@ -306,13 +306,13 @@ r	& 2-2r  & r		& 0		&\cdots\\
 \vdots&	\vdots&\vdots&\vdots&\ddots	
 \end{bmatrix}$ 
 \item Einen Schritt berechnen: $\tilde{u}^{(k+1)}=\left\{F^{(n)}\right\}^{-1} \cdot G^{(n)}\cdot \tilde{u}^{(k)}$
-\item k-Schritte berechnen: $\tilde{u}^{(k)}=\left(\left\{F^{(n)}\right\}^{-1} \cdot G^{(n)}\right)^{k}\cdot \tilde{u}^{(0)}$
+\item $k$-Schritte berechnen: $\tilde{u}^{(k)}=\left(\left\{F^{(n)}\right\}^{-1} \cdot G^{(n)}\right)^{k}\cdot \tilde{u}^{(0)}$
 \end{itemize}
 
 \subsection{(FDM für Hyperbolische PDGL)}
 
-$$u_{tt}=u_{xx} = homogen$$
-$$u_{tt} -u_{xx}= v(x,t) = inhomogen$$
+$$u_{tt}=u_{xx} = \text{homogen}$$
+$$u_{tt} -u_{xx}= v(x,t) = \text{inhomogen}$$
 
 $$\Longrightarrow u_{j,k+1}=r^2 u_{j-1,k} 2(1-r^2)u_{j,k}+ r^2
 u_{j+1,k}-u_{j,k-1}$$
