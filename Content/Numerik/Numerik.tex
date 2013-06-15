@@ -205,7 +205,7 @@ Wenn $u_x(x,y) = 0$, dann spricht man auch von der Spiegelmethode. Die Punkte $P
 	Randbedingungen: $u(x,0)=f(x) \qquad u(0,t)=u(1,t)=0\qquad x\in(0,1) \qquad t\in[0,\infty)$
 \subsubsection{Explizites Verfahren (Richardson-Verfahren)}
 $\boxed{\frac{\tilde{u}(x,t+\Delta t) - \tilde{u}(x,t)}{\Delta t} = 
-\frac{\tilde{u}(x+\Delta x, t)-2\tilde{u}(x,y) + \tilde{u}( x - \Delta x, t )} {\Delta x^2}} \qquad \Delta x=\frac 1n\qquad \Delta t=\frac r{n^2} \qquad \boxed{r=\frac{\Delta
+\frac{\tilde{u}(x+\Delta x, t)-2\tilde{u}(x,y) + \tilde{u}( x - \Delta x, t )} {\Delta x^2}} \qquad \Delta x=\frac{x_{max}-x_{min}}{n}\qquad \Delta t=\frac r{n^2} \qquad \boxed{r=\frac{\Delta
 t}{\Delta x^2}}$\\
 
 \textbf{Idee:} Aus den Positionen $k$ wird $k+1$ berechnet: $\tilde{u}_{j,k+1} = r \tilde{u}_{j-1,k} + (1-2r)\tilde{u}_{j,k} + r \tilde{u}_{j+1,k}$\\
@@ -247,7 +247,9 @@ Der Grund für das schlechte Konvergenzverhalten kann geometrisch visualisiert w
 Im Unterschied zum expliziten Verfahren, das Werte vom vorherigen Zeitpunkt nutzt, wird hier das ein Gleichungssystem global gelöst.\\
 
 $\boxed{\frac{\tilde{u}(x,t) - \tilde{u}(x,t -\Delta t)}{\Delta t} = 
-\frac{\tilde{u}(x+\Delta x, t)-2\tilde{u}(x,y) + \tilde{u}( x - \Delta x, t )} {\Delta x^2}}$\\
+\frac{\tilde{u}(x+\Delta x, t)-2\tilde{u}(x,y) + \tilde{u}( x - \Delta x, t )} {\Delta x^2}}
+ \qquad \Delta x=\frac{x_{max}-x_{min}}{n}\qquad \Delta t=\frac r{n^2} \qquad \boxed{r=\frac{\Delta
+t}{\Delta x^2}}$\\
 
 $ \tilde{u}_{j,k} = r \tilde{u}_{j-1,k+1} + (1+2r)\tilde{u}_{j,k+1} + r \tilde{u}_{j+1,k+1}$
 
@@ -256,15 +258,15 @@ $ \tilde{u}_{j,k} = r \tilde{u}_{j-1,k+1} + (1+2r)\tilde{u}_{j,k+1} + r \tilde{u
 
 \begin{itemize}
 \item Initialisierung, Randbedingung: $\tilde{u}_{j,0}=f(j/n)$ \qquad $\tilde{u}_{0,k}=\tilde{u}_{n,k}=0$
-\item Approximationsmatrize: $E^{(n)}=tridiag_{n-1}(-r,1+2r,-r)=\begin{bmatrix}
-1+2r& r		& 0		& 0 	&\cdots\\
-r	& 1+2r  & r		& 0		&\cdots\\
-0	& r		& 1+2r 	& r 	&\cdots\\
-0	& 0		& r		& 1+2r 	&\cdots\\
+\item Approximationsmatrize: $E^{(n)}=\tridiag_{n-1}(-r,1+2r,-r)=\begin{bmatrix}
+1+2r& -r		& 0		& 0 	&\cdots\\
+-r	& 1+2r  & -r		& 0		&\cdots\\
+0	& -r		& 1+2r 	& -r 	&\cdots\\
+0	& 0		& -r		& 1+2r 	&\cdots\\
 \vdots&	\vdots&\vdots&\vdots&\ddots	
 \end{bmatrix}$ 
 \item Einen Schritt berechnen: $\tilde{u}^{(k+1)}=\left\{E^{(n)}\right\}^{-1} \tilde{u}^{(k)}$
-\item k-Schritte berechnen: $\tilde{u}^{(k)}=\left(\left\{E^{(n)}\right\}^{-1}\right)^k \tilde{u}^{(0)}$
+\item $k$-Schritte berechnen: $\tilde{u}^{(k)}=\left\{E^{(n)}\right\}^{\bm{-}k} \tilde{u}^{(0)}$
 \end{itemize}
 
 \textbf{Vorteil:} Das implizite Verfahren ist immer stabil, unabhängig von der Zeitauflösung $\Delta t$\\
