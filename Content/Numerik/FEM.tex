@@ -25,13 +25,13 @@ $G^{(n)}=\begin{bmatrix}
 	G_{1,1}& G_{1,2}&\cdots\\
 	G_{2,1}& G_{2,2}&\cdots\\
 	\vdots & \vdots &\ddots\\
-\end{bmatrix}$ \qquad mit \qquad $G_{j,k}^{(n)}=\int\limits_{0}^{1}{v_j''(x)\cdot v_k(x) dx}$\\
+\end{bmatrix}$ \qquad mit \qquad $G_{j,k}^{(n)}=\int\limits_{\partial \Omega}{\underbrace{(v_j''(x))}_{v_j \text{ in Form von DGL!}}\cdot v_k(x) dx}$\\
 \textbf{Galerkscher Vektor: } 
 $g^{(n)}=\begin{bmatrix}
 	g_1\\
 	g_2\\
 	\vdots\\
-\end{bmatrix}$ \qquad mit \qquad $g_{k}^{(n)}=\int\limits_{0}^{1}{f(x)\cdot v_k(x) dx}$\\
+\end{bmatrix}$ \qquad mit \qquad $g_{k}^{(n)}=\int\limits_{\partial \Omega}{f(x)\cdot v_k(x) dx}$\\
 
 \textbf{Lösung nach Galerkin:} $G^{(n)}\cdot a+g^{(n)}=0\qquad \Rightarrow \qquad a=\textcolor{red}{\mathbf{-}}\left\{G^{(n)}\right\}^{-1}\cdot g^{(n)}$
 
