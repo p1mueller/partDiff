@@ -314,11 +314,11 @@ r	& 2-2r  & r		& 0		&\cdots\\
 $$u_{tt}=u_{xx} = \text{homogen}$$
 $$u_{tt} -u_{xx}= v(x,t) = \text{inhomogen}$$
 
-$$\Longrightarrow u_{j,k+1}=r^2 u_{j-1,k} 2(1-r^2)u_{j,k}+ r^2
-u_{j+1,k}-u_{j,k-1}$$
+$$\Longrightarrow u_{j,k+1}=r^2 u_{j-1,k} + 2(1-r^2)u_{j,k}+ r^2
+u_{j+1,k}-u_{j,k-1} \quad \text{(Leap-Frog-Schema)}$$
 \subsubsection{Anfangsbedingungen}
 $$\tilde{u}_{j,0} = f(j\Delta x); u_{j,1}= f(j\Delta x) + g(j\Delta x)\Delta t$$
-(f(x)= Anfangsfunktion; g(x)=Ableitung; $r = \frac{\Delta t}{\Delta x^2}$)
+(f(x)= Anfangsfunktion; g(x)=Ableitung; $r = \frac{\Delta t}{\Delta x}$)
 
 \subsubsection{Transportgleichung}
 $$u_x(x,t) + u_t(x, t) = 0; u(x,0)=P(x-t)$$
@@ -342,7 +342,7 @@ $\Rightarrow$ $\oint\limits_{\Gamma}{\Delta u(x,y) dx dy}=\oint\limits_{\partial
 \begin{minipage}{14cm}
 	$\frac{u(P_E)-u(P_P)}{h}\cdot h+\frac{u(P_N)-u(P_P)}{h}\cdot h+\frac{u(P_W)-u(P_P)}{h}\cdot h+\frac{u(P_S)-u(P_P)}{h}\cdot h\approx 0$\\
 	
-	$\Rightarrow\tilde{u}(P_E)+\tilde{u}(P_N)+\tilde{u}(P_W)+\tilde{u}(P_S)+4\cdot\tilde{u}(P_P)=0$
+	$\Rightarrow\tilde{u}(P_E)+\tilde{u}(P_N)+\tilde{u}(P_W)+\tilde{u}(P_S)-4\cdot\tilde{u}(P_P)=0$
 \end{minipage}
 
 \textbf{Vorteile:}\\
