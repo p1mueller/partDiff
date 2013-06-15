@@ -86,18 +86,18 @@ $ f(x_0+h)=f(x_0)+f'(x_0)\frac{h}{1!}+...+f^{(n)}(x_0)\frac{h^n}{n!}+R_n(h) $ wo
 
 \subsubsection{Vorwärt/Rückwärtsdifferenz}
 $g'(x) - \frac{g(x+\Delta x) + g(x)}{\Delta x}= O(\Delta x) = 
-\frac{g''(\xi_1)}{2}\Delta x^2 \Rightarrow 1.Ordnung$
+\frac{g''(\xi_1)}{2}\Delta x^2 \Rightarrow$  1. Ordnung
 
 
 \subsubsection{Zentraldifferenz}
 $g'(x) - \frac{g(x+\Delta x) + g(x-\Delta x)}{2\Delta x}= O(\Delta x^2) = 
-\frac{g''(\xi_1)}{2}\Delta x^2 \Rightarrow 2.Ordnung$ 
+\frac{g''(\xi_1)}{2}\Delta x^2 \Rightarrow$ 2. Ordnung
 
 
 
 \subsubsection{2.Ableitung}
 $g''(x) - \frac{g(x+\Delta x) -2 g(x)+ g(x-\Delta x)}{2\Delta x}= O(\Delta x^2)
-= \frac{g''(\xi_1)}{2}\Delta x^2 \Rightarrow 1.Ordnung$
+= \frac{g''(\xi_1)}{2}\Delta x^2 \Rightarrow$ 1. Ordnung
 
 \subsection{Stabilität}
 Die Stabilität einer Matrize kann über deren Norm $||A||_*$ bestimmt werden.\\
@@ -208,12 +208,12 @@ $\boxed{\frac{\tilde{u}(x,t+\Delta t) - \tilde{u}(x,t)}{\Delta t} =
 \frac{\tilde{u}(x+\Delta x, t)-2\tilde{u}(x,y) + \tilde{u}( x - \Delta x, t )} {\Delta x^2}} \qquad \Delta x=\frac 1n\qquad \Delta t=\frac r{n^2} \qquad \boxed{r=\frac{\Delta
 t}{\Delta x^2}}$\\
 
-\textbf{Idee:} Aus den Positionen k wird k+1 berechnet: $\tilde{u}_{j,k+1} = r \tilde{u}_{j-1,k} + (1-2r)\tilde{u}_{j,k} + r \tilde{u}_{j+1,k}$\\
+\textbf{Idee:} Aus den Positionen $k$ wird $k+1$ berechnet: $\tilde{u}_{j,k+1} = r \tilde{u}_{j-1,k} + (1-2r)\tilde{u}_{j,k} + r \tilde{u}_{j+1,k}$\\
 
 
 \begin{itemize}
 \item Initialisierung, Randbedingung: $\tilde{u}_{j,0}=f(j/n)$ \qquad $\tilde{u}_{0,k}=\tilde{u}_{n,k}=0$
-\item Approximationsmatrize: $C^{(n)}=tridiag_{n-1}(r,1-2r,r)=\begin{bmatrix}
+\item Approximationsmatrize: $C^{(n)}=\tridiag_{n-1}(r,1-2r,r)=\begin{bmatrix}
 1-2r& r		& 0		& 0 	&\cdots\\
 r	& 1-2r  & r		& 0		&\cdots\\
 0	& r		& 1-2r 	& r 	&\cdots\\
@@ -221,7 +221,7 @@ r	& 1-2r  & r		& 0		&\cdots\\
 \vdots&	\vdots&\vdots&\vdots&\ddots	
 \end{bmatrix}$ 
 \item Einen Schritt berechnen: $\tilde{u}^{(k+1)}=C^{(n)} \tilde{u}^{(k)}$
-\item k-Schritte berechnen: $\tilde{u}^{(k)}=\big\{C^{(n)}\big\}^k \tilde{u}^{(0)}$
+\item $k$-Schritte berechnen: $\tilde{u}^{(k)}=\big\{C^{(n)}\big\}^k \tilde{u}^{(0)}$
 \end{itemize}
 
 \textbf{Konvergenzverhalten:} \\
@@ -233,7 +233,7 @@ r	& 1-2r  & r		& 0		&\cdots\\
 \begin{minipage}{12cm}
 Verfahren ist stabil wenn: $||A^{-1}|| < 1 \qquad \Rightarrow\qquad r < \frac{1}{2}$\\
 
-Dies macht es Nötig die Zeitschritte extrem klein zu wählen, darum ist das Verfahren auch nicht wirklich praxistauglich, weil sehr hohe Rechenkapazität nötig sind.\\
+Dies macht es nötig, die Zeitschritte extrem klein zu wählen. Darum ist das Verfahren auch nicht wirklich praxistauglich, weil sehr hohe Rechenkapazität nötig sind.\\
 
 Der Grund für das schlechte Konvergenzverhalten kann geometrisch visualisiert werden. In die Berechnung des Wertes im Knoten $P$, werden die Werte aller schwarz eingefärbter Knoten eingehen. Von den Randwerten wird nur die 0-te Stufe berücksichtigt.
 \end{minipage}
