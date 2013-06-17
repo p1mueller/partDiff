@@ -211,7 +211,8 @@ $\boxed{\frac{\tilde{u}(x,t+\Delta t) - \tilde{u}(x,t)}{\Delta t} =
 t}{\Delta x^2}}$\\
 
 \textbf{Idee:} Aus den Positionen $k$ wird $k+1$ berechnet: $\tilde{u}_{j,k+1} = r \tilde{u}_{j-1,k} + (1-2r)\tilde{u}_{j,k} + r \tilde{u}_{j+1,k}$\\
-
+Diskretisierung von t: k, k+1, \ldots\\
+Diskretisierung von x: j, j+1, \ldots\\
 
 \begin{itemize}
 \item Initialisierung, Randbedingung: $\tilde{u}_{j,0}=f(j/n)$ \qquad $\tilde{u}_{0,k}=\tilde{u}_{n,k}=0$
