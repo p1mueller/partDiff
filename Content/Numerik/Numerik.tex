@@ -239,11 +239,8 @@ Dies macht es nötig, die Zeitschritte extrem klein zu wählen. Darum ist das Ve
 
 Der Grund für das schlechte Konvergenzverhalten kann geometrisch visualisiert werden. In die Berechnung des Wertes im Knoten $P$, werden die Werte aller schwarz eingefärbter Knoten eingehen. Von den Randwerten wird nur die 0-te Stufe berücksichtigt.
 \end{minipage}
-
-
-
-
-
+Damit das Verfahren mit $C^k$ für k-Schritte berechnet werden kann, müssen die
+rot eingefärbten Werte (links und rechts) gleich 0 sein (Boundary Condition).
 
 \subsubsection{Implizites Verfahren}
 Im Unterschied zum expliziten Verfahren, das Werte vom vorherigen Zeitpunkt nutzt, wird hier das ein Gleichungssystem global gelöst.\\
