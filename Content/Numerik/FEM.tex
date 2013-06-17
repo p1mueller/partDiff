@@ -33,8 +33,15 @@ $g^{(n)}=\begin{bmatrix}
 	\vdots\\
 \end{bmatrix}$ \qquad mit \qquad $g_{k}^{(n)}=\int\limits_{\partial \Omega}{f(x)\cdot v_k(x) dx}$\\
 
-\textbf{Lösung nach Galerkin:} $G^{(n)}\cdot a+g^{(n)}=0\qquad \Rightarrow \qquad a=\textcolor{red}{\mathbf{-}}\left\{G^{(n)}\right\}^{-1}\cdot g^{(n)}$
+\textbf{Lösung nach Galerkin:} $G^{(n)}\cdot a+g^{(n)}=0\qquad \Rightarrow
+\qquad a=\textcolor{red}{\mathbf{-}}\left\{G^{(n)}\right\}^{-1}\cdot g^{(n)}$\\
 
+Die obige Matrix ist nur für die PDGL $-u''(x) = f(x)$ mit dem Ansatz
+$\tilde{u}(x) = a_1 \cdot v_1(x) + a_2 \cdot v_2(x)$ gültig. Ansonsten muss ein
+Gleichungssystem für $v_k$ = $v_1$ und $v_2$ aufgestellt werden (Beispiel
+für DGL: $u''(x) + u(x) + x = 0$):\\
+$\int\limits_{\partial \Omega}{(a_1 \cdot v_1'' + a_2 \cdot v_2'' + a_1 \cdot
+v_1 + a_2 \cdot v_2 + x) \cdot v_k dx} = 0$
 
 \subsection{Gewichtete Residuen}
 \todo{Achtung: Gewichtete Residuen $\neq$ Bereichskollokation!! (Hinweis kann auch wieder gelöscht werden :) }
