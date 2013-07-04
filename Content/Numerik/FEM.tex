@@ -132,13 +132,13 @@ $q^{(n)}=\begin{bmatrix}
 
 \subsection{Finite Elemente}
 
-Die besprochenen Verfahren setzen die Wahl eines Satzes $v_1(x),\ldots,v_n(x)$ von Grundfunktionen voraus. Bei FEM wird mit lokalen Trägern (Grundfunktionen) gearbeitet, diese sind nur auf einem kleinen intervall ungleich Null. Der Vorteil dieses Vorgehens liegt darin, dass in einem Bereich nur einen Träger die Approximationsfunktion beeinflusst. Der Nachteil liegt in der Anzahl der so benötigten Träger, welche sehr hoch ist.\\
+Die besprochenen Verfahren setzen die Wahl eines Satzes $v_1(x),\ldots,v_n(x)$ von Grundfunktionen voraus. Bei FEM wird mit lokalen Trägern (Grundfunktionen) gearbeitet, diese sind nur auf einem kleinen Intervall ungleich null. Der Vorteil dieses Vorgehens liegt darin, dass in einem Bereich nur ein Träger die Approximationsfunktion beeinflusst. Der Nachteil liegt in der hohen Anzahl der so benötigten Träger.\\
 
 \textbf{WICHTIG:} Alle Verfahren werden mit einer Diskretisierung von $h=1/3$
 vorgestellt.
 
 \subsubsection{Knotenvariablen}
-Als erstes werden auf dem Intervall $[0,1]$ $n$, normalerweise gleich verteilte,   Knotenstellen eingeführt.
+Als erstes werden auf dem Intervall $[0,1]$ $n$, normalerweise gleichverteilte, Knotenstellen eingeführt.
 
 \begin{minipage}{11cm}
 Dadurch wird das Intervall $[0,1]$ in Teilintervalle (Maschen) zerlegt.\\
@@ -264,7 +264,7 @@ $r^4=
 	\int\limits_{0}^{1}{f(x)\cdot v_3(x)dx}\\
 \end{bmatrix}$\\
 
-Das Rizsche Gleichungsystem dazu ist: $\boxed{R^4\cdot a+r^4=0} \qquad\Rightarrow\qquad a=-\left\{R^4\right\}^{-1}\cdot r^4$\\
+Das Ritzsche Gleichungssystem dazu ist: $\boxed{R^4\cdot a+r^4=0} \qquad\Rightarrow\qquad a=-\left\{R^4\right\}^{-1}\cdot r^4$\\
 
 \textbf{Anfangsbedingungen:} Die Anfangsbedingungen $a_0$ und $a_n$ können direkt eingesetzt werden.\\
 
