@@ -288,7 +288,7 @@ zu mitteln. Mit dieser Idee geht das stetige Problem in folgendes diskretes Prob
 $-r \tilde{u}_{j-1,k+1} + (2+2r)\tilde{u}_{j,k+1} - r \tilde{u}_{j+1,k+1} = r
 \tilde{u}_{j-1,k+1} + (2-2r)\tilde{u}_{j,k+1} + r \tilde{u}_{j+1,k+1} $
 
-Wie bei den anderen Verfahren gilt: $\Delta x=\frac{x_{max}-x_{min}}{n}\qquad \Delta t=\frac r{n^2} \qquad \boxed{r=\frac{\Delta
+Wie bei den anderen Verfahren gilt: $\Delta x=\frac{x_{max}-x_{min}}{n}\qquad \boxed{n=\frac{x_{max}-x_{min}}{\Delta x}} \qquad \boxed{r=\frac{\Delta
 t}{\Delta x^2}}$
 \begin{itemize}
 \item Initialisierung, Randbedingung: $\tilde{u}_{j,0}=f(j/n)$ \qquad $\tilde{u}_{0,k}=\tilde{u}_{n,k}=0$
