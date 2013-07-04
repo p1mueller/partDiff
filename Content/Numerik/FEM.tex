@@ -1,3 +1,4 @@
+\clearpage
 \section{FEM}
 
 Der Vektorraum $\mathbb{V}$ hat undendlich viele Dimensionen. Falls wir n unabhängige Funktionen $v_1,\ldots,v_n$ wählen, dann spannen die Funktionen $a_1\cdot v_1(x)+\ldots+a_n\cdot v_n(x)$ einen n dimensionalen Teilraum $\mathbb{V}^{(n)}$  von $\mathbb{V}$ auf. Dabei gilt:\\
@@ -44,8 +45,6 @@ $\int\limits_{\partial \Omega}{(a_1 \cdot v_1'' + a_2 \cdot v_2'' + a_1 \cdot
 v_1 + a_2 \cdot v_2 + x) \cdot v_k dx} = 0$
 
 \subsection{Gewichtete Residuen}
-\todo{Achtung: Gewichtete Residuen $\neq$ Bereichskollokation!! (Hinweis kann auch wieder gelöscht werden :) }
-
 Gewichtungsfunktionen: $\{w_1(x),\ldots,w_n(x)\}$
 
 \textbf{Matrize (gewichtete Residuen): }
@@ -485,7 +484,7 @@ Die Approximation soll auf dem gleichverteilten Intervallen gelten: $[0,1/3]$,\q
 	$q_2(x)=4x\cdot(1-x)$\\
 	$q_3(x)=-x\cdot(1-2x)$\\
 	
-	Elementmatrize: $\boxed{E=\frac{1}{h}
+	Elementmatrize: $\boxed{E=-h
 	\begin{bmatrix}
 		-7& 8 & 1\\
 		8& -16& 8\\
