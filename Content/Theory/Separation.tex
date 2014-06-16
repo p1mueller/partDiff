@@ -18,7 +18,7 @@ Wahl eines geeigneten Koordinatensystems ist wichtig.
 \textbf{Beispiel 1: } PDGL: $\frac1x\partFrac{u}{x}+\frac1y\partFrac{u}{y}=\frac{1}{y^2}$
 \begin{enumerate}
 	\item Ansatz:\\[0.4cm]
-	$U(x,y)=X(x) + Y(y)$ (1.Ordnung)
+	$u(x,y)=X(x) + Y(y)$ (1.Ordnung)
 	\item Einsetzen:\\[0.4cm]
 	$\partFrac{u}{x}=X'(x)$\qquad $\partFrac{u}{y}=Y'(y)$ \quad $\Rightarrow$ \quad $\frac{X'(x)}{x}+\frac{Y'(y)}{y}=\frac{1}{y^2}$
 	\item Separation:\\[0.4cm]
@@ -27,16 +27,17 @@ Wahl eines geeigneten Koordinatensystems ist wichtig.
 	$X'(x)=k\cdot x \quad\Rightarrow\quad X(x)=\frac12 kX^2+C_x$\\
 	$Y'(y)=\frac1y-ky \quad\Rightarrow\quad Y(y)=\ln(y)-\frac{ky^2}{2}+C_y$
 	\item Linearkombination:\\[0.4cm]
-	$U(x,y)=\frac12 kx^2\frac12 ky^2+ln(y)+C$
+	$u(x,y)=\frac12 kx^2\frac12 ky^2+ln(y)+C$
 \end{enumerate}
+
 \textbf{Beispiel 2: } PDGL: $x^2\partFrac{^2u}{x^2}+x\partFrac{u}{x}+y^2\partFrac{^2u}{y^2}+y\partFrac{u}{y}=0$\\ 
 Randbedingungen: $\Omega=[1,2]\times[1,2]$ \qquad $u=0$ auf $\partial\Omega$
 \begin{enumerate}
 	\item Ansatz:\\[0.4cm]
-	$U(x,y)=X(x) \cdot Y(y)$ (2.Ordnung)
+	$u(x,y)=X(x) \cdot Y(y)$ (2.Ordnung)
 	\item Einsetzen:\\[0.4cm]
 	$x^2X''(x)Y(y)+xX'(x)Y(y)+y^2X(x)Y''(y)+yX(x)Y'(y)=0$
-	\item Separation: (Division durch $X(x)Y(y)$\\[0.4cm]
+	\item Separation: Division durch $X(x)Y(y)$\\[0.4cm]
 	$\frac{x^2X''(x)}{X(x)}+\frac{xX'(x)}{X(x)}+\frac{y^2Y''(y)}{Y(y)}+\frac{yY'(y)}{Y(y)}=0\quad\Rightarrow\quad \frac{x^2X''(x)}{X(x)}+\frac{xX'(x)}{X(x)}=k=-\frac{y^2Y''(y)}{Y(y)}-\frac{yY'(y)}{Y(y)}$
 	\item DGL'2 lösen:\\[0.4cm]
 	$\frac{x^2X''(x)}{X(x)}+\frac{xX'(x)}{X(x)}=k\quad\Rightarrow\quad x^2X''(x)+xX'(x)-kX(x)=0$\qquad mit $X(1)=X(2)=0$\\
@@ -45,15 +46,16 @@ Randbedingungen: $\Omega=[1,2]\times[1,2]$ \qquad $u=0$ auf $\partial\Omega$
 \end{enumerate}
 \end{minipage}
 \hfill
+
 \begin{minipage}{0.49\textwidth}
 \textbf{Beispiel 3: }PDGL: $\partFrac{^2u}{t^2}=\partFrac{^2u}{x^2}$ \quad $u(t=0,x)=0$\\
 Randbedingungen: $x=[0,\pi]$ \\
 \qquad\qquad $\partFrac{u}{t}(t=0,x)=\sin^3(x)=\frac34\sin(x)-\frac14\sin(3x)$
 \begin{enumerate}
 	\item Ansatz:\\[0.4cm]
-	$U(x,y)=X(x) \cdot T(t)$ (2.Ordnung)
+	$u(t,x)=T(t) \cdot X(x) $ (2.Ordnung)
 	\item Einsetzen:\\[0.4cm]
-	$X''(x)\cdot T(t)=T''(t)\cdot X(x)$
+	$T''(t)\cdot X(x) = X''(x)\cdot T(t)$
 	\item Separation:\\[0.4cm]
 	$\frac{X''(x)}{X(x)}= -\mu^2=\frac{T''(t)}{T(t)}$
 	\item DGL'2 lösen:\\[0.4cm]
