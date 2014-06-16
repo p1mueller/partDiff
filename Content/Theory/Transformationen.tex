@@ -23,7 +23,9 @@ gut gestellt sind.
 \subsubsection{Fourierreihe}
 $\boxed{u(t,x)=\frac{a_0(t)}{2}+\sum\limits_{k=1}^{\infty}{a_k(t)\cos(kx)+b_k(t)\sin(kx)}}$\\[0.4cm]
 
-\textbf{Beispiel:} Schwingende Saite: $\boxed{\partial_t^2u=\partial_x^2u}$
+\subsubsection{Beispiel: Schwingende Saite}
+
+$\boxed{\partial_t^2u=\partial_x^2u}$
 
 \begin{enumerate}
 \item Ansatz der Fourieranalyse in PDGL einsetzen:\\
@@ -40,8 +42,8 @@ $a_0(t)=m_0(t)+c_0\qquad a_k(t)=A_k^a\cos(kt)+B_k^a\sin(kt)\qquad b_k(t)=A_k^b\c
 \end{enumerate}
 
 
-\subsubsection{Anfangsbedingungen}
-Die Differentialgleichungen für die Koeffizienten $ak(t)$ und $bk(t)$ können erst dann
+\textbf{Anfangsbedingungen:}
+Die Differentialgleichungen für die Koeffizienten $a_k(t)$ und $b_k(t)$ können erst dann
 vollständig gelöst werden, wenn Anfangs oder Randbedingungen gegeben sind.\\
 \begin{itemize}
 \item Anfangsbedingungen für Wellengleichung:\\
@@ -84,10 +86,62 @@ $\partFrac{u}{t}+x\partFrac{u}{x}=x\qquad t\geq 0,\quad x\geq 0\qquad u(x,0)=0,\
 Transformation: $\partFrac{u}{t}+x\partFrac{u}{x}=x\FT sU(s,x)-u(x,0)+x\partFrac{U(s,x)}{x}=\frac{x}{s}\qquad \Rightarrow \qquad U(s,x)=\frac{x}{s(s+1)}$\\
 $U(s,x)\IFT x(1-\e^{-t})$
 
+\subsubsection{Beispiel: Wärmeleitung}
 
+Stab zur Zeit $t=0$: Temperaturen $-1$ bei $x=-\frac{\pi}2$ und
+$1$ bei $x=\frac{\pi}2$ -> station"arer Zustand.
+Zur Zeit $t=0$ werden die Reservoirs entfernt und der
+Stab wird sich selbst "uberlassen. Insbesondere kann durch die
+Enden keine W"arme mehr abgeleitet werden.
+\[
+\frac{\partial u}{\partial t}=\frac{\partial^2 u}{\partial x^2}
+\]
 
+``Dreiecksfunktion''
+\[
+d(x)
+=
+\begin{cases}
+\displaystyle-2-\frac{2x}{\pi}&\qquad \displaystyle-\frac{\pi}2\le x\\
+\displaystyle\frac{2x}{\pi}&\qquad \displaystyle-\frac{\pi}2\le x\le \frac{\pi}2\\
+\displaystyle2-\frac{2x}{\pi}&\qquad \displaystyle x\le\frac{\pi}2
+\end{cases}
+ \qquad = \qquad \sum_{n=0}^\infty \frac{8(-1)^n}{\pi^2(2n+1)^2}\sin ((2n+1)x)
+\]
 
+ $\hat u(t,k)$ Fourier-Sinus-Koeffizienten / ${\cal L} u$ Laplace-Transformation.
 
+Anfangsbedingungen ungerade -> L"osung der
+Differntialgleichung f"ur alle Zeiten ungerade. \\
+Randbedingungen:
+$\partial_xu(t,-\frac{\pi}2)=\partial_xu(t,\frac{\pi}2)=0$
+-> Spiegelung an
+$-\frac{\pi}2$ bzw.~$\frac{\pi}2$ -> $2\pi$-periodische
+Funktion auf $\mathbb R$ fortsetzen 
+\[
+\partial_t\hat u(t,k)=-k^2\hat u(t,k)
+\]
+Diese Gleichung kann man jetzt nach Laplace transformieren:
+\begin{align*}
+s{\cal L}\hat u(s,k) - \hat u(0,k)&=-k^2 {\cal L}\hat u(s,k)\\
+(s+k^2){\cal L}\hat u(s,k)&=\hat u(0,k)\\
+{\cal L}\hat u(s,k)&=\frac{\hat u(0,k)}{s+k^2}
+\end{align*}
+R"ucktransformation ergibt:
+\[
+\hat u(t,k)=\hat u(0,k) e^{-k^2t}
+\]
+Jetzt sind nur noch die Fourierkoeffizienten zu bestimmen, die kann
+man der Dreiecksfunktion entnehmen:
+\[
+\hat u(0,2n+1)=
+\frac{8(-1)^n}{\pi^2(2n+1)^2}
+\]
+und damit die endg"ultige L"osung durch Summieren der Fourierreihen bekommen:
+\[
+u(t,x)=
+\sum_{n=0}^\infty \frac{8(-1)^n}{\pi^2(2n+1)^2}e^{-(2n+1)^2t}\sin((2n+1)x)
+\]
 
 
 
