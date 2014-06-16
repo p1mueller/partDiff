@@ -167,18 +167,18 @@
 	  \label{sec:dgls}
 	  \begin{tabular}{ll | ll}
 	    DGL & L"osung & DGL & L"osung\\[0.2cm]
-      $\dfrac{dx}{dt} =0$
-      & $x_0$
+        $\dfrac{dx}{dt} =0$
+        & $C$
  	    & $\dfrac{dx}{dt} =1$
- 	    & $t + x_0$\\[0.2cm]
+ 	    & $t + C$\\[0.2cm]
 	    $\dfrac{dx}{dt} = y$
-	    & $y \cdot t$
+	    & $t \cdot y + C$
 	    & $\dfrac{dx}{dt} = x$
 	    & $C e^{t}$\\[0.2cm]
-	    $\dfrac{d u}{dt} = \sin(u)$
-	    & $- \cos(u)$
+	    $\dfrac{d u}{dt} = \sin(t)$
+	    & $C - \cos(t)$
 	    & $\dfrac{d^2 x}{dt^2} = x$
-	    & $\sinh(t)$ oder $\cosh(t)$\\[0.2cm]
+	    & $A*\cosh(t) + B*\sinh(t) = \dfrac{1}{2}((A+B)e^{t} + (A-B)e^{-t})$\\[0.2cm]
 	    $\dfrac{d^2 x(t)}{dt^2} = -\omega^2 x(t)$
 	    & $A \cos(\omega t) - B \sin(\omega t)$
 	    & & 
