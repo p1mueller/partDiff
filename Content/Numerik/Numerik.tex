@@ -21,12 +21,12 @@ $A^{(n)}= \frac{1}{\Delta x^2} \tridiag_{n-1} (-1,2,-1) = \frac{1}{\Delta x^2}
               0& 0 & -1 & \ldots \\
              \ldots 
            \end{bmatrix}$\qquad (eine $(n-1)\times(n-1)$-Matrize)\\ 
-Randwert: $\tilde{u}(0)= a; \tilde{u}(n)=b $;
-$A^{(n)}=\tilde{u}^{(n)} =\begin{bmatrix}
-             f(0) + \tilde{u}(0) \\
-             f(1) \\
+Randwert: $u(0)= a \qquad u(n)=b $ \qquad
+$A^{(n)}\tilde{u}^{(n)} =\begin{bmatrix}
+             f(x_1^{(n)}) + \dfrac{a}{\Delta x^2} \\
+             f(x_2^{(n)}) \\
              \vdots  \\
-             f(n) + \tilde{u}(n)
+             f(x_{(n-1)}^{(n)}) + \dfrac{b}{\Delta x^2}
            \end{bmatrix} $\\
 \subsubsection{Grundgleichung: $T''(x) -  h T(x) = T_A$}
 $-T'' + h T(x) = h T_A$\\
