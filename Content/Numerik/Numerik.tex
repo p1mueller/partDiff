@@ -315,7 +315,7 @@ r	& 2-2r  & r		& 0		&\cdots\\
 \item $k$-Schritte berechnen: $\tilde{u}^{(k)}=\left(\left\{F^{(n)}\right\}^{-1} \cdot G^{(n)}\right)^{k}\cdot \tilde{u}^{(0)}$
 \end{itemize}
 
-\subsection{(FDM für Hyperbolische PDGL)}
+\subsection{FDM für Hyperbolische PDGL}
 
 $$u_{tt}=u_{xx} = \text{homogen}$$
 $$u_{tt} -u_{xx}= v(x,t) = \text{inhomogen}$$
@@ -369,6 +369,8 @@ Laplace-Operator $(\Delta)$ verzichtet werden und somit die aufwendige Mathemati
 \item Aufteilen des Bereichs in kleine Teilbereiche, z.B. durch Mittelsenkrechte
 \item Rand diskretisieren.\\
 \end{enumerate}
+
+Für $P_i$-Zelle: $\sum\limits_{j} \dfrac{u(P_{i,j}) - u(P_i)}{\delta_{i,j}} \cdot \lambda_{i,j} = 0$
 
 Für P1-Zelle:\quad $\frac{\tilde{u}(P_2)-\tilde{u}(P_1)}{\delta_{1,2}}\cdot\lambda_{1,2}+\frac{\tilde{u}(P_3)-\tilde{u}(P_1)}{\delta_{1,3}}\cdot\lambda_{1,3}+\frac{\tilde{u}(R_1)-\tilde{u}(P_1)}{\delta_1}\cdot\lambda_1=0$\\
 
