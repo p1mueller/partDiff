@@ -26,22 +26,22 @@ $G^{(n)}=\begin{bmatrix}
 	G_{1,1}& G_{1,2}&\cdots\\
 	G_{2,1}& G_{2,2}&\cdots\\
 	\vdots & \vdots &\ddots\\
-\end{bmatrix}$ \qquad mit \qquad $G_{j,k}^{(n)}=\int\limits_{\partial \Omega}{\underbrace{(v_j''(x))}_{v_j \text{ in Form von DGL!}}\cdot v_k(x) dx}$\\
+\end{bmatrix}$ \qquad mit \qquad $G_{j,k}^{(n)}=\int\limits_{0}^{1}{\underbrace{(v_j''(x))}_{v_j \text{ in Form von DGL!}}\cdot v_k(x) dx}$\\
 \textbf{Galerkscher Vektor: } 
 $g^{(n)}=\begin{bmatrix}
 	g_1\\
 	g_2\\
 	\vdots\\
-\end{bmatrix}$ \qquad mit \qquad $g_{k}^{(n)}=\int\limits_{\partial \Omega}{f(x)\cdot v_k(x) dx}$\\
+\end{bmatrix}$ \qquad mit \qquad $g_{k}^{(n)}=\int\limits_{0}^{1}{f(x)\cdot v_k(x) dx}$\\
 
 \textbf{Lösung nach Galerkin:} $G^{(n)}\cdot a+g^{(n)}=0\qquad \Rightarrow
-\qquad a=\textcolor{red}{\mathbf{-}}\left\{G^{(n)}\right\}^{-1}\cdot g^{(n)}$\\
+\qquad a=\textcolor{red}{\mathbf{-}}\left\{G^{(n)}\right\}^{-1}\cdot g^{(n)}$ \quad nach Ritz $G^{(n)} = -R^{(n)} \quad g^{(n)} = r^{(n)}$\\
 
 Die obige Matrix ist nur für die PDGL $-u''(x) = f(x)$ mit dem Ansatz
 $\tilde{u}(x) = a_1 \cdot v_1(x) + a_2 \cdot v_2(x)$ gültig. Ansonsten muss ein
 Gleichungssystem für $v_k$ = $v_1$ und $v_2$ aufgestellt werden (Beispiel
 für DGL: $u''(x) + u(x) + x = 0$):\\
-$\int\limits_{\partial \Omega}{(a_1 \cdot v_1'' + a_2 \cdot v_2'' + a_1 \cdot
+$\int\limits_{0}^{1}{(a_1 \cdot v_1'' + a_2 \cdot v_2'' + a_1 \cdot
 v_1 + a_2 \cdot v_2 + x) \cdot v_k dx} = 0$
 
 \subsection{Gewichtete Residuen}
@@ -484,7 +484,7 @@ Die Approximation soll auf dem gleichverteilten Intervallen gelten: $[0,1/3]$,\q
 	$q_2(x)=4x\cdot(1-x)$\\
 	$q_3(x)=-x\cdot(1-2x)$\\
 	
-	Elementmatrize: $\boxed{E=-\frac{1}{h}
+	Elementmatrize: $\boxed{E=\frac{1}{h}
 	\begin{bmatrix}
 		-7& 8 & -1\\
 		8& -16& 8\\
@@ -568,10 +568,10 @@ Die Approximation soll auf dem gleichverteilten Intervallen gelten: $[0,1/3]$,\q
 
 \begin{minipage}{4cm}
 Formfunktionen:\\
-$h_1(x)=2t^3-3t^2+1$\\
-$h_2(x)=t^3-2t^2+t$\\
-$h_3(x)=-2t^3+3t^2$\\
-$h_4(x)=t^3-t^2$
+$h_1(x)=2x^3-3x^2+1$\\
+$h_2(x)=x^3-2x^2+x$\\
+$h_3(x)=-2x^3+3x^2$\\
+$h_4(x)=x^3-x^2$
 \end{minipage}
 \hfill
 \begin{minipage}{8cm}
