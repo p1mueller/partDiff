@@ -203,6 +203,9 @@ Wenn $u_x(x,y) = 0$, dann spricht man auch von der Spiegelmethode. Die Punkte $P
 	Wärmeleitungsgleichung: $\boxed{u_t(x,t)=u_{xx}(x,t)}$\qquad $f(0)=f(1)=0$ \qquad$ \overset{\_}{\Omega}=[0,1]\times [0,\infty]$\\
 	
 	Randbedingungen: $u(x,0)=f(x) \qquad u(0,t)=u(1,t)=0\qquad x\in(0,1) \qquad t\in[0,\infty)$
+	
+\newpage
+
 \subsubsection{Explizites Verfahren (Richardson-Verfahren)}
 $\boxed{\frac{\tilde{u}(x,t+\Delta t) - \tilde{u}(x,t)}{\Delta t} = 
 \frac{\tilde{u}(x+\Delta x, t)-2\tilde{u}(x,y) + \tilde{u}( x - \Delta x, t )} {\Delta x^2}} \qquad \Delta x=\frac{1}{n} \qquad \Delta t=\frac{r}{n^2} \qquad \boxed{r=\frac{\Delta
@@ -325,8 +328,8 @@ f(x)= Anfangsfunktion \qquad g(x)=Ableitung \qquad $r = \frac{\Delta t}{\Delta x
 \subsubsection{Transportgleichung}
 $$u_x(x,t) + u_t(x, t) = 0 \qquad u(x,0)=f(x) \longrightarrow u(x,t)=f(x-t)$$
 $$\frac{\tilde{u}(x,t+\Delta t)-\tilde{u}(x,t)}{\Delta t} + \frac{\tilde{u}(x,t) - \tilde{u}(x-\Delta x,
-t)}{\Delta x} = 0 $$
-$$\tilde{u}_{j,k+1}=(1-r)\tilde{u}_{j,k} + r\tilde{u}_{j-1,k} \quad \text{Konvergent für} \quad r \leq 1$$
+t)}{\Delta x} = 0 \qquad
+\tilde{u}_{j,k+1}=(1-r)\tilde{u}_{j,k} + r\tilde{u}_{j-1,k} \quad \text{Konvergent für} \quad r \leq 1$$
 
 \subsection{FVM (Finite Volumen Methode, Verfahren von Voronoi)}
 $\Delta u=0$\qquad in \quad$\Omega$\\
