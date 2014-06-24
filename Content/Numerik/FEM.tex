@@ -41,8 +41,8 @@ Die obige Matrix ist nur für die PDGL $-u''(x) = f(x)$ mit dem Ansatz
 $\tilde{u}(x) = a_1 \cdot v_1(x) + a_2 \cdot v_2(x)$ gültig. Ansonsten muss ein
 Gleichungssystem für $v_k$ = $v_1$ und $v_2$ aufgestellt werden (Beispiel
 für DGL: $u''(x) + u(x) + x = 0$):\\
-$\int\limits_{0}^{1}{(a_1 \cdot v_1'' + a_2 \cdot v_2'' + a_1 \cdot
-v_1 + a_2 \cdot v_2 + x) \cdot v_k dx} = 0$
+$\int\limits_{0}^{1}{(a_1 \cdot v_1''(x) + a_2 \cdot v_2''(x) + a_1 \cdot
+v_1(x) + a_2 \cdot v_2(x) + x) \cdot v_k(x) dx} = 0 \rightarrow G_{j,k}^{(n)}=\int\limits_{0}^{1}(v_j''(x) + v_j(x))\cdot v_k(x) dx$
 
 \subsection{Gewichtete Residuen}
 Gewichtungsfunktionen: $\{w_1(x),\ldots,w_n(x)\}$
@@ -85,9 +85,8 @@ Die obige Matrix ist nur für die PDGL $-u''(x) = f(x)$ mit dem Ansatz
 $\tilde{u}(x) = a_1 \cdot v_1(x) + a_2 \cdot v_2(x)$ gültig. Ansonsten muss die
 DGL mit den Ansatzfunktionen aufgestellt und an beiden Punkten eingesetzt
 werden, um $a_1$ und $a_2$ zu bestimmen:\\
-DGL: $u''(x) + u(x) + x = 0$ $\Rightarrow$ Gleichung an Punkt 1: $a_1 \cdot
-v_1''(x_1) + a_2 \cdot v_2''(x_1) + a_1 \cdot v(x_1) + a_2 \cdot v(x_1) + x_1 =
-0$
+DGL: $u''(x) + u(x) = -x$ $\Rightarrow$ Gleichung an Punkt 1: $a_1 \cdot
+v_1''(x_1) + a_2 \cdot v_2''(x_1) + a_1 \cdot v(x_1) + a_2 \cdot v(x_1) = - x_1$
 
 
 

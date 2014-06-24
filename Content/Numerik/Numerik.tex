@@ -88,7 +88,7 @@ $ f(x_0+h)=f(x_0)+f'(x_0)\frac{h}{1!}+...+f^{(n)}(x_0)\frac{h^n}{n!}+R_n(h) $ wo
 
 \subsubsection{Vorwärt/Rückwärtsdifferenz}
 $g'(x) - \frac{g(x+\Delta x) + g(x)}{\Delta x}= O(\Delta x) = 
-\frac{g''(\xi)}{2}\Delta x^2 \Rightarrow$  1. Ordnung
+\frac{g''(\xi)}{2}\Delta x \Rightarrow$  1. Ordnung
 
 
 \subsubsection{Zentraldifferenz}
@@ -125,7 +125,7 @@ Daraus folgt: $\boxed{||A||=\max\limits_{k}|\lambda_k|}$ sowie $\boxed{||A^{-1}|
 Eigenwerte bestimmen: $\boxed{\det(A-\lambda I)=|A-\lambda I|=0}\qquad \Rightarrow \qquad \lambda_1,\ldots,\lambda_n$\\
 Eigenvektoren bestimmen (für jedes $\lambda_i$): $(A-\lambda_i I) \cdot v_i=0\qquad \Rightarrow \qquad v_1,\ldots,v_n$\\
 
-\subsection{FDM für elliptisch PDGL (Poisson: $\Delta u = f$)}
+\subsection{FDM für elliptisch PDGL (Poisson: $-\Delta u = f$)}
 %Dirichletsche Randbedingung ($u(x,y)= f(x,y) \forall (x,y)\epsilon \delta G)$\\
 
 Gleichung:    $-\Delta u(x,y)= f(x,y) \qquad 
@@ -144,19 +144,44 @@ $B \tilde{u} = f \Rightarrow B= \begin{bmatrix}
               0& 0 & D & \ldots \\
              \ldots 
            \end{bmatrix}$
-wobei $T=\begin{bmatrix}
+wobei $T=\frac{1}{h^2}\begin{bmatrix}
              4& -1 & 0 & \ldots \\
              -1& 4 & -1 & \ldots \\
               0& -1 & 4 & \ldots \\
               0& 0 & -1 & \ldots \\
              \ldots 
            \end{bmatrix}$
-und $D=\begin{bmatrix}
+und $D=\frac{1}{h^2}\begin{bmatrix}
              -1& 0& 0 & \ldots \\
              0 & -1 &  & \ldots \\
               0& 0&-1 & \ldots \\
              \ldots 
-           \end{bmatrix}$
+           \end{bmatrix}$\\
+   $\tilde{u}=\begin{bmatrix}
+                \tilde{u}_{1,1}\\
+                \tilde{u}_{2,1}\\
+                \vdots\\
+                \tilde{u}_{1,2}\\
+                \tilde{u}_{2,2}\\
+                \vdots
+              \end{bmatrix}$
+    $f=\begin{bmatrix}
+               f_{1,1}\\
+               f_{2,1}\\
+               \vdots\\
+               f_{1,2}\\
+               f_{2,2}\\
+               \vdots
+             \end{bmatrix} + 
+             \frac{1}{h^2}\begin{bmatrix}
+                u(0,0) + u(1,0) + u(0,1)\\
+                u(2,0)\\
+                \vdots\\
+                u(0,2)\\
+                0\\
+                \vdots
+              \end{bmatrix}$ \\
+   Randbedingungen müssen in f eingearbeitet werden falls $u(x,y) \neq 0$ auf $\partial\Omega$
 
            
 \subsubsection{Irreguläre Gitter (für den Rand)}
@@ -316,20 +341,26 @@ r	& 2-2r  & r		& 0		&\cdots\\
 
 \subsection{FDM für Hyperbolische PDGL}
 
-$$u_{tt}=u_{xx} = \text{homogen}$$
-$$u_{tt} -u_{xx}= v(x,t) = \text{inhomogen}$$
+\begin{minipage}{8cm}
+$u_{tt}=u_{xx} \rightarrow \text{homogen}$\\
+$u_{tt} -u_{xx}= v(x,t) \rightarrow \text{inhomogen}$
+\end{minipage}
+\begin{minipage}{5cm}
+Anfangsbedingungen:\\
+$u(x,0)=f(x) \quad u_t(x,0)=g(x)$
+\end{minipage}\\
 
-$$\Longrightarrow \tilde{u}_{j,k+1}=r^2 \tilde{u}_{j-1,k} + 2(1-r^2)\tilde{u}_{j,k}+ r^2
-\tilde{u}_{j+1,k}-\tilde{u}_{j,k-1} \quad \text{(Leap-Frog-Schema)}$$
-\subsubsection{Anfangsbedingungen}
-$$\tilde{u}_{j,0} = f(j\Delta x) \qquad \tilde{u}_{j,1}= f(j\Delta x) + g(j\Delta x)\Delta t$$
-f(x)= Anfangsfunktion \qquad g(x)=Ableitung \qquad $r = \frac{\Delta t}{\Delta x}$
+\subsubsection{Leap-Frog-Schema}
+$\tilde{u}_{j,k+1}=r^2 \tilde{u}_{j-1,k} + 2(1-r^2)\tilde{u}_{j,k}+ r^2
+\tilde{u}_{j+1,k}-\tilde{u}_{j,k-1} \qquad r = \frac{\Delta t}{\Delta x}$\\
+\\
+$\tilde{u}_{j,0} = f(j\Delta x) \qquad \tilde{u}_{j,1}= f(j\Delta x) + g(j\Delta x)\Delta t$\\
 
 \subsubsection{Transportgleichung}
 $$u_x(x,t) + u_t(x, t) = 0 \qquad u(x,0)=f(x) \longrightarrow u(x,t)=f(x-t)$$
 $$\frac{\tilde{u}(x,t+\Delta t)-\tilde{u}(x,t)}{\Delta t} + \frac{\tilde{u}(x,t) - \tilde{u}(x-\Delta x,
 t)}{\Delta x} = 0 \qquad
-\tilde{u}_{j,k+1}=(1-r)\tilde{u}_{j,k} + r\tilde{u}_{j-1,k} \quad \text{Konvergent für} \quad r \leq 1$$
+\tilde{u}_{j,k+1}=(1-r)\tilde{u}_{j,k} + r\tilde{u}_{j-1,k} \quad \text{Konvergent für} \quad r=\frac{\Delta t}{\Delta x} \leq 1$$
 
 \subsection{FVM (Finite Volumen Methode, Verfahren von Voronoi)}
 $\Delta u=0$\qquad in \quad$\Omega$\\
