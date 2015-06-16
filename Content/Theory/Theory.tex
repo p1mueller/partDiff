@@ -21,11 +21,19 @@ Sie kann durch Substitution $\frac{\partial u}{\partial x_i}\to p_i,~\frac{\part
 $F(x_1,\dots,x_n,u,p_1,\dots,p_n,t_{11},t_{12},\dots,t_{n,n-1},t_{nn})$
 ausgedrückt werden.\\
 \textbf{Beispiel Übung}\\
-$\frac{\partial^2 u}{\partial x_1 \partial x_2} = 0$ $\Rightarrow$ $F \left(
-\frac {\partial^2 u}{\partial x_1 \partial x_2} \right) = 0$\\
-$\frac{\partial u}{\partial x_1} = \frac{\partial u}{\partial x_2} $
-$\Rightarrow$ $F \left( \frac{\partial u}{\partial x_1}, \frac{\partial
-u}{\partial x_2} \right) = 0$
+\begin{tabular}{lclcl}
+$\frac{\partial^2 u}{\partial x_1 \partial x_2} = 0$ & $\Rightarrow$ & 
+    $F(t_{12}) = t_{12} = 0$ & $\Leftrightarrow$ &
+    $F \left( \frac {\partial^2 u}{\partial x_1 \partial x_2} \right) = 0$ \\
+$\frac{\partial u}{\partial x_1} = \frac{\partial u}{\partial x_2} $ & $\Rightarrow$ & 
+    $F(p_1,p_2) = p_1 - p_2 = 0$ & $\Leftrightarrow$ & 
+    $F \left( \frac{\partial u}{\partial x_1}, \frac{\partial u}{\partial x_2} \right) = 0$ \\
+$x_1 \frac{\partial u}{\partial x_1} + x_2 \frac{\partial u}{\partial x_2} = \frac{\partial u}{\partial x_3} $ & 
+    $\Rightarrow$ & $F(x_1,x_2,p_1,p_2,p_3) = x_1 p_1 + x_2 p_2 - p_3$ & $\Leftrightarrow$ &
+    $F\left( x_1,x_2,\frac{\partial u}{\partial x_1},\frac{\partial u}{\partial x_2},\frac{\partial u}{\partial x_3} \right)
+    = x_1\frac{\partial u}{\partial x_1} + x_2\frac{\partial u}{\partial x_2} - \frac{\partial u}{\partial x_3} = 0$
+
+\end{tabular}
 
 \subsubsection{Laplace-Operator}
 \begin{tabular}{ll}
@@ -92,13 +100,33 @@ Lösung:& Funktion $u$: $\overset{\_}{\Omega}\rightarrow \mathbb{R}$, PDGL in $\
 \subsubsection{Klassifikation einer PDGL}
 \begin{tabular}{lll}
 Ordnung:& \multicolumn{2}{l}{Höchste vorkommende partielle Ableitung}\\
-Typ:& Linear: & Linear bei $u, x_1,...,x_n, \frac{\partial u}{\partial x_1},\ldots,\frac{\partial u}{\partial x_n}$\\
-& Quasilinear: &  Linear bei $\frac{\partial u}{\partial x_1},\ldots,\frac{\partial u}{\partial x_n}$\\
+Typ:& Linear: & Linear in $u, x_1,...,x_n, \frac{\partial u}{\partial x_1},\ldots,\frac{\partial u}{\partial x_n}$\\
+& Quasilinear: &  Linear in $\frac{\partial u}{\partial x_1},\ldots,\frac{\partial u}{\partial x_n}$\\
 & Nichtlineare: & Alles andere
 \end{tabular}
 
 \input{Content/Theory/Characteristic.tex}
 \input{Content/Theory/Separation.tex}
+
+\subsection{Hamilton-Jacobi Theorie}
+Die Hamilton-Jacobi Theorie geht von einer Gesamtenergie $H(x_i,p_i)$ in Abhängigkeit von Ort
+und Impuls aus.
+Dazu muss eine Funktion $S(x_i,t)$ gefunden werden, für welche
+\begin{align*}
+    \frac{\partial S}{\partial t} = H\left(x_i,p_i\right) = H\left(x_i,\frac{\partial S}{\partial x_i}\right)
+    && \text{mit} \quad
+    p_i = \frac{\partial S}{\partial x_i}
+\end{align*}
+Diese kann meist durch Integration gelöst werden.
+Dabei werden die Integrationskonstanten $P_i$ eingeführt.
+Die \emph{Bahnparameter} $Q_i$ sind
+\[
+    Q_i = \frac{\partial S}{\partial P_i}
+\]
+und die Bahnkurve hat die Form
+\[
+    x_i(t,Q_i,P_i)
+\]
 
 \input{Content/Theory/Transformationen.tex}
 \input{Content/Theory/PDGL2Ord.tex}
