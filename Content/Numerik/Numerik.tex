@@ -306,9 +306,9 @@ $ \tilde{u}_{j,k} = - r \tilde{u}_{j-1,k+1} + (1+2r)\tilde{u}_{j,k+1} - r \tilde
 Die Idee des Verfahrens von Crank-Nicolson ist es die beiden Approximationen
 
 $\boxed{\frac{\tilde{u}(x,t+\Delta t) - \tilde{u}(x,t)}{\Delta t} = 
-\frac{\tilde{u}(x+\Delta x, t)-2\tilde{u}(x,y) + \tilde{u}( x - \Delta x, t )} {\Delta x^2}}$
-$\boxed{\frac{\tilde{u}(x,t) - \tilde{u}(x,t -\Delta t)}{\Delta t} = 
-\frac{\tilde{u}(x+\Delta x, t)-2\tilde{u}(x,y) + \tilde{u}( x - \Delta x, t )} {\Delta x^2}}$
+\frac{\tilde{u}(x+\Delta x, t)-2\tilde{u}(x,t) + \tilde{u}( x - \Delta x, t )} {\Delta x^2}}$\\
+$\boxed{\frac{\tilde{u}(x,t+\Delta t) - \tilde{u}(x,t)}{\Delta t} = 
+\frac{\tilde{u}(x+\Delta x, t+\Delta t)-2\tilde{u}(x,t+\Delta t) + \tilde{u}( x - \Delta x, t +\Delta t)} {\Delta x^2}}$
 
 zu mitteln. Mit dieser Idee geht das stetige Problem in folgendes diskretes Problem über:
 
