@@ -211,13 +211,19 @@ $-\left(\frac{u(P_E) + u(P_W) - 2 u(P)}{\Delta x^2} + \frac{u(P_N) + u(P_S) - 2 
 \end{minipage}
 \hfill
 \begin{minipage}{14cm}
-In einem Randpunkt P liegen wie in der Abbildung ersichtlich, $P_N$ und $P_S$ auf dem Rand von Omega, $P_W$ liegt ausserhalb von Omega.\\
-In P sei die Neumannsche Randbedingung: $\boxed{\partFrac{u}{n}(P)=g(P)}$\\
-$u_x(P)=\frac{u(P_E)-u(P_W)}{2h}\quad\Rightarrow\quad u(P_W)=u(P_E)-2h\cdot u_x(P)$\\
+Bei Neumann Rand-Bedingungen müssen die Randpunkte ebenfalls berechnet werden.
+In der Abbildung sind $P$, $P_N$ und $P_S$ auf dem Rand,
+$P_E$ ist liegt innerhalb, und $P_W$ ausserhalb von $\Omega$.
+Gegeben sei  die Neumannsche Randbedingung in $P$: $\boxed{\partFrac{u}{n}(P)=g(P)}$\\
+Aus der Ableitung $u_x(P) = \partFrac{u}{n}(P) = \frac{u(P_E)-u(P_W)}{2h}$
+kann der ausserhalb liegende Punkt $u(P_W)$ berechnet werden: $u(P_W)=u(P_E)-2h\cdot u_x(P)$.
+Somit gilt:
 
 $\boxed{\frac{2u(P_E) + u(P_N) +
 u(P_S)- 4 u(P) - 2h\cdot u_x(P)}{h^2}}$\\
 
+Sind $P_W$ und $P_E$ vertauscht, so ist das Vorzeichen umgekehrt:
+$u(P_W)=u(P_E)+2h\cdot u_x(P)$.\\
 
 \textbf{Spiegelmethode}:\\
 Wenn $u_x(x,y) = 0$, dann spricht man auch von der Spiegelmethode. Die Punkte $P_W$ und $P_E$ weisen dann die gleiche Wertigkeit auf ($P_W=P_E$).
