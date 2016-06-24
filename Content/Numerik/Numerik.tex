@@ -49,9 +49,9 @@ Lösen: Die Ableitung von $ u'' $ einsetzen, siehe oben, ergibt die allgemeine G
 \\
 P1: $ \frac{0-2 \tilde{u}(\frac{1}{3}) + \tilde{u}(\frac{2}{3})}{(\frac{1}{3})^2} =4(\tilde{u}(\frac{1}{3})-\frac{1}{3}) $
 \qquad \qquad
-P2: $ \frac{\tilde{u}_1(\frac{1}{3})-2 \tilde{u}(\frac{2}{3}) + 2}{(\frac{1}{3})^2} =4(\tilde{u}(\frac{2}{3})-\frac{2}{3}) $
+P2: $ \frac{\tilde{u}(\frac{1}{3})-2 \tilde{u}(\frac{2}{3}) + 2}{(\frac{1}{3})^2} =4(\tilde{u}(\frac{2}{3})-\frac{2}{3}) $
 \\
-Nun das Gleichungssysteme lösen ergibt $ \tilde{u}(\frac{1}{3}) $ und $ \tilde{u}_2(\frac{2}{3}) $          
+Nun das Gleichungssysteme lösen ergibt $ \tilde{u}(\frac{1}{3}) $ und $ \tilde{u}(\frac{2}{3}) $          
            
            
 \subsection{Konvergenz}
@@ -109,7 +109,7 @@ Die Stabilität einer Matrize kann über deren Norm $||A||_*$ bestimmt werden.\\
 Es gilt: $||A||_*=\max\limits_{||x||_*=1}||A\cdot x||_*$\qquad$||A\cdot x||_*\leq||A||~||x||_*$\\
 
 Ein Approximationsverfahren ist stabil wenn, wenn unabhängig von der konstante $C$ gilt:
-$\boxed{||{A^{(n)}}^{-1}||\leq C}$\\
+$\boxed{||{A^{(n)}}^{-1}||_{1/n}\leq C}$\\
 
 
 
