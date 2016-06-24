@@ -42,10 +42,8 @@ Kartesisch: $\Delta u(x,y,z)=\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}
 \left( \rho\,\frac{\partial f}{\partial \rho} \right) +
 \frac{1}{\rho^2}\frac{\partial^2 f}{\partial \phi^2} +
 \frac{\partial^2 f}{\partial z^2}$ \\
-Polar: $\Delta f(r, \phi ) =
-\frac{\partial^2 f}{\partial r^2} +
-\frac{1}{r}\frac{\partial f}{\partial r} +
-\frac{1}{r^2}\frac{\partial^2 f}{\partial \phi^2}$
+Polar: $\Delta f(r, \varphi ) =
+\frac{1}{r}\frac{\partial f}{\partial r} r \frac{\partial f}{\partial r} + \frac{1}{r^2} \frac{\partial^2 f}{\partial \varphi^2}$
 & Kugel: $\Delta f ( r , \vartheta , \phi ) = \frac{1}{r^2} 
 \frac{\partial}{\partial r} \left( r^2  \,\frac{\partial f}{\partial r} \right) +
 \frac{1}{r^2 \sin \vartheta}  \frac{\partial}{\partial \vartheta} \left(\sin\vartheta \, \frac{\partial f}{\partial \vartheta} \right) +
@@ -95,7 +93,8 @@ $\Omega$ ein kleiner Ball gezeichnet werden kann, welches sich auch im Gebiet $\
 \begin{tabular}{ll}
 Gegeben:& Gebiet $\Omega$, PDGL,Randwerte $\partial\Omega$\\
 Lösung:& Funktion $u$: $\overset{\_}{\Omega}\rightarrow \mathbb{R}$, PDGL in $\Omega$ und Randwerte auf $\partial\Omega$\\
-\end{tabular}
+\end{tabular} \\
+'gut gestellt' wen die Angaben die Lösung eindeutig bestimmen
 
 \subsubsection{Klassifikation einer PDGL}
 \begin{tabular}{lll}
