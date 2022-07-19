@@ -23,6 +23,9 @@
 *.nlo
 *.out
 *.pdfsync
+.vscode/*
+*.fls
+*.xdv
 *.ps
 *.snm
 *.synctex.gz
